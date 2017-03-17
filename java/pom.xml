@@ -4,7 +4,7 @@
 
 	<artifactId>whoisclient</artifactId>
 	<description>Java whois client</description>
-	<groupId>com.github.minorg</groupId>
+	<groupId>io.github.minorg</groupId>
 	<name>whoisclient</name>
 	<packaging>jar</packaging>
 	<url>https://github.com/minorg/whoisclient</url>
