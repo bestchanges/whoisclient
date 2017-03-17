@@ -9,7 +9,6 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import io.github.minorg.whoisclient.ParsedWhoisRecord;
-import io.github.minorg.whoisclient.WhoisRecordParseException;
 
 final class WhoisReferralFieldParser implements WhoisFieldParser {
     public WhoisReferralFieldParser() {

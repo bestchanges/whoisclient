@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 import com.google.common.base.Optional;
 
 import io.github.minorg.whoisclient.ParsedWhoisRecord;
-import io.github.minorg.whoisclient.WhoisRecordParseException;
 
 abstract class WhoisDateFieldParser extends WhoisPatternFieldParser {
     protected WhoisDateFieldParser(final ParsedWhoisRecord.FieldMetadata field, final String[] linePatternStrings) {

@@ -17,7 +17,6 @@ import com.google.common.collect.ImmutableMap;
 import io.github.minorg.whoisclient.Gazetteers;
 import io.github.minorg.whoisclient.ParsedWhoisRecord;
 import io.github.minorg.whoisclient.ParsedWhoisRegistrant;
-import io.github.minorg.whoisclient.WhoisRecordParseException;
 import io.github.minorg.whoisclient.WhoisRegistrant;
 
 public class WhoisRegistrantFieldParser extends WhoisPatternFieldParser {

@@ -2,7 +2,6 @@ package io.github.minorg.whoisclient.parser;
 
 import io.github.minorg.whoisclient.Gazetteers;
 import io.github.minorg.whoisclient.ParsedWhoisRecord;
-import io.github.minorg.whoisclient.WhoisRecordParseException;
 
 final class WhoisFieldParsers {
     public WhoisFieldParsers() {

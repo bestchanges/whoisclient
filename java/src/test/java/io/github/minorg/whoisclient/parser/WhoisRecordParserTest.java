@@ -13,7 +13,6 @@ import com.google.common.collect.ImmutableList;
 
 import io.github.minorg.whoisclient.ParsedWhoisRecord;
 import io.github.minorg.whoisclient.RawWhoisRecord;
-import io.github.minorg.whoisclient.WhoisRecordParseException;
 
 public final class WhoisRecordParserTest {
     @Before

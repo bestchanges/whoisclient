@@ -22,6 +22,7 @@ import org.thryft.native_.InternetDomainName;
 import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableList;
 
+import io.github.minorg.whoisclient.parser.WhoisRecordParseException;
 import io.github.minorg.whoisclient.parser.WhoisRecordParser;
 
 public final class WhoisClient {

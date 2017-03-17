@@ -9,7 +9,6 @@ import io.github.minorg.whoisclient.ParsedWhoisRecord;
 import io.github.minorg.whoisclient.RawWhoisRecord;
 import io.github.minorg.whoisclient.WhoisRecord;
 import io.github.minorg.whoisclient.WhoisRecordMetadata;
-import io.github.minorg.whoisclient.WhoisRecordParseException;
 
 public final class WhoisRecordParser {
     public WhoisRecordParser() {
