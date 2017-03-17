@@ -37,7 +37,7 @@ public final class WhoisRecordParser {
             while ((recordSeparatorI != -1) && (lastRecordSeparatorI < text.length())) {
                 final String textPart = text.substring(lastRecordSeparatorI, recordSeparatorI);
                 if (domainNamePattern.matcher(textPart).find()) {
-                    return __parse(new RawWhoisRecord(raw.getQueriedName(), raw.getQueriedWhoisServers(),
+                    return __parse(RawWhoisRecord.create(raw.getQueriedName(), raw.getQueriedWhoisServers(),
                             raw.getQueryTimestamp(), textPart));
                 }
                 lastRecordSeparatorI = recordSeparatorI + 2;
@@ -46,7 +46,7 @@ public final class WhoisRecordParser {
             if (lastRecordSeparatorI < text.length()) {
                 final String textPart = text.substring(lastRecordSeparatorI);
                 if (domainNamePattern.matcher(textPart).find()) {
-                    return __parse(new RawWhoisRecord(raw.getQueriedName(), raw.getQueriedWhoisServers(),
+                    return __parse(RawWhoisRecord.create(raw.getQueriedName(), raw.getQueriedWhoisServers(),
                             raw.getQueryTimestamp(), textPart));
                 }
             }

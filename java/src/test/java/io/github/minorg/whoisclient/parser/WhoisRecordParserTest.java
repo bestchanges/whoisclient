@@ -239,7 +239,7 @@ public final class WhoisRecordParserTest {
 
     private ParsedWhoisRecord __parse(final String raw, final String requestedDomainName, final String whoisServer)
             throws WhoisRecordParseException {
-        return parser.parse(new RawWhoisRecord(InternetDomainName.from(requestedDomainName),
+        return parser.parse(RawWhoisRecord.create(InternetDomainName.from(requestedDomainName),
                 ImmutableList.of(InternetDomainName.from(whoisServer)), new Date(), raw)).getParsed();
     }
 

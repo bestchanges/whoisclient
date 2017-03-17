@@ -53,8 +53,8 @@ public final class WhoisClient {
             final String text = __getRawWhoisRecord(domainName, whoisServerAddress, whoisServerPort);
             queriedWhoisServers.add(InternetDomainName.from(whoisServerAddress.getHostName().toLowerCase()));
 
-            record = parser
-                    .parse(new RawWhoisRecord(domainName, ImmutableList.copyOf(queriedWhoisServers), new Date(), text));
+            record = parser.parse(
+                    RawWhoisRecord.create(domainName, ImmutableList.copyOf(queriedWhoisServers), new Date(), text));
 
             if (!record.getParsed().getReferral().isPresent()) {
                 break;
