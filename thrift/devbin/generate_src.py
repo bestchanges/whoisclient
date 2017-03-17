@@ -46,10 +46,23 @@ class Main(thryft.main.Main):
             # ASTs are cached in the compiler so this only costs us the file system traversal,
             # and avoids generating code when there's a compilation error
             for thrift_file_path in self._get_thrift_file_paths(thrift_src_dir_path):
+                compile_kwds = {
+                    'document_root_dir_path': thrift_src_dir_path,
+                    'thrift_file_path': thrift_file_path
+                }
+
+                if pass_i == 0:
+                    self._compile_thrift_file(
+                        generator=lint_generator,
+                        **compile_kwds
+                    )
+
+                    continue
+
                 self._compile_thrift_file(
-                    document_root_dir_path=thrift_src_dir_path,
-                    generator=lint_generator if pass_i == 0 else java_generator,
-                    thrift_file_path=thrift_file_path
+                    generator=java_generator,
+                    out=os.path.join(ROOT_DIR_PATH, 'java', 'src', 'gen', 'java'),
+                    **compile_kwds
                 )
 
 assert __name__ == '__main__'
