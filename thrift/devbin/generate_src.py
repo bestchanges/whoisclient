@@ -1,5 +1,5 @@
 import os.path
-from shutil import copyfile
+import shutil
 import sys
 
 try:
@@ -28,6 +28,7 @@ class Main(thryft.main.Main):
         ):
             if os.path.isdir(dir_path):
                 shutil.rmtree(dir_path)
+                os.mkdir(dir_path)
 
     def _compile(self):
         thrift_src_dir_path = os.path.join(ROOT_DIR_PATH, 'thrift', 'src')
