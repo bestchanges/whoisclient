@@ -17,7 +17,6 @@ import com.google.common.collect.ImmutableMap;
 import io.github.minorg.whoisclient.Gazetteers;
 import io.github.minorg.whoisclient.ParsedWhoisRecord;
 import io.github.minorg.whoisclient.ParsedWhoisRegistrant;
-import io.github.minorg.whoisclient.WhoisRegistrant;
 
 public class WhoisRegistrantFieldParser extends WhoisPatternFieldParser {
     public WhoisRegistrantFieldParser(final Gazetteers gazetteers) {
@@ -166,9 +165,9 @@ public class WhoisRegistrantFieldParser extends WhoisPatternFieldParser {
             return false;
         }
 
-        final ParsedWhoisRegistrant.Builder registrantBuilder = WhoisRegistrant.builder();
+        final ParsedWhoisRegistrant.Builder registrantBuilder = ParsedWhoisRegistrant.builder();
         boolean empty = true;
-        for (final ParsedWhoisRegistrant.FieldMetadata registrantField : WhoisRegistrant.FieldMetadata.values()) {
+        for (final ParsedWhoisRegistrant.FieldMetadata registrantField : ParsedWhoisRegistrant.FieldMetadata.values()) {
             String registrantFieldName;
             switch (registrantField) {
             case COUNTRY_CODE:
