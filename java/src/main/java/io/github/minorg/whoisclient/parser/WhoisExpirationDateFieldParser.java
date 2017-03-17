@@ -1,10 +1,10 @@
 package io.github.minorg.whoisclient.parser;
 
-import io.github.minorg.whoisclient.WhoisRecord;
+import io.github.minorg.whoisclient.ParsedWhoisRecord;
 
 public final class WhoisExpirationDateFieldParser extends WhoisDateFieldParser {
     public WhoisExpirationDateFieldParser() {
-        super(WhoisRecord.FieldMetadata.EXPIRATION_DATE,
+        super(ParsedWhoisRecord.FieldMetadata.EXPIRATION_DATE,
                 new String[] { "\\[Expires on\\]\\s*(?<val>.+)",
                         "Registrar Registration Expiration Date:[ ]*(?<val>.+)-[0-9]{4}",
                         "Expires on[.]*: [a-zA-Z]+, (?<val>.+)", "Expiration Date:\\s?(?<val>.+)",

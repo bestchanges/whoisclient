@@ -1,10 +1,10 @@
 package io.github.minorg.whoisclient.parser;
 
-import io.github.minorg.whoisclient.WhoisRecord;
+import io.github.minorg.whoisclient.ParsedWhoisRecord;
 
 public final class WhoisCreationDateFieldParser extends WhoisDateFieldParser {
     public WhoisCreationDateFieldParser() {
-        super(WhoisRecord.FieldMetadata.CREATION_DATE,
+        super(ParsedWhoisRecord.FieldMetadata.CREATION_DATE,
                 new String[] { "\\[Created on\\]\\s*(?<val>.+)", "Created on[.]*: [a-zA-Z]+, (?<val>.+)",
                         "Creation Date:\\s?(?<val>.+)", "Creation date\\s*:\\s?(?<val>.+)",
                         "Registration Date:\\s?(?<val>.+)", "Created Date:\\s?(?<val>.+)", "Created on:\\s?(?<val>.+)",

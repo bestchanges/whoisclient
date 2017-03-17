@@ -11,10 +11,9 @@ import org.thryft.native_.InternetDomainName;
 
 import com.google.common.collect.ImmutableList;
 
+import io.github.minorg.whoisclient.ParsedWhoisRecord;
 import io.github.minorg.whoisclient.RawWhoisRecord;
-import io.github.minorg.whoisclient.WhoisRecord;
 import io.github.minorg.whoisclient.WhoisRecordParseException;
-import io.github.minorg.whoisclient.parser.WhoisRecordParser;
 
 public final class WhoisRecordParserTest {
     @Before
@@ -71,7 +70,7 @@ public final class WhoisRecordParserTest {
                 + "Whois database for failure to abide by these terms of use. VeriSign\n"
                 + "reserves the right to modify these terms at any time.\n" + "\n"
                 + "The Registry database contains ONLY .COM, .NET, .EDU domains and\n" + "Registrars.\n" + "";
-        final WhoisRecord record = __parse(raw, "notablist.com", "whois.verisign-grs.com");
+        final ParsedWhoisRecord record = __parse(raw, "notablist.com", "whois.verisign-grs.com");
         assertTrue(record.getCreationDate().isPresent());
         assertEquals(2014, record.getCreationDate().get().getYear() + 1900);
         assertEquals(1, record.getCreationDate().get().getMonth());
@@ -121,8 +120,7 @@ public final class WhoisRecordParserTest {
                 + "A dispute over the ownership of a domain name may be subject to the alternate procedure established by the Registry in question or brought before the courts. <br />\n"
                 + "For additional information, please contact us via the following form:<br />\n"
                 + " https://www.gandi.net/support/contacter/mail/\n" + "";
-        final WhoisRecord record = __parse(raw, "minorgordon.net", "whois.gandi.net");
-        assertTrue(record.getQueriedWhoisServers().contains("whois.gandi.net"));
+        final ParsedWhoisRecord record = __parse(raw, "minorgordon.net", "whois.gandi.net");
         assertTrue(record.getAdministrativeContact().isPresent());
         assertTrue(record.getRegistrant().isPresent());
         assertTrue(record.getTechnicalContact().isPresent());
@@ -178,7 +176,7 @@ public final class WhoisRecordParserTest {
                 + "Please note: the registrant of the domain name is specified\n"
                 + "in the \"registrant\" section.  In most cases, GoDaddy.com, LLC \n"
                 + "is not the registrant of domain names listed in this database.\n" + "";
-        final WhoisRecord record = __parse(text, "notablist.com", "whois.godaddy.com");
+        final ParsedWhoisRecord record = __parse(text, "notablist.com", "whois.godaddy.com");
         assertTrue(record.getAdministrativeContact().isPresent());
         assertTrue(record.getRegistrant().isPresent());
         assertTrue(record.getTechnicalContact().isPresent());
@@ -234,16 +232,16 @@ public final class WhoisRecordParserTest {
                 + "Please note: the registrant of the domain name is specified\n"
                 + "in the \"registrant\" section.  In most cases, GoDaddy.com, LLC \n"
                 + "is not the registrant of domain names listed in this database.\n" + "";
-        final WhoisRecord record = __parse(text, "notablist.com", "whois.godaddy.com");
+        final ParsedWhoisRecord record = __parse(text, "notablist.com", "whois.godaddy.com");
         assertTrue(record.getAdministrativeContact().isPresent());
         assertTrue(record.getRegistrant().isPresent());
         assertTrue(record.getTechnicalContact().isPresent());
     }
 
-    private WhoisRecord __parse(final String raw, final String requestedDomainName, final String whoisServer)
+    private ParsedWhoisRecord __parse(final String raw, final String requestedDomainName, final String whoisServer)
             throws WhoisRecordParseException {
         return parser.parse(new RawWhoisRecord(InternetDomainName.from(requestedDomainName),
-                ImmutableList.of(InternetDomainName.from(whoisServer)), new Date(), raw));
+                ImmutableList.of(InternetDomainName.from(whoisServer)), new Date(), raw)).getParsed();
     }
 
     private WhoisRecordParser parser;

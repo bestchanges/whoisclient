@@ -5,8 +5,10 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import io.github.minorg.whoisclient.ParsedWhoisRecord;
 import io.github.minorg.whoisclient.RawWhoisRecord;
 import io.github.minorg.whoisclient.WhoisRecord;
+import io.github.minorg.whoisclient.WhoisRecordMetadata;
 import io.github.minorg.whoisclient.WhoisRecordParseException;
 
 public final class WhoisRecordParser {
@@ -56,15 +58,16 @@ public final class WhoisRecordParser {
     }
 
     private WhoisRecord __parse(final RawWhoisRecord raw) throws WhoisRecordParseException {
-        final WhoisRecord.Builder builder = WhoisRecord.builder();
+        final ParsedWhoisRecord.Builder parsedBuilder = ParsedWhoisRecord.builder();
         final String text = raw.getText();
-        if (!fieldParsers.parse(text, builder)) {
+        if (!fieldParsers.parse(text, parsedBuilder)) {
             logger.debug("unable to parse any fields from\n{}", text);
         }
-        builder.setQueriedName(raw.getQueriedName());
-        builder.setQueriedWhoisServers(raw.getQueriedWhoisServers());
-        builder.setQueryTimestamp(raw.getQueryTimestamp());
-        return builder.build();
+        return WhoisRecord.builder()
+                .setMetadata(WhoisRecordMetadata.builder().setQueriedName(raw.getQueriedName())
+                        .setQueriedWhoisServers(raw.getQueriedWhoisServers()).setQueryTimestamp(raw.getQueryTimestamp())
+                        .build())
+                .setParsed(parsedBuilder.build()).setText(raw.getText()).build();
     }
 
     private final WhoisFieldParsers fieldParsers;

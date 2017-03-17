@@ -1,7 +1,7 @@
 package io.github.minorg.whoisclient.parser;
 
 import io.github.minorg.whoisclient.Gazetteers;
-import io.github.minorg.whoisclient.WhoisRecord;
+import io.github.minorg.whoisclient.ParsedWhoisRecord;
 import io.github.minorg.whoisclient.WhoisRecordParseException;
 
 final class WhoisFieldParsers {
@@ -14,7 +14,8 @@ final class WhoisFieldParsers {
                 new WhoisUpdatedDateFieldParser() };
     }
 
-    public boolean parse(final String raw, final WhoisRecord.Builder recordBuilder) throws WhoisRecordParseException {
+    public boolean parse(final String raw, final ParsedWhoisRecord.Builder recordBuilder)
+            throws WhoisRecordParseException {
         boolean parsed = false;
         for (final WhoisFieldParser parser : parsers) {
             parsed |= parser.parse(raw, recordBuilder);

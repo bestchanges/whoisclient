@@ -1,8 +1,8 @@
 namespace * whoisclient
 
-include "whois_registrant_street.thrift"
+include "parsed_whois_registrant_street.thrift"
 
-struct WhoisRegistrant {
+struct ParsedWhoisRegistrant {
     // @validation {"blank": false, "minLength": 1}
     optional string airport_code;
 
@@ -52,5 +52,5 @@ struct WhoisRegistrant {
     optional string state_code;
 
     // @validation {"minLength": 1}
-    optional list<whois_registrant_street.WhoisRegistrantStreet> street;
+    optional list<parsed_whois_registrant_street.ParsedWhoisRegistrantStreet> street;
 }

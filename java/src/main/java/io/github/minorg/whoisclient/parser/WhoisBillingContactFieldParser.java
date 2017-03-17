@@ -1,11 +1,11 @@
 package io.github.minorg.whoisclient.parser;
 
 import io.github.minorg.whoisclient.Gazetteers;
-import io.github.minorg.whoisclient.WhoisRecord;
+import io.github.minorg.whoisclient.ParsedWhoisRecord;
 
 public class WhoisBillingContactFieldParser extends WhoisRegistrantFieldParser {
     public WhoisBillingContactFieldParser(final Gazetteers gazetteers) {
-        super(WhoisRecord.FieldMetadata.BILLING_CONTACT, gazetteers, new String[] {
+        super(ParsedWhoisRecord.FieldMetadata.BILLING_CONTACT, gazetteers, new String[] {
                 "(?:Billing ID:(?<handle>.+)\\n)?Billing Name:(?<name>.*)\\nBilling Organization:(?<organization>.*)\\nBilling Street1:(?<street1>.*)\\n(?:Billing Street2:(?<street2>.*)\\n)?(?:Billing Street3:(?<street3>.*)\\n)?Billing City:(?<city>.*)\\nBilling State/Province:(?<state>.*)\\nBilling Postal Code:(?<postalcode>.*)\\nBilling Country:(?<country>.*)\\nBilling Phone:(?<phone>.*)\\n(?:Billing Phone Ext.:(?<phoneext>.*)\\n)?(?:Billing FAX:(?<fax>.*)\\n)?(?:Billing FAX Ext.:(?<faxext>.*)\\n)?Billing Email:(?<email>.*)", // nic.pw,
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       // No-IP.com
                 "Billing ID:(?<handle>.+)\\nBilling Name:(?<name>.*)\\n(?:Billing Organization:(?<organization>.*)\\n)?Billing Address1?:(?<street1>.*)\\n(?:Billing Address2:(?<street2>.*)\\n)?(?:Billing Address3:(?<street3>.*)\\n)?Billing City:(?<city>.*)\\nBilling State/Province:(?<state>.*)\\nBilling Country/Economy:(?<country>.*)\\nBilling Postal Code:(?<postalcode>.*)\\nBilling Phone:(?<phone>.*)\\n(?:Billing Phone Ext.:(?<phoneext>.*)\\n)?(?:Billing FAX:(?<fax>.*)\\n)?(?:Billing FAX Ext.:(?<faxext>.*)\\n)?Billing E-mail:(?<email>.*)", // DotAsia

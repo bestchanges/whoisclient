@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import io.github.minorg.whoisclient.WhoisRecord;
+import io.github.minorg.whoisclient.ParsedWhoisRecord;
 import io.github.minorg.whoisclient.WhoisRecordParseException;
 
 final class WhoisReferralFieldParser implements WhoisFieldParser {
@@ -19,7 +19,8 @@ final class WhoisReferralFieldParser implements WhoisFieldParser {
     }
 
     @Override
-    public boolean parse(final String raw, final WhoisRecord.Builder recordBuilder) throws WhoisRecordParseException {
+    public boolean parse(final String raw, final ParsedWhoisRecord.Builder recordBuilder)
+            throws WhoisRecordParseException {
         try {
             for (String line : IOUtils.readLines(new StringReader(raw))) {
                 line = StringUtils.strip(line);

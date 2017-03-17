@@ -11,17 +11,18 @@ import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Optional;
 
-import io.github.minorg.whoisclient.WhoisRecord;
+import io.github.minorg.whoisclient.ParsedWhoisRecord;
 import io.github.minorg.whoisclient.WhoisRecordParseException;
 
 abstract class WhoisDateFieldParser extends WhoisPatternFieldParser {
-    protected WhoisDateFieldParser(final WhoisRecord.FieldMetadata field, final String[] linePatternStrings) {
+    protected WhoisDateFieldParser(final ParsedWhoisRecord.FieldMetadata field, final String[] linePatternStrings) {
         super(linePatternStrings);
         this.field = checkNotNull(field);
     }
 
     @Override
-    public boolean parse(final String raw, final WhoisRecord.Builder recordBuilder) throws WhoisRecordParseException {
+    public boolean parse(final String raw, final ParsedWhoisRecord.Builder recordBuilder)
+            throws WhoisRecordParseException {
         final Optional<Matcher> match = _match(raw);
         if (!match.isPresent()) {
             return false;
@@ -37,6 +38,6 @@ abstract class WhoisDateFieldParser extends WhoisPatternFieldParser {
     }
 
     private final WhoisDateParser dateParser = new WhoisDateParser();
-    private final WhoisRecord.FieldMetadata field;
+    private final ParsedWhoisRecord.FieldMetadata field;
     private final static Logger logger = LoggerFactory.getLogger(WhoisDateFieldParser.class);
 }

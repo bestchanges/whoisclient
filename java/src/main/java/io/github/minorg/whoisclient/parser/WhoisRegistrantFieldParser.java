@@ -15,13 +15,13 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
 import io.github.minorg.whoisclient.Gazetteers;
-import io.github.minorg.whoisclient.WhoisRecord;
+import io.github.minorg.whoisclient.ParsedWhoisRecord;
 import io.github.minorg.whoisclient.WhoisRecordParseException;
 import io.github.minorg.whoisclient.WhoisRegistrant;
 
 public class WhoisRegistrantFieldParser extends WhoisPatternFieldParser {
     public WhoisRegistrantFieldParser(final Gazetteers gazetteers) {
-        this(WhoisRecord.FieldMetadata.REGISTRANT, gazetteers, new String[] {
+        this(ParsedWhoisRecord.FieldMetadata.REGISTRANT, gazetteers, new String[] {
                 "   Registrant:[ ]*\\n      (?<organization>.*)\\n      (?<name>.*)\\n      (?<street>.*)\\n      (?<city>.*), (?<state>.*) (?<postalcode>.*)\\n      (?<country>.*)\\n(?:      Phone: (?<phone>.*)\\n)?      Email: (?<email>.*)\\n", // Corporate
                                                                                                                                                                                                                                                        // Domains,
                                                                                                                                                                                                                                                        // Inc.
@@ -151,7 +151,7 @@ public class WhoisRegistrantFieldParser extends WhoisPatternFieldParser {
         });
     }
 
-    protected WhoisRegistrantFieldParser(final WhoisRecord.FieldMetadata field, final Gazetteers gazetteers,
+    protected WhoisRegistrantFieldParser(final ParsedWhoisRecord.FieldMetadata field, final Gazetteers gazetteers,
             final String[] patternStrings) {
         super(patternStrings);
         this.field = checkNotNull(field);
@@ -159,7 +159,7 @@ public class WhoisRegistrantFieldParser extends WhoisPatternFieldParser {
     }
 
     @Override
-    public final boolean parse(final String raw, final WhoisRecord.Builder recordBuilder)
+    public final boolean parse(final String raw, final ParsedWhoisRecord.Builder recordBuilder)
             throws WhoisRecordParseException {
         final Optional<Matcher> match = _match(raw);
         if (!match.isPresent()) {
@@ -306,7 +306,7 @@ public class WhoisRegistrantFieldParser extends WhoisPatternFieldParser {
         return value;
     }
 
-    private final WhoisRecord.FieldMetadata field;
+    private final ParsedWhoisRecord.FieldMetadata field;
     private final Gazetteers gazetteers;
     private final static Logger logger = LoggerFactory.getLogger(WhoisRegistrantFieldParser.class);
 }

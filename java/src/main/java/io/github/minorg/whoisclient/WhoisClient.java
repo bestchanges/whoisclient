@@ -22,8 +22,6 @@ import org.thryft.native_.InternetDomainName;
 import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableList;
 
-import io.github.minorg.whoisclient.WhoisRecord;
-import io.github.minorg.whoisclient.WhoisRecordParseException;
 import io.github.minorg.whoisclient.parser.WhoisRecordParser;
 
 public final class WhoisClient {
@@ -57,18 +55,18 @@ public final class WhoisClient {
             record = parser
                     .parse(new RawWhoisRecord(domainName, ImmutableList.copyOf(queriedWhoisServers), new Date(), text));
 
-            if (!record.getReferral().isPresent()) {
+            if (!record.getParsed().getReferral().isPresent()) {
                 break;
-            } else if (queriedWhoisServers.contains(record.getReferral().get().toLowerCase())) {
-                logger.warn("referral loop: {}", record.getReferral().get());
+            } else if (queriedWhoisServers.contains(record.getParsed().getReferral().get().toLowerCase())) {
+                logger.warn("referral loop: {}", record.getParsed().getReferral().get());
                 break;
             }
 
             try {
-                whoisServerAddress = InetAddress.getByName(record.getReferral().get());
+                whoisServerAddress = InetAddress.getByName(record.getParsed().getReferral().get());
                 whoisServerPort = WHOIS_SERVER_PORT_DEFAULT;
             } catch (final UnknownHostException e) {
-                logger.warn("unable to resolve referral {}", record.getReferral().get());
+                logger.warn("unable to resolve referral {}", record.getParsed().getReferral().get());
                 return record;
             }
         }

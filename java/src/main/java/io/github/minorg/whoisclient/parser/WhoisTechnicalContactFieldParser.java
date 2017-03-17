@@ -1,11 +1,11 @@
 package io.github.minorg.whoisclient.parser;
 
 import io.github.minorg.whoisclient.Gazetteers;
-import io.github.minorg.whoisclient.WhoisRecord;
+import io.github.minorg.whoisclient.ParsedWhoisRecord;
 
 public class WhoisTechnicalContactFieldParser extends WhoisRegistrantFieldParser {
     public WhoisTechnicalContactFieldParser(final Gazetteers gazetteers) {
-        super(WhoisRecord.FieldMetadata.TECHNICAL_CONTACT, gazetteers, new String[] {
+        super(ParsedWhoisRecord.FieldMetadata.TECHNICAL_CONTACT, gazetteers, new String[] {
                 "   Technical Contact:[ ]*\\n      (?<organization>.*)\\n      (?<name>.*)\\n      (?<street>.*)\\n      (?<city>.*), (?<state>.*) (?<postalcode>.*)\\n      (?<country>.*)\\n(?:      Phone: (?<phone>.*)\\n)?      Email: (?<email>.*)\\n", // Corporate
                                                                                                                                                                                                                                                               // Domains,
                                                                                                                                                                                                                                                               // Inc.
