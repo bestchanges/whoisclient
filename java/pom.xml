@@ -8,7 +8,7 @@
 	<name>whoisclient</name>
 	<packaging>jar</packaging>
 	<url>https://github.com/minorg/whoisclient</url>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 
 	<build>
 		<plugins>
