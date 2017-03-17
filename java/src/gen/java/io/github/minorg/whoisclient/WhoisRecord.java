@@ -724,7 +724,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public org.thryft.native_.InternetDomainName validateQueriedName(final org.thryft.native_.InternetDomainName queriedName) throws RuntimeException {
             if (queriedName == null) {
-                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: queriedName is null");
+                throw new NullPointerException("io.github.minorg.whoisclient.WhoisRecord: queriedName is null");
             }
             return queriedName;
         }
@@ -732,10 +732,10 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> validateQueriedWhoisServers(final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers) throws RuntimeException {
             if (queriedWhoisServers == null) {
-                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: queriedWhoisServers is null");
+                throw new NullPointerException("io.github.minorg.whoisclient.WhoisRecord: queriedWhoisServers is null");
             }
             if (queriedWhoisServers.isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRecord: queriedWhoisServers is less than min length 1");
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.WhoisRecord: queriedWhoisServers is less than min length 1");
             }
             return queriedWhoisServers;
         }
@@ -743,7 +743,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public java.util.Date validateQueryTimestamp(final java.util.Date queryTimestamp) throws RuntimeException {
             if (queryTimestamp == null) {
-                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: queryTimestamp is null");
+                throw new NullPointerException("io.github.minorg.whoisclient.WhoisRecord: queryTimestamp is null");
             }
             return queryTimestamp;
         }
@@ -751,7 +751,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<io.github.minorg.whoisclient.WhoisRegistrant> validateAdministrativeContact(final com.google.common.base.Optional<io.github.minorg.whoisclient.WhoisRegistrant> administrativeContact) throws RuntimeException {
             if (administrativeContact == null) {
-                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: administrativeContact is null");
+                throw new NullPointerException("io.github.minorg.whoisclient.WhoisRecord: administrativeContact is null");
             }
             if (!administrativeContact.isPresent()) {
                 return administrativeContact;
@@ -762,7 +762,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<io.github.minorg.whoisclient.WhoisRegistrant> validateBillingContact(final com.google.common.base.Optional<io.github.minorg.whoisclient.WhoisRegistrant> billingContact) throws RuntimeException {
             if (billingContact == null) {
-                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: billingContact is null");
+                throw new NullPointerException("io.github.minorg.whoisclient.WhoisRecord: billingContact is null");
             }
             if (!billingContact.isPresent()) {
                 return billingContact;
@@ -773,7 +773,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<java.util.Date> validateCreationDate(final com.google.common.base.Optional<java.util.Date> creationDate) throws RuntimeException {
             if (creationDate == null) {
-                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: creationDate is null");
+                throw new NullPointerException("io.github.minorg.whoisclient.WhoisRecord: creationDate is null");
             }
             if (!creationDate.isPresent()) {
                 return creationDate;
@@ -784,7 +784,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<java.util.Date> validateExpirationDate(final com.google.common.base.Optional<java.util.Date> expirationDate) throws RuntimeException {
             if (expirationDate == null) {
-                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: expirationDate is null");
+                throw new NullPointerException("io.github.minorg.whoisclient.WhoisRecord: expirationDate is null");
             }
             if (!expirationDate.isPresent()) {
                 return expirationDate;
@@ -795,13 +795,13 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateReferral(final com.google.common.base.Optional<String> referral) throws RuntimeException {
             if (referral == null) {
-                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: referral is null");
+                throw new NullPointerException("io.github.minorg.whoisclient.WhoisRecord: referral is null");
             }
             if (!referral.isPresent()) {
                 return referral;
             }
             if (referral.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRecord: referral is less than min length 1");
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.WhoisRecord: referral is less than min length 1");
             }
             {
                 final int __strLen = referral.get().length();
@@ -813,7 +813,7 @@ public final class WhoisRecord implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRecord: referral is blank: '%s' (length=%d)", referral.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.WhoisRecord: referral is blank: '%s' (length=%d)", referral.get(), __strLen));
                 }
             }
             return referral;
@@ -822,7 +822,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<io.github.minorg.whoisclient.WhoisRegistrant> validateRegistrant(final com.google.common.base.Optional<io.github.minorg.whoisclient.WhoisRegistrant> registrant) throws RuntimeException {
             if (registrant == null) {
-                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: registrant is null");
+                throw new NullPointerException("io.github.minorg.whoisclient.WhoisRecord: registrant is null");
             }
             if (!registrant.isPresent()) {
                 return registrant;
@@ -833,7 +833,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<io.github.minorg.whoisclient.WhoisRegistrant> validateTechnicalContact(final com.google.common.base.Optional<io.github.minorg.whoisclient.WhoisRegistrant> technicalContact) throws RuntimeException {
             if (technicalContact == null) {
-                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: technicalContact is null");
+                throw new NullPointerException("io.github.minorg.whoisclient.WhoisRecord: technicalContact is null");
             }
             if (!technicalContact.isPresent()) {
                 return technicalContact;
@@ -844,7 +844,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<java.util.Date> validateUpdatedDate(final com.google.common.base.Optional<java.util.Date> updatedDate) throws RuntimeException {
             if (updatedDate == null) {
-                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: updatedDate is null");
+                throw new NullPointerException("io.github.minorg.whoisclient.WhoisRecord: updatedDate is null");
             }
             if (!updatedDate.isPresent()) {
                 return updatedDate;
@@ -935,7 +935,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public org.thryft.native_.InternetDomainName validateQueriedName(final org.thryft.native_.InternetDomainName queriedName) throws org.thryft.protocol.InputProtocolException {
             if (queriedName == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.QUERIED_NAME, "com.github.minorg.whoisclient.WhoisRecord: queriedName is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.QUERIED_NAME, "io.github.minorg.whoisclient.WhoisRecord: queriedName is null");
             }
             return queriedName;
         }
@@ -943,10 +943,10 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> validateQueriedWhoisServers(final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers) throws org.thryft.protocol.InputProtocolException {
             if (queriedWhoisServers == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.QUERIED_WHOIS_SERVERS, "com.github.minorg.whoisclient.WhoisRecord: queriedWhoisServers is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.QUERIED_WHOIS_SERVERS, "io.github.minorg.whoisclient.WhoisRecord: queriedWhoisServers is null");
             }
             if (queriedWhoisServers.isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.QUERIED_WHOIS_SERVERS, "com.github.minorg.whoisclient.WhoisRecord: queriedWhoisServers is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.QUERIED_WHOIS_SERVERS, "io.github.minorg.whoisclient.WhoisRecord: queriedWhoisServers is less than min length 1");
             }
             return queriedWhoisServers;
         }
@@ -954,7 +954,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public java.util.Date validateQueryTimestamp(final java.util.Date queryTimestamp) throws org.thryft.protocol.InputProtocolException {
             if (queryTimestamp == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.QUERY_TIMESTAMP, "com.github.minorg.whoisclient.WhoisRecord: queryTimestamp is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.QUERY_TIMESTAMP, "io.github.minorg.whoisclient.WhoisRecord: queryTimestamp is null");
             }
             return queryTimestamp;
         }
@@ -962,7 +962,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<io.github.minorg.whoisclient.WhoisRegistrant> validateAdministrativeContact(final com.google.common.base.Optional<io.github.minorg.whoisclient.WhoisRegistrant> administrativeContact) throws org.thryft.protocol.InputProtocolException {
             if (administrativeContact == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.ADMINISTRATIVE_CONTACT, "com.github.minorg.whoisclient.WhoisRecord: administrativeContact is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.ADMINISTRATIVE_CONTACT, "io.github.minorg.whoisclient.WhoisRecord: administrativeContact is null");
             }
             if (!administrativeContact.isPresent()) {
                 return administrativeContact;
@@ -973,7 +973,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<io.github.minorg.whoisclient.WhoisRegistrant> validateBillingContact(final com.google.common.base.Optional<io.github.minorg.whoisclient.WhoisRegistrant> billingContact) throws org.thryft.protocol.InputProtocolException {
             if (billingContact == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.BILLING_CONTACT, "com.github.minorg.whoisclient.WhoisRecord: billingContact is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.BILLING_CONTACT, "io.github.minorg.whoisclient.WhoisRecord: billingContact is null");
             }
             if (!billingContact.isPresent()) {
                 return billingContact;
@@ -984,7 +984,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<java.util.Date> validateCreationDate(final com.google.common.base.Optional<java.util.Date> creationDate) throws org.thryft.protocol.InputProtocolException {
             if (creationDate == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.CREATION_DATE, "com.github.minorg.whoisclient.WhoisRecord: creationDate is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.CREATION_DATE, "io.github.minorg.whoisclient.WhoisRecord: creationDate is null");
             }
             if (!creationDate.isPresent()) {
                 return creationDate;
@@ -995,7 +995,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<java.util.Date> validateExpirationDate(final com.google.common.base.Optional<java.util.Date> expirationDate) throws org.thryft.protocol.InputProtocolException {
             if (expirationDate == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.EXPIRATION_DATE, "com.github.minorg.whoisclient.WhoisRecord: expirationDate is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.EXPIRATION_DATE, "io.github.minorg.whoisclient.WhoisRecord: expirationDate is null");
             }
             if (!expirationDate.isPresent()) {
                 return expirationDate;
@@ -1006,13 +1006,13 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateReferral(final com.google.common.base.Optional<String> referral) throws org.thryft.protocol.InputProtocolException {
             if (referral == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.REFERRAL, "com.github.minorg.whoisclient.WhoisRecord: referral is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.REFERRAL, "io.github.minorg.whoisclient.WhoisRecord: referral is null");
             }
             if (!referral.isPresent()) {
                 return referral;
             }
             if (referral.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.REFERRAL, "com.github.minorg.whoisclient.WhoisRecord: referral is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.REFERRAL, "io.github.minorg.whoisclient.WhoisRecord: referral is less than min length 1");
             }
             {
                 final int __strLen = referral.get().length();
@@ -1024,7 +1024,7 @@ public final class WhoisRecord implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.REFERRAL, String.format("com.github.minorg.whoisclient.WhoisRecord: referral is blank: '%s' (length=%d)", referral.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.REFERRAL, String.format("io.github.minorg.whoisclient.WhoisRecord: referral is blank: '%s' (length=%d)", referral.get(), __strLen));
                 }
             }
             return referral;
@@ -1033,7 +1033,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<io.github.minorg.whoisclient.WhoisRegistrant> validateRegistrant(final com.google.common.base.Optional<io.github.minorg.whoisclient.WhoisRegistrant> registrant) throws org.thryft.protocol.InputProtocolException {
             if (registrant == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.REGISTRANT, "com.github.minorg.whoisclient.WhoisRecord: registrant is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.REGISTRANT, "io.github.minorg.whoisclient.WhoisRecord: registrant is null");
             }
             if (!registrant.isPresent()) {
                 return registrant;
@@ -1044,7 +1044,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<io.github.minorg.whoisclient.WhoisRegistrant> validateTechnicalContact(final com.google.common.base.Optional<io.github.minorg.whoisclient.WhoisRegistrant> technicalContact) throws org.thryft.protocol.InputProtocolException {
             if (technicalContact == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.TECHNICAL_CONTACT, "com.github.minorg.whoisclient.WhoisRecord: technicalContact is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.TECHNICAL_CONTACT, "io.github.minorg.whoisclient.WhoisRecord: technicalContact is null");
             }
             if (!technicalContact.isPresent()) {
                 return technicalContact;
@@ -1055,7 +1055,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<java.util.Date> validateUpdatedDate(final com.google.common.base.Optional<java.util.Date> updatedDate) throws org.thryft.protocol.InputProtocolException {
             if (updatedDate == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.UPDATED_DATE, "com.github.minorg.whoisclient.WhoisRecord: updatedDate is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.UPDATED_DATE, "io.github.minorg.whoisclient.WhoisRecord: updatedDate is null");
             }
             if (!updatedDate.isPresent()) {
                 return updatedDate;
@@ -1739,7 +1739,7 @@ public final class WhoisRecord implements org.thryft.Struct {
 
     @Override
     public void writeAsStruct(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
-        oprot.writeStructBegin("com.github.minorg.whoisclient.WhoisRecord");
+        oprot.writeStructBegin("io.github.minorg.whoisclient.WhoisRecord");
         writeFields(oprot);
         oprot.writeStructEnd();
     }
