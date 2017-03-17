@@ -1,4 +1,4 @@
-package com.github.minorgwhoisclient;
+package com.github.minorg.whoisclient;
 
 public final class WhoisRegistrant implements org.thryft.Struct {
     public final static class Builder {
@@ -928,13 +928,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateAirportCode(final com.google.common.base.Optional<String> airportCode) throws RuntimeException {
             if (airportCode == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRegistrant: airportCode is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRegistrant: airportCode is null");
             }
             if (!airportCode.isPresent()) {
                 return airportCode;
             }
             if (airportCode.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: airportCode is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: airportCode is less than min length 1");
             }
             {
                 final int __strLen = airportCode.get().length();
@@ -946,7 +946,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorgwhoisclient.WhoisRegistrant: airportCode is blank: '%s' (length=%d)", airportCode.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRegistrant: airportCode is blank: '%s' (length=%d)", airportCode.get(), __strLen));
                 }
             }
             return airportCode;
@@ -955,13 +955,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateCity(final com.google.common.base.Optional<String> city) throws RuntimeException {
             if (city == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRegistrant: city is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRegistrant: city is null");
             }
             if (!city.isPresent()) {
                 return city;
             }
             if (city.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: city is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: city is less than min length 1");
             }
             {
                 final int __strLen = city.get().length();
@@ -973,7 +973,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorgwhoisclient.WhoisRegistrant: city is blank: '%s' (length=%d)", city.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRegistrant: city is blank: '%s' (length=%d)", city.get(), __strLen));
                 }
             }
             return city;
@@ -982,13 +982,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateCountry(final com.google.common.base.Optional<String> country) throws RuntimeException {
             if (country == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRegistrant: country is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRegistrant: country is null");
             }
             if (!country.isPresent()) {
                 return country;
             }
             if (country.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: country is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: country is less than min length 1");
             }
             {
                 final int __strLen = country.get().length();
@@ -1000,7 +1000,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorgwhoisclient.WhoisRegistrant: country is blank: '%s' (length=%d)", country.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRegistrant: country is blank: '%s' (length=%d)", country.get(), __strLen));
                 }
             }
             return country;
@@ -1009,13 +1009,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateCountryCode(final com.google.common.base.Optional<String> countryCode) throws RuntimeException {
             if (countryCode == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRegistrant: countryCode is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRegistrant: countryCode is null");
             }
             if (!countryCode.isPresent()) {
                 return countryCode;
             }
             if (countryCode.get().length() < 2) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: countryCode is less than min length 2");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: countryCode is less than min length 2");
             }
             {
                 final int __strLen = countryCode.get().length();
@@ -1027,11 +1027,11 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorgwhoisclient.WhoisRegistrant: countryCode is blank: '%s' (length=%d)", countryCode.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRegistrant: countryCode is blank: '%s' (length=%d)", countryCode.get(), __strLen));
                 }
             }
             if (countryCode.get().length() > 3) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: countryCode is greater than max length 3");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: countryCode is greater than max length 3");
             }
             return countryCode;
         }
@@ -1039,13 +1039,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateDistrict(final com.google.common.base.Optional<String> district) throws RuntimeException {
             if (district == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRegistrant: district is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRegistrant: district is null");
             }
             if (!district.isPresent()) {
                 return district;
             }
             if (district.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: district is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: district is less than min length 1");
             }
             {
                 final int __strLen = district.get().length();
@@ -1057,7 +1057,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorgwhoisclient.WhoisRegistrant: district is blank: '%s' (length=%d)", district.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRegistrant: district is blank: '%s' (length=%d)", district.get(), __strLen));
                 }
             }
             return district;
@@ -1066,13 +1066,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateEmail(final com.google.common.base.Optional<String> email) throws RuntimeException {
             if (email == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRegistrant: email is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRegistrant: email is null");
             }
             if (!email.isPresent()) {
                 return email;
             }
             if (email.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: email is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: email is less than min length 1");
             }
             {
                 final int __strLen = email.get().length();
@@ -1084,7 +1084,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorgwhoisclient.WhoisRegistrant: email is blank: '%s' (length=%d)", email.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRegistrant: email is blank: '%s' (length=%d)", email.get(), __strLen));
                 }
             }
             return email;
@@ -1093,13 +1093,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateFirstName(final com.google.common.base.Optional<String> firstName) throws RuntimeException {
             if (firstName == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRegistrant: firstName is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRegistrant: firstName is null");
             }
             if (!firstName.isPresent()) {
                 return firstName;
             }
             if (firstName.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: firstName is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: firstName is less than min length 1");
             }
             {
                 final int __strLen = firstName.get().length();
@@ -1111,7 +1111,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorgwhoisclient.WhoisRegistrant: firstName is blank: '%s' (length=%d)", firstName.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRegistrant: firstName is blank: '%s' (length=%d)", firstName.get(), __strLen));
                 }
             }
             return firstName;
@@ -1120,13 +1120,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateHandle(final com.google.common.base.Optional<String> handle) throws RuntimeException {
             if (handle == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRegistrant: handle is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRegistrant: handle is null");
             }
             if (!handle.isPresent()) {
                 return handle;
             }
             if (handle.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: handle is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: handle is less than min length 1");
             }
             {
                 final int __strLen = handle.get().length();
@@ -1138,7 +1138,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorgwhoisclient.WhoisRegistrant: handle is blank: '%s' (length=%d)", handle.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRegistrant: handle is blank: '%s' (length=%d)", handle.get(), __strLen));
                 }
             }
             return handle;
@@ -1147,13 +1147,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateLastName(final com.google.common.base.Optional<String> lastName) throws RuntimeException {
             if (lastName == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRegistrant: lastName is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRegistrant: lastName is null");
             }
             if (!lastName.isPresent()) {
                 return lastName;
             }
             if (lastName.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: lastName is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: lastName is less than min length 1");
             }
             {
                 final int __strLen = lastName.get().length();
@@ -1165,7 +1165,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorgwhoisclient.WhoisRegistrant: lastName is blank: '%s' (length=%d)", lastName.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRegistrant: lastName is blank: '%s' (length=%d)", lastName.get(), __strLen));
                 }
             }
             return lastName;
@@ -1174,13 +1174,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateName(final com.google.common.base.Optional<String> name) throws RuntimeException {
             if (name == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRegistrant: name is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRegistrant: name is null");
             }
             if (!name.isPresent()) {
                 return name;
             }
             if (name.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: name is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: name is less than min length 1");
             }
             {
                 final int __strLen = name.get().length();
@@ -1192,7 +1192,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorgwhoisclient.WhoisRegistrant: name is blank: '%s' (length=%d)", name.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRegistrant: name is blank: '%s' (length=%d)", name.get(), __strLen));
                 }
             }
             return name;
@@ -1201,13 +1201,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateOrganization(final com.google.common.base.Optional<String> organization) throws RuntimeException {
             if (organization == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRegistrant: organization is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRegistrant: organization is null");
             }
             if (!organization.isPresent()) {
                 return organization;
             }
             if (organization.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: organization is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: organization is less than min length 1");
             }
             {
                 final int __strLen = organization.get().length();
@@ -1219,7 +1219,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorgwhoisclient.WhoisRegistrant: organization is blank: '%s' (length=%d)", organization.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRegistrant: organization is blank: '%s' (length=%d)", organization.get(), __strLen));
                 }
             }
             return organization;
@@ -1228,13 +1228,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validatePhone(final com.google.common.base.Optional<String> phone) throws RuntimeException {
             if (phone == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRegistrant: phone is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRegistrant: phone is null");
             }
             if (!phone.isPresent()) {
                 return phone;
             }
             if (phone.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: phone is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: phone is less than min length 1");
             }
             {
                 final int __strLen = phone.get().length();
@@ -1246,7 +1246,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorgwhoisclient.WhoisRegistrant: phone is blank: '%s' (length=%d)", phone.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRegistrant: phone is blank: '%s' (length=%d)", phone.get(), __strLen));
                 }
             }
             return phone;
@@ -1255,13 +1255,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validatePhoneExt(final com.google.common.base.Optional<String> phoneExt) throws RuntimeException {
             if (phoneExt == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRegistrant: phoneExt is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRegistrant: phoneExt is null");
             }
             if (!phoneExt.isPresent()) {
                 return phoneExt;
             }
             if (phoneExt.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: phoneExt is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: phoneExt is less than min length 1");
             }
             {
                 final int __strLen = phoneExt.get().length();
@@ -1273,7 +1273,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorgwhoisclient.WhoisRegistrant: phoneExt is blank: '%s' (length=%d)", phoneExt.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRegistrant: phoneExt is blank: '%s' (length=%d)", phoneExt.get(), __strLen));
                 }
             }
             return phoneExt;
@@ -1282,13 +1282,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validatePostalCode(final com.google.common.base.Optional<String> postalCode) throws RuntimeException {
             if (postalCode == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRegistrant: postalCode is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRegistrant: postalCode is null");
             }
             if (!postalCode.isPresent()) {
                 return postalCode;
             }
             if (postalCode.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: postalCode is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: postalCode is less than min length 1");
             }
             {
                 final int __strLen = postalCode.get().length();
@@ -1300,7 +1300,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorgwhoisclient.WhoisRegistrant: postalCode is blank: '%s' (length=%d)", postalCode.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRegistrant: postalCode is blank: '%s' (length=%d)", postalCode.get(), __strLen));
                 }
             }
             return postalCode;
@@ -1309,13 +1309,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateState(final com.google.common.base.Optional<String> state) throws RuntimeException {
             if (state == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRegistrant: state is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRegistrant: state is null");
             }
             if (!state.isPresent()) {
                 return state;
             }
             if (state.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: state is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: state is less than min length 1");
             }
             {
                 final int __strLen = state.get().length();
@@ -1327,7 +1327,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorgwhoisclient.WhoisRegistrant: state is blank: '%s' (length=%d)", state.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRegistrant: state is blank: '%s' (length=%d)", state.get(), __strLen));
                 }
             }
             return state;
@@ -1336,13 +1336,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateStateCode(final com.google.common.base.Optional<String> stateCode) throws RuntimeException {
             if (stateCode == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRegistrant: stateCode is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRegistrant: stateCode is null");
             }
             if (!stateCode.isPresent()) {
                 return stateCode;
             }
             if (stateCode.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: stateCode is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: stateCode is less than min length 1");
             }
             {
                 final int __strLen = stateCode.get().length();
@@ -1354,7 +1354,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorgwhoisclient.WhoisRegistrant: stateCode is blank: '%s' (length=%d)", stateCode.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRegistrant: stateCode is blank: '%s' (length=%d)", stateCode.get(), __strLen));
                 }
             }
             return stateCode;
@@ -1363,13 +1363,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> validateStreet(final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> street) throws RuntimeException {
             if (street == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRegistrant: street is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRegistrant: street is null");
             }
             if (!street.isPresent()) {
                 return street;
             }
             if (street.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRegistrant: street is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRegistrant: street is less than min length 1");
             }
             return street;
         }
@@ -1487,13 +1487,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateAirportCode(final com.google.common.base.Optional<String> airportCode) throws org.thryft.protocol.InputProtocolException {
             if (airportCode == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.AIRPORT_CODE, "com.github.minorgwhoisclient.WhoisRegistrant: airportCode is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.AIRPORT_CODE, "com.github.minorg.whoisclient.WhoisRegistrant: airportCode is null");
             }
             if (!airportCode.isPresent()) {
                 return airportCode;
             }
             if (airportCode.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.AIRPORT_CODE, "com.github.minorgwhoisclient.WhoisRegistrant: airportCode is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.AIRPORT_CODE, "com.github.minorg.whoisclient.WhoisRegistrant: airportCode is less than min length 1");
             }
             {
                 final int __strLen = airportCode.get().length();
@@ -1505,7 +1505,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.AIRPORT_CODE, String.format("com.github.minorgwhoisclient.WhoisRegistrant: airportCode is blank: '%s' (length=%d)", airportCode.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.AIRPORT_CODE, String.format("com.github.minorg.whoisclient.WhoisRegistrant: airportCode is blank: '%s' (length=%d)", airportCode.get(), __strLen));
                 }
             }
             return airportCode;
@@ -1514,13 +1514,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateCity(final com.google.common.base.Optional<String> city) throws org.thryft.protocol.InputProtocolException {
             if (city == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.CITY, "com.github.minorgwhoisclient.WhoisRegistrant: city is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.CITY, "com.github.minorg.whoisclient.WhoisRegistrant: city is null");
             }
             if (!city.isPresent()) {
                 return city;
             }
             if (city.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.CITY, "com.github.minorgwhoisclient.WhoisRegistrant: city is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.CITY, "com.github.minorg.whoisclient.WhoisRegistrant: city is less than min length 1");
             }
             {
                 final int __strLen = city.get().length();
@@ -1532,7 +1532,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.CITY, String.format("com.github.minorgwhoisclient.WhoisRegistrant: city is blank: '%s' (length=%d)", city.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.CITY, String.format("com.github.minorg.whoisclient.WhoisRegistrant: city is blank: '%s' (length=%d)", city.get(), __strLen));
                 }
             }
             return city;
@@ -1541,13 +1541,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateCountry(final com.google.common.base.Optional<String> country) throws org.thryft.protocol.InputProtocolException {
             if (country == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.COUNTRY, "com.github.minorgwhoisclient.WhoisRegistrant: country is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.COUNTRY, "com.github.minorg.whoisclient.WhoisRegistrant: country is null");
             }
             if (!country.isPresent()) {
                 return country;
             }
             if (country.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY, "com.github.minorgwhoisclient.WhoisRegistrant: country is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY, "com.github.minorg.whoisclient.WhoisRegistrant: country is less than min length 1");
             }
             {
                 final int __strLen = country.get().length();
@@ -1559,7 +1559,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY, String.format("com.github.minorgwhoisclient.WhoisRegistrant: country is blank: '%s' (length=%d)", country.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY, String.format("com.github.minorg.whoisclient.WhoisRegistrant: country is blank: '%s' (length=%d)", country.get(), __strLen));
                 }
             }
             return country;
@@ -1568,13 +1568,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateCountryCode(final com.google.common.base.Optional<String> countryCode) throws org.thryft.protocol.InputProtocolException {
             if (countryCode == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.COUNTRY_CODE, "com.github.minorgwhoisclient.WhoisRegistrant: countryCode is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.COUNTRY_CODE, "com.github.minorg.whoisclient.WhoisRegistrant: countryCode is null");
             }
             if (!countryCode.isPresent()) {
                 return countryCode;
             }
             if (countryCode.get().length() < 2) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY_CODE, "com.github.minorgwhoisclient.WhoisRegistrant: countryCode is less than min length 2");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY_CODE, "com.github.minorg.whoisclient.WhoisRegistrant: countryCode is less than min length 2");
             }
             {
                 final int __strLen = countryCode.get().length();
@@ -1586,11 +1586,11 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY_CODE, String.format("com.github.minorgwhoisclient.WhoisRegistrant: countryCode is blank: '%s' (length=%d)", countryCode.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY_CODE, String.format("com.github.minorg.whoisclient.WhoisRegistrant: countryCode is blank: '%s' (length=%d)", countryCode.get(), __strLen));
                 }
             }
             if (countryCode.get().length() > 3) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY_CODE, "com.github.minorgwhoisclient.WhoisRegistrant: countryCode is greater than max length 3");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY_CODE, "com.github.minorg.whoisclient.WhoisRegistrant: countryCode is greater than max length 3");
             }
             return countryCode;
         }
@@ -1598,13 +1598,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateDistrict(final com.google.common.base.Optional<String> district) throws org.thryft.protocol.InputProtocolException {
             if (district == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.DISTRICT, "com.github.minorgwhoisclient.WhoisRegistrant: district is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.DISTRICT, "com.github.minorg.whoisclient.WhoisRegistrant: district is null");
             }
             if (!district.isPresent()) {
                 return district;
             }
             if (district.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.DISTRICT, "com.github.minorgwhoisclient.WhoisRegistrant: district is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.DISTRICT, "com.github.minorg.whoisclient.WhoisRegistrant: district is less than min length 1");
             }
             {
                 final int __strLen = district.get().length();
@@ -1616,7 +1616,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.DISTRICT, String.format("com.github.minorgwhoisclient.WhoisRegistrant: district is blank: '%s' (length=%d)", district.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.DISTRICT, String.format("com.github.minorg.whoisclient.WhoisRegistrant: district is blank: '%s' (length=%d)", district.get(), __strLen));
                 }
             }
             return district;
@@ -1625,13 +1625,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateEmail(final com.google.common.base.Optional<String> email) throws org.thryft.protocol.InputProtocolException {
             if (email == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.EMAIL, "com.github.minorgwhoisclient.WhoisRegistrant: email is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.EMAIL, "com.github.minorg.whoisclient.WhoisRegistrant: email is null");
             }
             if (!email.isPresent()) {
                 return email;
             }
             if (email.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.EMAIL, "com.github.minorgwhoisclient.WhoisRegistrant: email is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.EMAIL, "com.github.minorg.whoisclient.WhoisRegistrant: email is less than min length 1");
             }
             {
                 final int __strLen = email.get().length();
@@ -1643,7 +1643,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.EMAIL, String.format("com.github.minorgwhoisclient.WhoisRegistrant: email is blank: '%s' (length=%d)", email.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.EMAIL, String.format("com.github.minorg.whoisclient.WhoisRegistrant: email is blank: '%s' (length=%d)", email.get(), __strLen));
                 }
             }
             return email;
@@ -1652,13 +1652,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateFirstName(final com.google.common.base.Optional<String> firstName) throws org.thryft.protocol.InputProtocolException {
             if (firstName == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.FIRST_NAME, "com.github.minorgwhoisclient.WhoisRegistrant: firstName is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.FIRST_NAME, "com.github.minorg.whoisclient.WhoisRegistrant: firstName is null");
             }
             if (!firstName.isPresent()) {
                 return firstName;
             }
             if (firstName.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.FIRST_NAME, "com.github.minorgwhoisclient.WhoisRegistrant: firstName is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.FIRST_NAME, "com.github.minorg.whoisclient.WhoisRegistrant: firstName is less than min length 1");
             }
             {
                 final int __strLen = firstName.get().length();
@@ -1670,7 +1670,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.FIRST_NAME, String.format("com.github.minorgwhoisclient.WhoisRegistrant: firstName is blank: '%s' (length=%d)", firstName.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.FIRST_NAME, String.format("com.github.minorg.whoisclient.WhoisRegistrant: firstName is blank: '%s' (length=%d)", firstName.get(), __strLen));
                 }
             }
             return firstName;
@@ -1679,13 +1679,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateHandle(final com.google.common.base.Optional<String> handle) throws org.thryft.protocol.InputProtocolException {
             if (handle == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.HANDLE, "com.github.minorgwhoisclient.WhoisRegistrant: handle is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.HANDLE, "com.github.minorg.whoisclient.WhoisRegistrant: handle is null");
             }
             if (!handle.isPresent()) {
                 return handle;
             }
             if (handle.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.HANDLE, "com.github.minorgwhoisclient.WhoisRegistrant: handle is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.HANDLE, "com.github.minorg.whoisclient.WhoisRegistrant: handle is less than min length 1");
             }
             {
                 final int __strLen = handle.get().length();
@@ -1697,7 +1697,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.HANDLE, String.format("com.github.minorgwhoisclient.WhoisRegistrant: handle is blank: '%s' (length=%d)", handle.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.HANDLE, String.format("com.github.minorg.whoisclient.WhoisRegistrant: handle is blank: '%s' (length=%d)", handle.get(), __strLen));
                 }
             }
             return handle;
@@ -1706,13 +1706,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateLastName(final com.google.common.base.Optional<String> lastName) throws org.thryft.protocol.InputProtocolException {
             if (lastName == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.LAST_NAME, "com.github.minorgwhoisclient.WhoisRegistrant: lastName is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.LAST_NAME, "com.github.minorg.whoisclient.WhoisRegistrant: lastName is null");
             }
             if (!lastName.isPresent()) {
                 return lastName;
             }
             if (lastName.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.LAST_NAME, "com.github.minorgwhoisclient.WhoisRegistrant: lastName is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.LAST_NAME, "com.github.minorg.whoisclient.WhoisRegistrant: lastName is less than min length 1");
             }
             {
                 final int __strLen = lastName.get().length();
@@ -1724,7 +1724,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.LAST_NAME, String.format("com.github.minorgwhoisclient.WhoisRegistrant: lastName is blank: '%s' (length=%d)", lastName.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.LAST_NAME, String.format("com.github.minorg.whoisclient.WhoisRegistrant: lastName is blank: '%s' (length=%d)", lastName.get(), __strLen));
                 }
             }
             return lastName;
@@ -1733,13 +1733,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateName(final com.google.common.base.Optional<String> name) throws org.thryft.protocol.InputProtocolException {
             if (name == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.NAME, "com.github.minorgwhoisclient.WhoisRegistrant: name is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.NAME, "com.github.minorg.whoisclient.WhoisRegistrant: name is null");
             }
             if (!name.isPresent()) {
                 return name;
             }
             if (name.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.NAME, "com.github.minorgwhoisclient.WhoisRegistrant: name is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.NAME, "com.github.minorg.whoisclient.WhoisRegistrant: name is less than min length 1");
             }
             {
                 final int __strLen = name.get().length();
@@ -1751,7 +1751,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.NAME, String.format("com.github.minorgwhoisclient.WhoisRegistrant: name is blank: '%s' (length=%d)", name.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.NAME, String.format("com.github.minorg.whoisclient.WhoisRegistrant: name is blank: '%s' (length=%d)", name.get(), __strLen));
                 }
             }
             return name;
@@ -1760,13 +1760,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateOrganization(final com.google.common.base.Optional<String> organization) throws org.thryft.protocol.InputProtocolException {
             if (organization == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.ORGANIZATION, "com.github.minorgwhoisclient.WhoisRegistrant: organization is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.ORGANIZATION, "com.github.minorg.whoisclient.WhoisRegistrant: organization is null");
             }
             if (!organization.isPresent()) {
                 return organization;
             }
             if (organization.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.ORGANIZATION, "com.github.minorgwhoisclient.WhoisRegistrant: organization is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.ORGANIZATION, "com.github.minorg.whoisclient.WhoisRegistrant: organization is less than min length 1");
             }
             {
                 final int __strLen = organization.get().length();
@@ -1778,7 +1778,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.ORGANIZATION, String.format("com.github.minorgwhoisclient.WhoisRegistrant: organization is blank: '%s' (length=%d)", organization.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.ORGANIZATION, String.format("com.github.minorg.whoisclient.WhoisRegistrant: organization is blank: '%s' (length=%d)", organization.get(), __strLen));
                 }
             }
             return organization;
@@ -1787,13 +1787,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validatePhone(final com.google.common.base.Optional<String> phone) throws org.thryft.protocol.InputProtocolException {
             if (phone == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.PHONE, "com.github.minorgwhoisclient.WhoisRegistrant: phone is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.PHONE, "com.github.minorg.whoisclient.WhoisRegistrant: phone is null");
             }
             if (!phone.isPresent()) {
                 return phone;
             }
             if (phone.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.PHONE, "com.github.minorgwhoisclient.WhoisRegistrant: phone is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.PHONE, "com.github.minorg.whoisclient.WhoisRegistrant: phone is less than min length 1");
             }
             {
                 final int __strLen = phone.get().length();
@@ -1805,7 +1805,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.PHONE, String.format("com.github.minorgwhoisclient.WhoisRegistrant: phone is blank: '%s' (length=%d)", phone.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.PHONE, String.format("com.github.minorg.whoisclient.WhoisRegistrant: phone is blank: '%s' (length=%d)", phone.get(), __strLen));
                 }
             }
             return phone;
@@ -1814,13 +1814,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validatePhoneExt(final com.google.common.base.Optional<String> phoneExt) throws org.thryft.protocol.InputProtocolException {
             if (phoneExt == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.PHONE_EXT, "com.github.minorgwhoisclient.WhoisRegistrant: phoneExt is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.PHONE_EXT, "com.github.minorg.whoisclient.WhoisRegistrant: phoneExt is null");
             }
             if (!phoneExt.isPresent()) {
                 return phoneExt;
             }
             if (phoneExt.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.PHONE_EXT, "com.github.minorgwhoisclient.WhoisRegistrant: phoneExt is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.PHONE_EXT, "com.github.minorg.whoisclient.WhoisRegistrant: phoneExt is less than min length 1");
             }
             {
                 final int __strLen = phoneExt.get().length();
@@ -1832,7 +1832,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.PHONE_EXT, String.format("com.github.minorgwhoisclient.WhoisRegistrant: phoneExt is blank: '%s' (length=%d)", phoneExt.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.PHONE_EXT, String.format("com.github.minorg.whoisclient.WhoisRegistrant: phoneExt is blank: '%s' (length=%d)", phoneExt.get(), __strLen));
                 }
             }
             return phoneExt;
@@ -1841,13 +1841,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validatePostalCode(final com.google.common.base.Optional<String> postalCode) throws org.thryft.protocol.InputProtocolException {
             if (postalCode == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.POSTAL_CODE, "com.github.minorgwhoisclient.WhoisRegistrant: postalCode is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.POSTAL_CODE, "com.github.minorg.whoisclient.WhoisRegistrant: postalCode is null");
             }
             if (!postalCode.isPresent()) {
                 return postalCode;
             }
             if (postalCode.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.POSTAL_CODE, "com.github.minorgwhoisclient.WhoisRegistrant: postalCode is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.POSTAL_CODE, "com.github.minorg.whoisclient.WhoisRegistrant: postalCode is less than min length 1");
             }
             {
                 final int __strLen = postalCode.get().length();
@@ -1859,7 +1859,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.POSTAL_CODE, String.format("com.github.minorgwhoisclient.WhoisRegistrant: postalCode is blank: '%s' (length=%d)", postalCode.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.POSTAL_CODE, String.format("com.github.minorg.whoisclient.WhoisRegistrant: postalCode is blank: '%s' (length=%d)", postalCode.get(), __strLen));
                 }
             }
             return postalCode;
@@ -1868,13 +1868,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateState(final com.google.common.base.Optional<String> state) throws org.thryft.protocol.InputProtocolException {
             if (state == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.STATE, "com.github.minorgwhoisclient.WhoisRegistrant: state is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.STATE, "com.github.minorg.whoisclient.WhoisRegistrant: state is null");
             }
             if (!state.isPresent()) {
                 return state;
             }
             if (state.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STATE, "com.github.minorgwhoisclient.WhoisRegistrant: state is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STATE, "com.github.minorg.whoisclient.WhoisRegistrant: state is less than min length 1");
             }
             {
                 final int __strLen = state.get().length();
@@ -1886,7 +1886,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STATE, String.format("com.github.minorgwhoisclient.WhoisRegistrant: state is blank: '%s' (length=%d)", state.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STATE, String.format("com.github.minorg.whoisclient.WhoisRegistrant: state is blank: '%s' (length=%d)", state.get(), __strLen));
                 }
             }
             return state;
@@ -1895,13 +1895,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateStateCode(final com.google.common.base.Optional<String> stateCode) throws org.thryft.protocol.InputProtocolException {
             if (stateCode == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.STATE_CODE, "com.github.minorgwhoisclient.WhoisRegistrant: stateCode is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.STATE_CODE, "com.github.minorg.whoisclient.WhoisRegistrant: stateCode is null");
             }
             if (!stateCode.isPresent()) {
                 return stateCode;
             }
             if (stateCode.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STATE_CODE, "com.github.minorgwhoisclient.WhoisRegistrant: stateCode is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STATE_CODE, "com.github.minorg.whoisclient.WhoisRegistrant: stateCode is less than min length 1");
             }
             {
                 final int __strLen = stateCode.get().length();
@@ -1913,7 +1913,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STATE_CODE, String.format("com.github.minorgwhoisclient.WhoisRegistrant: stateCode is blank: '%s' (length=%d)", stateCode.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STATE_CODE, String.format("com.github.minorg.whoisclient.WhoisRegistrant: stateCode is blank: '%s' (length=%d)", stateCode.get(), __strLen));
                 }
             }
             return stateCode;
@@ -1922,13 +1922,13 @@ public final class WhoisRegistrant implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> validateStreet(final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> street) throws org.thryft.protocol.InputProtocolException {
             if (street == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.STREET, "com.github.minorgwhoisclient.WhoisRegistrant: street is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.STREET, "com.github.minorg.whoisclient.WhoisRegistrant: street is null");
             }
             if (!street.isPresent()) {
                 return street;
             }
             if (street.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STREET, "com.github.minorgwhoisclient.WhoisRegistrant: street is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STREET, "com.github.minorg.whoisclient.WhoisRegistrant: street is less than min length 1");
             }
             return street;
         }
@@ -2866,7 +2866,7 @@ public final class WhoisRegistrant implements org.thryft.Struct {
 
     @Override
     public void writeAsStruct(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
-        oprot.writeStructBegin("com.github.minorgwhoisclient.WhoisRegistrant");
+        oprot.writeStructBegin("com.github.minorg.whoisclient.WhoisRegistrant");
         writeFields(oprot);
         oprot.writeStructEnd();
     }

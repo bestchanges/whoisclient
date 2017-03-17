@@ -37,7 +37,7 @@ class Main(thryft.main.Main):
             JavaGenerator(
                 default_methods=True,
                 function_overloads=True,
-                namespace_prefix='com.github.minorg'
+                namespace_prefix='com.github.minorg.'
             )
         lint_generator = LintGenerator()
 

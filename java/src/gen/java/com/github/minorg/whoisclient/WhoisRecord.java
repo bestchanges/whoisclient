@@ -1,4 +1,4 @@
-package com.github.minorgwhoisclient;
+package com.github.minorg.whoisclient;
 
 public final class WhoisRecord implements org.thryft.Struct {
     public final static class Builder {
@@ -6,13 +6,13 @@ public final class WhoisRecord implements org.thryft.Struct {
             queriedName = null;
             queriedWhoisServers = null;
             queryTimestamp = null;
-            administrativeContact = com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent();
-            billingContact = com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent();
+            administrativeContact = com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent();
+            billingContact = com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent();
             creationDate = com.google.common.base.Optional.<java.util.Date> absent();
             expirationDate = com.google.common.base.Optional.<java.util.Date> absent();
             referral = com.google.common.base.Optional.<String> absent();
-            registrant = com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent();
-            technicalContact = com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent();
+            registrant = com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent();
+            technicalContact = com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent();
             updatedDate = com.google.common.base.Optional.<java.util.Date> absent();
         }
 
@@ -30,7 +30,7 @@ public final class WhoisRecord implements org.thryft.Struct {
             this.updatedDate = other.getUpdatedDate();
         }
 
-        protected WhoisRecord _build(final org.thryft.native_.InternetDomainName queriedName, final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers, final java.util.Date queryTimestamp, final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> administrativeContact, final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> billingContact, final com.google.common.base.Optional<java.util.Date> creationDate, final com.google.common.base.Optional<java.util.Date> expirationDate, final com.google.common.base.Optional<String> referral, final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> registrant, final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> technicalContact, final com.google.common.base.Optional<java.util.Date> updatedDate) {
+        protected WhoisRecord _build(final org.thryft.native_.InternetDomainName queriedName, final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers, final java.util.Date queryTimestamp, final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> administrativeContact, final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> billingContact, final com.google.common.base.Optional<java.util.Date> creationDate, final com.google.common.base.Optional<java.util.Date> expirationDate, final com.google.common.base.Optional<String> referral, final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> registrant, final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> technicalContact, final com.google.common.base.Optional<java.util.Date> updatedDate) {
             return new WhoisRecord(queriedName, queriedWhoisServers, queryTimestamp, administrativeContact, billingContact, creationDate, expirationDate, referral, registrant, technicalContact, updatedDate, DefaultConstructionValidator.getInstance());
         }
 
@@ -38,11 +38,11 @@ public final class WhoisRecord implements org.thryft.Struct {
             return _build(queriedName, queriedWhoisServers, queryTimestamp, administrativeContact, billingContact, creationDate, expirationDate, referral, registrant, technicalContact, updatedDate);
         }
 
-        public final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> getAdministrativeContact() {
+        public final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> getAdministrativeContact() {
             return administrativeContact;
         }
 
-        public final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> getBillingContact() {
+        public final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> getBillingContact() {
             return billingContact;
         }
 
@@ -73,11 +73,11 @@ public final class WhoisRecord implements org.thryft.Struct {
             return referral;
         }
 
-        public final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> getRegistrant() {
+        public final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> getRegistrant() {
             return registrant;
         }
 
-        public final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> getTechnicalContact() {
+        public final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> getTechnicalContact() {
             return technicalContact;
         }
 
@@ -138,10 +138,10 @@ public final class WhoisRecord implements org.thryft.Struct {
                      throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.QUERY_TIMESTAMP, e);
                 }
                 if (__list.getSize() > 3) {
-                    administrativeContact = com.google.common.base.Optional.of(com.github.minorgwhoisclient.WhoisRegistrant.readAsStruct(iprot));
+                    administrativeContact = com.google.common.base.Optional.of(com.github.minorg.whoisclient.WhoisRegistrant.readAsStruct(iprot));
                 }
                 if (__list.getSize() > 4) {
-                    billingContact = com.google.common.base.Optional.of(com.github.minorgwhoisclient.WhoisRegistrant.readAsStruct(iprot));
+                    billingContact = com.google.common.base.Optional.of(com.github.minorg.whoisclient.WhoisRegistrant.readAsStruct(iprot));
                 }
                 if (__list.getSize() > 5) {
                     try {
@@ -159,10 +159,10 @@ public final class WhoisRecord implements org.thryft.Struct {
                     referral = com.google.common.base.Optional.of(iprot.readString());
                 }
                 if (__list.getSize() > 8) {
-                    registrant = com.google.common.base.Optional.of(com.github.minorgwhoisclient.WhoisRegistrant.readAsStruct(iprot));
+                    registrant = com.google.common.base.Optional.of(com.github.minorg.whoisclient.WhoisRegistrant.readAsStruct(iprot));
                 }
                 if (__list.getSize() > 9) {
-                    technicalContact = com.google.common.base.Optional.of(com.github.minorgwhoisclient.WhoisRegistrant.readAsStruct(iprot));
+                    technicalContact = com.google.common.base.Optional.of(com.github.minorg.whoisclient.WhoisRegistrant.readAsStruct(iprot));
                 }
                 if (__list.getSize() > 10) {
                     try {
@@ -234,11 +234,11 @@ public final class WhoisRecord implements org.thryft.Struct {
                         break;
                     }
                     case "administrative_contact": {
-                        administrativeContact = com.google.common.base.Optional.of(com.github.minorgwhoisclient.WhoisRegistrant.readAsStruct(iprot));
+                        administrativeContact = com.google.common.base.Optional.of(com.github.minorg.whoisclient.WhoisRegistrant.readAsStruct(iprot));
                         break;
                     }
                     case "billing_contact": {
-                        billingContact = com.google.common.base.Optional.of(com.github.minorgwhoisclient.WhoisRegistrant.readAsStruct(iprot));
+                        billingContact = com.google.common.base.Optional.of(com.github.minorg.whoisclient.WhoisRegistrant.readAsStruct(iprot));
                         break;
                     }
                     case "creation_date": {
@@ -260,11 +260,11 @@ public final class WhoisRecord implements org.thryft.Struct {
                         break;
                     }
                     case "registrant": {
-                        registrant = com.google.common.base.Optional.of(com.github.minorgwhoisclient.WhoisRegistrant.readAsStruct(iprot));
+                        registrant = com.google.common.base.Optional.of(com.github.minorg.whoisclient.WhoisRegistrant.readAsStruct(iprot));
                         break;
                     }
                     case "technical_contact": {
-                        technicalContact = com.google.common.base.Optional.of(com.github.minorgwhoisclient.WhoisRegistrant.readAsStruct(iprot));
+                        technicalContact = com.google.common.base.Optional.of(com.github.minorg.whoisclient.WhoisRegistrant.readAsStruct(iprot));
                         break;
                     }
                     case "updated_date": {
@@ -308,34 +308,34 @@ public final class WhoisRecord implements org.thryft.Struct {
             case QUERIED_NAME: setQueriedName((org.thryft.native_.InternetDomainName)value); return this;
             case QUERIED_WHOIS_SERVERS: setQueriedWhoisServers((com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName>)value); return this;
             case QUERY_TIMESTAMP: setQueryTimestamp((java.util.Date)value); return this;
-            case ADMINISTRATIVE_CONTACT: setAdministrativeContact((com.github.minorgwhoisclient.WhoisRegistrant)value); return this;
-            case BILLING_CONTACT: setBillingContact((com.github.minorgwhoisclient.WhoisRegistrant)value); return this;
+            case ADMINISTRATIVE_CONTACT: setAdministrativeContact((com.github.minorg.whoisclient.WhoisRegistrant)value); return this;
+            case BILLING_CONTACT: setBillingContact((com.github.minorg.whoisclient.WhoisRegistrant)value); return this;
             case CREATION_DATE: setCreationDate((java.util.Date)value); return this;
             case EXPIRATION_DATE: setExpirationDate((java.util.Date)value); return this;
             case REFERRAL: setReferral((String)value); return this;
-            case REGISTRANT: setRegistrant((com.github.minorgwhoisclient.WhoisRegistrant)value); return this;
-            case TECHNICAL_CONTACT: setTechnicalContact((com.github.minorgwhoisclient.WhoisRegistrant)value); return this;
+            case REGISTRANT: setRegistrant((com.github.minorg.whoisclient.WhoisRegistrant)value); return this;
+            case TECHNICAL_CONTACT: setTechnicalContact((com.github.minorg.whoisclient.WhoisRegistrant)value); return this;
             case UPDATED_DATE: setUpdatedDate((java.util.Date)value); return this;
             default:
                 throw new IllegalStateException();
             }
         }
 
-        public Builder setAdministrativeContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> administrativeContact) {
+        public Builder setAdministrativeContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> administrativeContact) {
             this.administrativeContact = DefaultConstructionValidator.getInstance().validateAdministrativeContact(administrativeContact);
             return this;
         }
 
-        public Builder setAdministrativeContact(@javax.annotation.Nullable final com.github.minorgwhoisclient.WhoisRegistrant administrativeContact) {
+        public Builder setAdministrativeContact(@javax.annotation.Nullable final com.github.minorg.whoisclient.WhoisRegistrant administrativeContact) {
             return setAdministrativeContact(com.google.common.base.Optional.fromNullable(administrativeContact));
         }
 
-        public Builder setBillingContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> billingContact) {
+        public Builder setBillingContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> billingContact) {
             this.billingContact = DefaultConstructionValidator.getInstance().validateBillingContact(billingContact);
             return this;
         }
 
-        public Builder setBillingContact(@javax.annotation.Nullable final com.github.minorgwhoisclient.WhoisRegistrant billingContact) {
+        public Builder setBillingContact(@javax.annotation.Nullable final com.github.minorg.whoisclient.WhoisRegistrant billingContact) {
             return setBillingContact(com.google.common.base.Optional.fromNullable(billingContact));
         }
 
@@ -415,21 +415,21 @@ public final class WhoisRecord implements org.thryft.Struct {
             return setReferral(com.google.common.base.Optional.fromNullable(referral));
         }
 
-        public Builder setRegistrant(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> registrant) {
+        public Builder setRegistrant(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> registrant) {
             this.registrant = DefaultConstructionValidator.getInstance().validateRegistrant(registrant);
             return this;
         }
 
-        public Builder setRegistrant(@javax.annotation.Nullable final com.github.minorgwhoisclient.WhoisRegistrant registrant) {
+        public Builder setRegistrant(@javax.annotation.Nullable final com.github.minorg.whoisclient.WhoisRegistrant registrant) {
             return setRegistrant(com.google.common.base.Optional.fromNullable(registrant));
         }
 
-        public Builder setTechnicalContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> technicalContact) {
+        public Builder setTechnicalContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> technicalContact) {
             this.technicalContact = DefaultConstructionValidator.getInstance().validateTechnicalContact(technicalContact);
             return this;
         }
 
-        public Builder setTechnicalContact(@javax.annotation.Nullable final com.github.minorgwhoisclient.WhoisRegistrant technicalContact) {
+        public Builder setTechnicalContact(@javax.annotation.Nullable final com.github.minorg.whoisclient.WhoisRegistrant technicalContact) {
             return setTechnicalContact(com.google.common.base.Optional.fromNullable(technicalContact));
         }
 
@@ -474,12 +474,12 @@ public final class WhoisRecord implements org.thryft.Struct {
         }
 
         public Builder unsetAdministrativeContact() {
-            this.administrativeContact = com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent();
+            this.administrativeContact = com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent();
             return this;
         }
 
         public Builder unsetBillingContact() {
-            this.billingContact = com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent();
+            this.billingContact = com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent();
             return this;
         }
 
@@ -514,12 +514,12 @@ public final class WhoisRecord implements org.thryft.Struct {
         }
 
         public Builder unsetRegistrant() {
-            this.registrant = com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent();
+            this.registrant = com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent();
             return this;
         }
 
         public Builder unsetTechnicalContact() {
-            this.technicalContact = com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent();
+            this.technicalContact = com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent();
             return this;
         }
 
@@ -534,13 +534,13 @@ public final class WhoisRecord implements org.thryft.Struct {
          */
         private com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers;
         private java.util.Date queryTimestamp;
-        private com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> administrativeContact;
-        private com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> billingContact;
+        private com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> administrativeContact;
+        private com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> billingContact;
         private com.google.common.base.Optional<java.util.Date> creationDate;
         private com.google.common.base.Optional<java.util.Date> expirationDate;
         private com.google.common.base.Optional<String> referral;
-        private com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> registrant;
-        private com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> technicalContact;
+        private com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> registrant;
+        private com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> technicalContact;
         private com.google.common.base.Optional<java.util.Date> updatedDate;
     }
 
@@ -578,13 +578,13 @@ public final class WhoisRecord implements org.thryft.Struct {
         QUERIED_NAME("queriedName", new com.google.common.reflect.TypeToken<org.thryft.native_.InternetDomainName>() {}, true, 0, "queried_name", org.thryft.protocol.Type.STRING),
         QUERIED_WHOIS_SERVERS("queriedWhoisServers", new com.google.common.reflect.TypeToken<com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName>>() {}, true, 0, "queried_whois_servers", org.thryft.protocol.Type.LIST),
         QUERY_TIMESTAMP("queryTimestamp", new com.google.common.reflect.TypeToken<java.util.Date>() {}, true, 0, "query_timestamp", org.thryft.protocol.Type.I64),
-        ADMINISTRATIVE_CONTACT("administrativeContact", new com.google.common.reflect.TypeToken<com.github.minorgwhoisclient.WhoisRegistrant>() {}, false, 0, "administrative_contact", org.thryft.protocol.Type.STRUCT),
-        BILLING_CONTACT("billingContact", new com.google.common.reflect.TypeToken<com.github.minorgwhoisclient.WhoisRegistrant>() {}, false, 0, "billing_contact", org.thryft.protocol.Type.STRUCT),
+        ADMINISTRATIVE_CONTACT("administrativeContact", new com.google.common.reflect.TypeToken<com.github.minorg.whoisclient.WhoisRegistrant>() {}, false, 0, "administrative_contact", org.thryft.protocol.Type.STRUCT),
+        BILLING_CONTACT("billingContact", new com.google.common.reflect.TypeToken<com.github.minorg.whoisclient.WhoisRegistrant>() {}, false, 0, "billing_contact", org.thryft.protocol.Type.STRUCT),
         CREATION_DATE("creationDate", new com.google.common.reflect.TypeToken<java.util.Date>() {}, false, 0, "creation_date", org.thryft.protocol.Type.I64),
         EXPIRATION_DATE("expirationDate", new com.google.common.reflect.TypeToken<java.util.Date>() {}, false, 0, "expiration_date", org.thryft.protocol.Type.I64),
         REFERRAL("referral", new com.google.common.reflect.TypeToken<String>() {}, false, 0, "referral", org.thryft.protocol.Type.STRING),
-        REGISTRANT("registrant", new com.google.common.reflect.TypeToken<com.github.minorgwhoisclient.WhoisRegistrant>() {}, false, 0, "registrant", org.thryft.protocol.Type.STRUCT),
-        TECHNICAL_CONTACT("technicalContact", new com.google.common.reflect.TypeToken<com.github.minorgwhoisclient.WhoisRegistrant>() {}, false, 0, "technical_contact", org.thryft.protocol.Type.STRUCT),
+        REGISTRANT("registrant", new com.google.common.reflect.TypeToken<com.github.minorg.whoisclient.WhoisRegistrant>() {}, false, 0, "registrant", org.thryft.protocol.Type.STRUCT),
+        TECHNICAL_CONTACT("technicalContact", new com.google.common.reflect.TypeToken<com.github.minorg.whoisclient.WhoisRegistrant>() {}, false, 0, "technical_contact", org.thryft.protocol.Type.STRUCT),
         UPDATED_DATE("updatedDate", new com.google.common.reflect.TypeToken<java.util.Date>() {}, false, 0, "updated_date", org.thryft.protocol.Type.I64);
 
         @Override
@@ -693,9 +693,9 @@ public final class WhoisRecord implements org.thryft.Struct {
 
         public java.util.Date validateQueryTimestamp(final java.util.Date queryTimestamp) throws ExceptionT;
 
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateAdministrativeContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> administrativeContact) throws ExceptionT;
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateAdministrativeContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> administrativeContact) throws ExceptionT;
 
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateBillingContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> billingContact) throws ExceptionT;
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateBillingContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> billingContact) throws ExceptionT;
 
         public com.google.common.base.Optional<java.util.Date> validateCreationDate(final com.google.common.base.Optional<java.util.Date> creationDate) throws ExceptionT;
 
@@ -703,9 +703,9 @@ public final class WhoisRecord implements org.thryft.Struct {
 
         public com.google.common.base.Optional<String> validateReferral(final com.google.common.base.Optional<String> referral) throws ExceptionT;
 
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateRegistrant(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> registrant) throws ExceptionT;
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateRegistrant(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> registrant) throws ExceptionT;
 
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateTechnicalContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> technicalContact) throws ExceptionT;
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateTechnicalContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> technicalContact) throws ExceptionT;
 
         public com.google.common.base.Optional<java.util.Date> validateUpdatedDate(final com.google.common.base.Optional<java.util.Date> updatedDate) throws ExceptionT;
     }
@@ -724,7 +724,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public org.thryft.native_.InternetDomainName validateQueriedName(final org.thryft.native_.InternetDomainName queriedName) throws RuntimeException {
             if (queriedName == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRecord: queriedName is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: queriedName is null");
             }
             return queriedName;
         }
@@ -732,10 +732,10 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> validateQueriedWhoisServers(final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers) throws RuntimeException {
             if (queriedWhoisServers == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRecord: queriedWhoisServers is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: queriedWhoisServers is null");
             }
             if (queriedWhoisServers.isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRecord: queriedWhoisServers is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRecord: queriedWhoisServers is less than min length 1");
             }
             return queriedWhoisServers;
         }
@@ -743,15 +743,15 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public java.util.Date validateQueryTimestamp(final java.util.Date queryTimestamp) throws RuntimeException {
             if (queryTimestamp == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRecord: queryTimestamp is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: queryTimestamp is null");
             }
             return queryTimestamp;
         }
 
         @Override
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateAdministrativeContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> administrativeContact) throws RuntimeException {
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateAdministrativeContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> administrativeContact) throws RuntimeException {
             if (administrativeContact == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRecord: administrativeContact is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: administrativeContact is null");
             }
             if (!administrativeContact.isPresent()) {
                 return administrativeContact;
@@ -760,9 +760,9 @@ public final class WhoisRecord implements org.thryft.Struct {
         }
 
         @Override
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateBillingContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> billingContact) throws RuntimeException {
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateBillingContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> billingContact) throws RuntimeException {
             if (billingContact == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRecord: billingContact is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: billingContact is null");
             }
             if (!billingContact.isPresent()) {
                 return billingContact;
@@ -773,7 +773,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<java.util.Date> validateCreationDate(final com.google.common.base.Optional<java.util.Date> creationDate) throws RuntimeException {
             if (creationDate == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRecord: creationDate is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: creationDate is null");
             }
             if (!creationDate.isPresent()) {
                 return creationDate;
@@ -784,7 +784,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<java.util.Date> validateExpirationDate(final com.google.common.base.Optional<java.util.Date> expirationDate) throws RuntimeException {
             if (expirationDate == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRecord: expirationDate is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: expirationDate is null");
             }
             if (!expirationDate.isPresent()) {
                 return expirationDate;
@@ -795,13 +795,13 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateReferral(final com.google.common.base.Optional<String> referral) throws RuntimeException {
             if (referral == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRecord: referral is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: referral is null");
             }
             if (!referral.isPresent()) {
                 return referral;
             }
             if (referral.get().isEmpty()) {
-                throw new IllegalArgumentException("com.github.minorgwhoisclient.WhoisRecord: referral is less than min length 1");
+                throw new IllegalArgumentException("com.github.minorg.whoisclient.WhoisRecord: referral is less than min length 1");
             }
             {
                 final int __strLen = referral.get().length();
@@ -813,16 +813,16 @@ public final class WhoisRecord implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new IllegalArgumentException(String.format("com.github.minorgwhoisclient.WhoisRecord: referral is blank: '%s' (length=%d)", referral.get(), __strLen));
+                    throw new IllegalArgumentException(String.format("com.github.minorg.whoisclient.WhoisRecord: referral is blank: '%s' (length=%d)", referral.get(), __strLen));
                 }
             }
             return referral;
         }
 
         @Override
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateRegistrant(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> registrant) throws RuntimeException {
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateRegistrant(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> registrant) throws RuntimeException {
             if (registrant == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRecord: registrant is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: registrant is null");
             }
             if (!registrant.isPresent()) {
                 return registrant;
@@ -831,9 +831,9 @@ public final class WhoisRecord implements org.thryft.Struct {
         }
 
         @Override
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateTechnicalContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> technicalContact) throws RuntimeException {
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateTechnicalContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> technicalContact) throws RuntimeException {
             if (technicalContact == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRecord: technicalContact is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: technicalContact is null");
             }
             if (!technicalContact.isPresent()) {
                 return technicalContact;
@@ -844,7 +844,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<java.util.Date> validateUpdatedDate(final com.google.common.base.Optional<java.util.Date> updatedDate) throws RuntimeException {
             if (updatedDate == null) {
-                throw new NullPointerException("com.github.minorgwhoisclient.WhoisRecord: updatedDate is null");
+                throw new NullPointerException("com.github.minorg.whoisclient.WhoisRecord: updatedDate is null");
             }
             if (!updatedDate.isPresent()) {
                 return updatedDate;
@@ -879,12 +879,12 @@ public final class WhoisRecord implements org.thryft.Struct {
         }
 
         @Override
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateAdministrativeContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> administrativeContact) {
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateAdministrativeContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> administrativeContact) {
             return administrativeContact;
         }
 
         @Override
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateBillingContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> billingContact) {
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateBillingContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> billingContact) {
             return billingContact;
         }
 
@@ -904,12 +904,12 @@ public final class WhoisRecord implements org.thryft.Struct {
         }
 
         @Override
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateRegistrant(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> registrant) {
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateRegistrant(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> registrant) {
             return registrant;
         }
 
         @Override
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateTechnicalContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> technicalContact) {
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateTechnicalContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> technicalContact) {
             return technicalContact;
         }
 
@@ -935,7 +935,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public org.thryft.native_.InternetDomainName validateQueriedName(final org.thryft.native_.InternetDomainName queriedName) throws org.thryft.protocol.InputProtocolException {
             if (queriedName == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.QUERIED_NAME, "com.github.minorgwhoisclient.WhoisRecord: queriedName is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.QUERIED_NAME, "com.github.minorg.whoisclient.WhoisRecord: queriedName is null");
             }
             return queriedName;
         }
@@ -943,10 +943,10 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> validateQueriedWhoisServers(final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers) throws org.thryft.protocol.InputProtocolException {
             if (queriedWhoisServers == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.QUERIED_WHOIS_SERVERS, "com.github.minorgwhoisclient.WhoisRecord: queriedWhoisServers is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.QUERIED_WHOIS_SERVERS, "com.github.minorg.whoisclient.WhoisRecord: queriedWhoisServers is null");
             }
             if (queriedWhoisServers.isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.QUERIED_WHOIS_SERVERS, "com.github.minorgwhoisclient.WhoisRecord: queriedWhoisServers is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.QUERIED_WHOIS_SERVERS, "com.github.minorg.whoisclient.WhoisRecord: queriedWhoisServers is less than min length 1");
             }
             return queriedWhoisServers;
         }
@@ -954,15 +954,15 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public java.util.Date validateQueryTimestamp(final java.util.Date queryTimestamp) throws org.thryft.protocol.InputProtocolException {
             if (queryTimestamp == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.QUERY_TIMESTAMP, "com.github.minorgwhoisclient.WhoisRecord: queryTimestamp is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.QUERY_TIMESTAMP, "com.github.minorg.whoisclient.WhoisRecord: queryTimestamp is null");
             }
             return queryTimestamp;
         }
 
         @Override
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateAdministrativeContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> administrativeContact) throws org.thryft.protocol.InputProtocolException {
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateAdministrativeContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> administrativeContact) throws org.thryft.protocol.InputProtocolException {
             if (administrativeContact == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.ADMINISTRATIVE_CONTACT, "com.github.minorgwhoisclient.WhoisRecord: administrativeContact is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.ADMINISTRATIVE_CONTACT, "com.github.minorg.whoisclient.WhoisRecord: administrativeContact is null");
             }
             if (!administrativeContact.isPresent()) {
                 return administrativeContact;
@@ -971,9 +971,9 @@ public final class WhoisRecord implements org.thryft.Struct {
         }
 
         @Override
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateBillingContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> billingContact) throws org.thryft.protocol.InputProtocolException {
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateBillingContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> billingContact) throws org.thryft.protocol.InputProtocolException {
             if (billingContact == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.BILLING_CONTACT, "com.github.minorgwhoisclient.WhoisRecord: billingContact is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.BILLING_CONTACT, "com.github.minorg.whoisclient.WhoisRecord: billingContact is null");
             }
             if (!billingContact.isPresent()) {
                 return billingContact;
@@ -984,7 +984,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<java.util.Date> validateCreationDate(final com.google.common.base.Optional<java.util.Date> creationDate) throws org.thryft.protocol.InputProtocolException {
             if (creationDate == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.CREATION_DATE, "com.github.minorgwhoisclient.WhoisRecord: creationDate is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.CREATION_DATE, "com.github.minorg.whoisclient.WhoisRecord: creationDate is null");
             }
             if (!creationDate.isPresent()) {
                 return creationDate;
@@ -995,7 +995,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<java.util.Date> validateExpirationDate(final com.google.common.base.Optional<java.util.Date> expirationDate) throws org.thryft.protocol.InputProtocolException {
             if (expirationDate == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.EXPIRATION_DATE, "com.github.minorgwhoisclient.WhoisRecord: expirationDate is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.EXPIRATION_DATE, "com.github.minorg.whoisclient.WhoisRecord: expirationDate is null");
             }
             if (!expirationDate.isPresent()) {
                 return expirationDate;
@@ -1006,13 +1006,13 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<String> validateReferral(final com.google.common.base.Optional<String> referral) throws org.thryft.protocol.InputProtocolException {
             if (referral == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.REFERRAL, "com.github.minorgwhoisclient.WhoisRecord: referral is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.REFERRAL, "com.github.minorg.whoisclient.WhoisRecord: referral is null");
             }
             if (!referral.isPresent()) {
                 return referral;
             }
             if (referral.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.REFERRAL, "com.github.minorgwhoisclient.WhoisRecord: referral is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.REFERRAL, "com.github.minorg.whoisclient.WhoisRecord: referral is less than min length 1");
             }
             {
                 final int __strLen = referral.get().length();
@@ -1024,16 +1024,16 @@ public final class WhoisRecord implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.REFERRAL, String.format("com.github.minorgwhoisclient.WhoisRecord: referral is blank: '%s' (length=%d)", referral.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.REFERRAL, String.format("com.github.minorg.whoisclient.WhoisRecord: referral is blank: '%s' (length=%d)", referral.get(), __strLen));
                 }
             }
             return referral;
         }
 
         @Override
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateRegistrant(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> registrant) throws org.thryft.protocol.InputProtocolException {
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateRegistrant(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> registrant) throws org.thryft.protocol.InputProtocolException {
             if (registrant == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.REGISTRANT, "com.github.minorgwhoisclient.WhoisRecord: registrant is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.REGISTRANT, "com.github.minorg.whoisclient.WhoisRecord: registrant is null");
             }
             if (!registrant.isPresent()) {
                 return registrant;
@@ -1042,9 +1042,9 @@ public final class WhoisRecord implements org.thryft.Struct {
         }
 
         @Override
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateTechnicalContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> technicalContact) throws org.thryft.protocol.InputProtocolException {
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateTechnicalContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> technicalContact) throws org.thryft.protocol.InputProtocolException {
             if (technicalContact == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.TECHNICAL_CONTACT, "com.github.minorgwhoisclient.WhoisRecord: technicalContact is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.TECHNICAL_CONTACT, "com.github.minorg.whoisclient.WhoisRecord: technicalContact is null");
             }
             if (!technicalContact.isPresent()) {
                 return technicalContact;
@@ -1055,7 +1055,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         @Override
         public com.google.common.base.Optional<java.util.Date> validateUpdatedDate(final com.google.common.base.Optional<java.util.Date> updatedDate) throws org.thryft.protocol.InputProtocolException {
             if (updatedDate == null) {
-                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.UPDATED_DATE, "com.github.minorgwhoisclient.WhoisRecord: updatedDate is null");
+                throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.UPDATED_DATE, "com.github.minorg.whoisclient.WhoisRecord: updatedDate is null");
             }
             if (!updatedDate.isPresent()) {
                 return updatedDate;
@@ -1090,12 +1090,12 @@ public final class WhoisRecord implements org.thryft.Struct {
         }
 
         @Override
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateAdministrativeContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> administrativeContact) {
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateAdministrativeContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> administrativeContact) {
             return administrativeContact;
         }
 
         @Override
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateBillingContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> billingContact) {
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateBillingContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> billingContact) {
             return billingContact;
         }
 
@@ -1115,12 +1115,12 @@ public final class WhoisRecord implements org.thryft.Struct {
         }
 
         @Override
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateRegistrant(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> registrant) {
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateRegistrant(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> registrant) {
             return registrant;
         }
 
         @Override
-        public com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> validateTechnicalContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> technicalContact) {
+        public com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> validateTechnicalContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> technicalContact) {
             return technicalContact;
         }
 
@@ -1139,7 +1139,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         this(other.getQueriedName(), other.getQueriedWhoisServers(), other.getQueryTimestamp(), other.getAdministrativeContact(), other.getBillingContact(), other.getCreationDate(), other.getExpirationDate(), other.getReferral(), other.getRegistrant(), other.getTechnicalContact(), other.getUpdatedDate(), NopConstructionValidator.getInstance());
     }
 
-    protected WhoisRecord(final org.thryft.native_.InternetDomainName queriedName, final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers, final java.util.Date queryTimestamp, final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> administrativeContact, final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> billingContact, final com.google.common.base.Optional<java.util.Date> creationDate, final com.google.common.base.Optional<java.util.Date> expirationDate, final com.google.common.base.Optional<String> referral, final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> registrant, final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> technicalContact, final com.google.common.base.Optional<java.util.Date> updatedDate, ConstructionValidator validator) {
+    protected WhoisRecord(final org.thryft.native_.InternetDomainName queriedName, final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers, final java.util.Date queryTimestamp, final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> administrativeContact, final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> billingContact, final com.google.common.base.Optional<java.util.Date> creationDate, final com.google.common.base.Optional<java.util.Date> expirationDate, final com.google.common.base.Optional<String> referral, final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> registrant, final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> technicalContact, final com.google.common.base.Optional<java.util.Date> updatedDate, ConstructionValidator validator) {
         this.queriedName = validator.validateQueriedName(queriedName);
         this.queriedWhoisServers = validator.validateQueriedWhoisServers(queriedWhoisServers);
         this.queryTimestamp = validator.validateQueryTimestamp(queryTimestamp);
@@ -1169,20 +1169,20 @@ public final class WhoisRecord implements org.thryft.Struct {
      * Required factory method
      */
     public static WhoisRecord create(final org.thryft.native_.InternetDomainName queriedName, final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers, final java.util.Date queryTimestamp) {
-        return new WhoisRecord(queriedName, queriedWhoisServers, queryTimestamp, com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent(), com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent(), com.google.common.base.Optional.<java.util.Date> absent(), com.google.common.base.Optional.<java.util.Date> absent(), com.google.common.base.Optional.<String> absent(), com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent(), com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent(), com.google.common.base.Optional.<java.util.Date> absent(), DefaultConstructionValidator.getInstance());
+        return new WhoisRecord(queriedName, queriedWhoisServers, queryTimestamp, com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent(), com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent(), com.google.common.base.Optional.<java.util.Date> absent(), com.google.common.base.Optional.<java.util.Date> absent(), com.google.common.base.Optional.<String> absent(), com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent(), com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent(), com.google.common.base.Optional.<java.util.Date> absent(), DefaultConstructionValidator.getInstance());
     }
 
     /**
      * Total Nullable factory method
      */
-    public static WhoisRecord create(final org.thryft.native_.InternetDomainName queriedName, final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers, final java.util.Date queryTimestamp, final @javax.annotation.Nullable com.github.minorgwhoisclient.WhoisRegistrant administrativeContact, final @javax.annotation.Nullable com.github.minorgwhoisclient.WhoisRegistrant billingContact, final @javax.annotation.Nullable java.util.Date creationDate, final @javax.annotation.Nullable java.util.Date expirationDate, final @javax.annotation.Nullable String referral, final @javax.annotation.Nullable com.github.minorgwhoisclient.WhoisRegistrant registrant, final @javax.annotation.Nullable com.github.minorgwhoisclient.WhoisRegistrant technicalContact, final @javax.annotation.Nullable java.util.Date updatedDate) {
+    public static WhoisRecord create(final org.thryft.native_.InternetDomainName queriedName, final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers, final java.util.Date queryTimestamp, final @javax.annotation.Nullable com.github.minorg.whoisclient.WhoisRegistrant administrativeContact, final @javax.annotation.Nullable com.github.minorg.whoisclient.WhoisRegistrant billingContact, final @javax.annotation.Nullable java.util.Date creationDate, final @javax.annotation.Nullable java.util.Date expirationDate, final @javax.annotation.Nullable String referral, final @javax.annotation.Nullable com.github.minorg.whoisclient.WhoisRegistrant registrant, final @javax.annotation.Nullable com.github.minorg.whoisclient.WhoisRegistrant technicalContact, final @javax.annotation.Nullable java.util.Date updatedDate) {
         return new WhoisRecord(queriedName, queriedWhoisServers, queryTimestamp, com.google.common.base.Optional.fromNullable(administrativeContact), com.google.common.base.Optional.fromNullable(billingContact), com.google.common.base.Optional.fromNullable(creationDate), com.google.common.base.Optional.fromNullable(expirationDate), com.google.common.base.Optional.fromNullable(referral), com.google.common.base.Optional.fromNullable(registrant), com.google.common.base.Optional.fromNullable(technicalContact), com.google.common.base.Optional.fromNullable(updatedDate), DefaultConstructionValidator.getInstance());
     }
 
     /**
      * Optional factory method
      */
-    public static WhoisRecord create(final org.thryft.native_.InternetDomainName queriedName, final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers, final java.util.Date queryTimestamp, final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> administrativeContact, final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> billingContact, final com.google.common.base.Optional<java.util.Date> creationDate, final com.google.common.base.Optional<java.util.Date> expirationDate, final com.google.common.base.Optional<String> referral, final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> registrant, final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> technicalContact, final com.google.common.base.Optional<java.util.Date> updatedDate) {
+    public static WhoisRecord create(final org.thryft.native_.InternetDomainName queriedName, final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers, final java.util.Date queryTimestamp, final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> administrativeContact, final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> billingContact, final com.google.common.base.Optional<java.util.Date> creationDate, final com.google.common.base.Optional<java.util.Date> expirationDate, final com.google.common.base.Optional<String> referral, final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> registrant, final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> technicalContact, final com.google.common.base.Optional<java.util.Date> updatedDate) {
         return new WhoisRecord(queriedName, queriedWhoisServers, queryTimestamp, administrativeContact, billingContact, creationDate, expirationDate, referral, registrant, technicalContact, updatedDate, DefaultConstructionValidator.getInstance());
     }
 
@@ -1275,11 +1275,11 @@ public final class WhoisRecord implements org.thryft.Struct {
         }
     }
 
-    public final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> getAdministrativeContact() {
+    public final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> getAdministrativeContact() {
         return administrativeContact;
     }
 
-    public final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> getBillingContact() {
+    public final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> getBillingContact() {
         return billingContact;
     }
 
@@ -1310,11 +1310,11 @@ public final class WhoisRecord implements org.thryft.Struct {
         return referral;
     }
 
-    public final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> getRegistrant() {
+    public final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> getRegistrant() {
         return registrant;
     }
 
-    public final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> getTechnicalContact() {
+    public final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> getTechnicalContact() {
         return technicalContact;
     }
 
@@ -1374,13 +1374,13 @@ public final class WhoisRecord implements org.thryft.Struct {
         org.thryft.native_.InternetDomainName queriedName = null;
         com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers = null;
         java.util.Date queryTimestamp = null;
-        com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> administrativeContact = com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent();
-        com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> billingContact = com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent();
+        com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> administrativeContact = com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent();
+        com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> billingContact = com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent();
         com.google.common.base.Optional<java.util.Date> creationDate = com.google.common.base.Optional.<java.util.Date> absent();
         com.google.common.base.Optional<java.util.Date> expirationDate = com.google.common.base.Optional.<java.util.Date> absent();
         com.google.common.base.Optional<String> referral = com.google.common.base.Optional.<String> absent();
-        com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> registrant = com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent();
-        com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> technicalContact = com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent();
+        com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> registrant = com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent();
+        com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> technicalContact = com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent();
         com.google.common.base.Optional<java.util.Date> updatedDate = com.google.common.base.Optional.<java.util.Date> absent();
 
         try {
@@ -1420,10 +1420,10 @@ public final class WhoisRecord implements org.thryft.Struct {
                  throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.QUERY_TIMESTAMP, e);
             }
             if (__list.getSize() > 3) {
-                administrativeContact = com.google.common.base.Optional.of(com.github.minorgwhoisclient.WhoisRegistrant.readAsStruct(iprot));
+                administrativeContact = com.google.common.base.Optional.of(com.github.minorg.whoisclient.WhoisRegistrant.readAsStruct(iprot));
             }
             if (__list.getSize() > 4) {
-                billingContact = com.google.common.base.Optional.of(com.github.minorgwhoisclient.WhoisRegistrant.readAsStruct(iprot));
+                billingContact = com.google.common.base.Optional.of(com.github.minorg.whoisclient.WhoisRegistrant.readAsStruct(iprot));
             }
             if (__list.getSize() > 5) {
                 try {
@@ -1441,10 +1441,10 @@ public final class WhoisRecord implements org.thryft.Struct {
                 referral = com.google.common.base.Optional.of(iprot.readString());
             }
             if (__list.getSize() > 8) {
-                registrant = com.google.common.base.Optional.of(com.github.minorgwhoisclient.WhoisRegistrant.readAsStruct(iprot));
+                registrant = com.google.common.base.Optional.of(com.github.minorg.whoisclient.WhoisRegistrant.readAsStruct(iprot));
             }
             if (__list.getSize() > 9) {
-                technicalContact = com.google.common.base.Optional.of(com.github.minorgwhoisclient.WhoisRegistrant.readAsStruct(iprot));
+                technicalContact = com.google.common.base.Optional.of(com.github.minorg.whoisclient.WhoisRegistrant.readAsStruct(iprot));
             }
             if (__list.getSize() > 10) {
                 try {
@@ -1467,13 +1467,13 @@ public final class WhoisRecord implements org.thryft.Struct {
         org.thryft.native_.InternetDomainName queriedName = null;
         com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers = null;
         java.util.Date queryTimestamp = null;
-        com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> administrativeContact = com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent();
-        com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> billingContact = com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent();
+        com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> administrativeContact = com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent();
+        com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> billingContact = com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent();
         com.google.common.base.Optional<java.util.Date> creationDate = com.google.common.base.Optional.<java.util.Date> absent();
         com.google.common.base.Optional<java.util.Date> expirationDate = com.google.common.base.Optional.<java.util.Date> absent();
         com.google.common.base.Optional<String> referral = com.google.common.base.Optional.<String> absent();
-        com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> registrant = com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent();
-        com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> technicalContact = com.google.common.base.Optional.<com.github.minorgwhoisclient.WhoisRegistrant> absent();
+        com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> registrant = com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent();
+        com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> technicalContact = com.google.common.base.Optional.<com.github.minorg.whoisclient.WhoisRegistrant> absent();
         com.google.common.base.Optional<java.util.Date> updatedDate = com.google.common.base.Optional.<java.util.Date> absent();
 
         try {
@@ -1528,11 +1528,11 @@ public final class WhoisRecord implements org.thryft.Struct {
                     break;
                 }
                 case "administrative_contact": {
-                    administrativeContact = com.google.common.base.Optional.of(com.github.minorgwhoisclient.WhoisRegistrant.readAsStruct(iprot));
+                    administrativeContact = com.google.common.base.Optional.of(com.github.minorg.whoisclient.WhoisRegistrant.readAsStruct(iprot));
                     break;
                 }
                 case "billing_contact": {
-                    billingContact = com.google.common.base.Optional.of(com.github.minorgwhoisclient.WhoisRegistrant.readAsStruct(iprot));
+                    billingContact = com.google.common.base.Optional.of(com.github.minorg.whoisclient.WhoisRegistrant.readAsStruct(iprot));
                     break;
                 }
                 case "creation_date": {
@@ -1554,11 +1554,11 @@ public final class WhoisRecord implements org.thryft.Struct {
                     break;
                 }
                 case "registrant": {
-                    registrant = com.google.common.base.Optional.of(com.github.minorgwhoisclient.WhoisRegistrant.readAsStruct(iprot));
+                    registrant = com.google.common.base.Optional.of(com.github.minorg.whoisclient.WhoisRegistrant.readAsStruct(iprot));
                     break;
                 }
                 case "technical_contact": {
-                    technicalContact = com.google.common.base.Optional.of(com.github.minorgwhoisclient.WhoisRegistrant.readAsStruct(iprot));
+                    technicalContact = com.google.common.base.Optional.of(com.github.minorg.whoisclient.WhoisRegistrant.readAsStruct(iprot));
                     break;
                 }
                 case "updated_date": {
@@ -1583,19 +1583,19 @@ public final class WhoisRecord implements org.thryft.Struct {
         return new WhoisRecord(DefaultReadValidator.getInstance().validateQueriedName(queriedName), DefaultReadValidator.getInstance().validateQueriedWhoisServers(queriedWhoisServers), DefaultReadValidator.getInstance().validateQueryTimestamp(queryTimestamp), DefaultReadValidator.getInstance().validateAdministrativeContact(administrativeContact), DefaultReadValidator.getInstance().validateBillingContact(billingContact), DefaultReadValidator.getInstance().validateCreationDate(creationDate), DefaultReadValidator.getInstance().validateExpirationDate(expirationDate), DefaultReadValidator.getInstance().validateReferral(referral), DefaultReadValidator.getInstance().validateRegistrant(registrant), DefaultReadValidator.getInstance().validateTechnicalContact(technicalContact), DefaultReadValidator.getInstance().validateUpdatedDate(updatedDate), NopConstructionValidator.getInstance());
     }
 
-    public WhoisRecord replaceAdministrativeContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> administrativeContact) {
+    public WhoisRecord replaceAdministrativeContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> administrativeContact) {
         return new WhoisRecord(this.queriedName, this.queriedWhoisServers, this.queryTimestamp, DefaultConstructionValidator.getInstance().validateAdministrativeContact(administrativeContact), this.billingContact, this.creationDate, this.expirationDate, this.referral, this.registrant, this.technicalContact, this.updatedDate, NopConstructionValidator.getInstance());
     }
 
-    public WhoisRecord replaceAdministrativeContact(final com.github.minorgwhoisclient.WhoisRegistrant administrativeContact) {
+    public WhoisRecord replaceAdministrativeContact(final com.github.minorg.whoisclient.WhoisRegistrant administrativeContact) {
         return replaceAdministrativeContact(com.google.common.base.Optional.fromNullable(administrativeContact));
     }
 
-    public WhoisRecord replaceBillingContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> billingContact) {
+    public WhoisRecord replaceBillingContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> billingContact) {
         return new WhoisRecord(this.queriedName, this.queriedWhoisServers, this.queryTimestamp, this.administrativeContact, DefaultConstructionValidator.getInstance().validateBillingContact(billingContact), this.creationDate, this.expirationDate, this.referral, this.registrant, this.technicalContact, this.updatedDate, NopConstructionValidator.getInstance());
     }
 
-    public WhoisRecord replaceBillingContact(final com.github.minorgwhoisclient.WhoisRegistrant billingContact) {
+    public WhoisRecord replaceBillingContact(final com.github.minorg.whoisclient.WhoisRegistrant billingContact) {
         return replaceBillingContact(com.google.common.base.Optional.fromNullable(billingContact));
     }
 
@@ -1635,19 +1635,19 @@ public final class WhoisRecord implements org.thryft.Struct {
         return replaceReferral(com.google.common.base.Optional.fromNullable(referral));
     }
 
-    public WhoisRecord replaceRegistrant(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> registrant) {
+    public WhoisRecord replaceRegistrant(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> registrant) {
         return new WhoisRecord(this.queriedName, this.queriedWhoisServers, this.queryTimestamp, this.administrativeContact, this.billingContact, this.creationDate, this.expirationDate, this.referral, DefaultConstructionValidator.getInstance().validateRegistrant(registrant), this.technicalContact, this.updatedDate, NopConstructionValidator.getInstance());
     }
 
-    public WhoisRecord replaceRegistrant(final com.github.minorgwhoisclient.WhoisRegistrant registrant) {
+    public WhoisRecord replaceRegistrant(final com.github.minorg.whoisclient.WhoisRegistrant registrant) {
         return replaceRegistrant(com.google.common.base.Optional.fromNullable(registrant));
     }
 
-    public WhoisRecord replaceTechnicalContact(final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> technicalContact) {
+    public WhoisRecord replaceTechnicalContact(final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> technicalContact) {
         return new WhoisRecord(this.queriedName, this.queriedWhoisServers, this.queryTimestamp, this.administrativeContact, this.billingContact, this.creationDate, this.expirationDate, this.referral, this.registrant, DefaultConstructionValidator.getInstance().validateTechnicalContact(technicalContact), this.updatedDate, NopConstructionValidator.getInstance());
     }
 
-    public WhoisRecord replaceTechnicalContact(final com.github.minorgwhoisclient.WhoisRegistrant technicalContact) {
+    public WhoisRecord replaceTechnicalContact(final com.github.minorg.whoisclient.WhoisRegistrant technicalContact) {
         return replaceTechnicalContact(com.google.common.base.Optional.fromNullable(technicalContact));
     }
 
@@ -1739,7 +1739,7 @@ public final class WhoisRecord implements org.thryft.Struct {
 
     @Override
     public void writeAsStruct(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
-        oprot.writeStructBegin("com.github.minorgwhoisclient.WhoisRecord");
+        oprot.writeStructBegin("com.github.minorg.whoisclient.WhoisRecord");
         writeFields(oprot);
         oprot.writeStructEnd();
     }
@@ -1858,9 +1858,9 @@ public final class WhoisRecord implements org.thryft.Struct {
 
     private final java.util.Date queryTimestamp;
 
-    private final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> administrativeContact;
+    private final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> administrativeContact;
 
-    private final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> billingContact;
+    private final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> billingContact;
 
     private final com.google.common.base.Optional<java.util.Date> creationDate;
 
@@ -1868,9 +1868,9 @@ public final class WhoisRecord implements org.thryft.Struct {
 
     private final com.google.common.base.Optional<String> referral;
 
-    private final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> registrant;
+    private final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> registrant;
 
-    private final com.google.common.base.Optional<com.github.minorgwhoisclient.WhoisRegistrant> technicalContact;
+    private final com.google.common.base.Optional<com.github.minorg.whoisclient.WhoisRegistrant> technicalContact;
 
     private final com.google.common.base.Optional<java.util.Date> updatedDate;
 }
