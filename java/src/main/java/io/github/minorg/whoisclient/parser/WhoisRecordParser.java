@@ -60,7 +60,7 @@ public final class WhoisRecordParser {
         final ParsedWhoisRecord.Builder parsedBuilder = ParsedWhoisRecord.builder();
         final String text = raw.getText();
         if (!fieldParsers.parse(text, parsedBuilder)) {
-            logger.debug("unable to parse any fields from\n{}", text);
+            throw new WhoisRecordParseException("unable to parse any fields from\n" + text);
         }
         return WhoisRecord.builder()
                 .setMetadata(WhoisRecordMetadata.builder().setQueriedName(raw.getQueriedName())

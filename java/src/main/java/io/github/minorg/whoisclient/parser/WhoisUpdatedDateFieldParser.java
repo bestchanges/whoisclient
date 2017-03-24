@@ -15,7 +15,9 @@ public final class WhoisUpdatedDateFieldParser extends WhoisDateFieldParser {
                         "Modified\\s?[.]*:\\s?(?<val>.+)", "(C|c)hanged:\\s*(?<val>.+)", "last_update:\\s*(?<val>.+)",
                         "Last Update\\s?[.]*:\\s?(?<val>.+)", "Last updated on (?<val>.+) [a-z]{3,4}",
                         "Last updated:\\s*(?<val>.+)", "last-updated:\\s*(?<val>.+)",
-                        "\\[Last Update\\]\\s*(?<val>.+) \\([A-Z]+\\)",
-                        "Last update of whois database:\\s?[a-z]{3}, (?<val>.+) [a-z]{3,4}" });
+                        "\\[Last Update\\]\\s*(?<val>.+) \\([A-Z]+\\)"
+                // "Last update of whois database:\\s?[a-z]{3}, (?<val>.+)
+                // [a-z]{3,4}"
+                });
     }
 }
