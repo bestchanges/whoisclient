@@ -26,7 +26,8 @@ public final class WhoisRecordParser {
             text = textWithUnixLineEndings;
         }
 
-        if (raw.getQueriedWhoisServers().get(raw.getQueriedWhoisServers().size() - 1)
+        if (raw.getQueriedWhoisServers()
+                .get(raw.getQueriedWhoisServers().size() - 1).toString()
                 .equals("whois.verisign-grs.com")) {
             // VeriSign returns multiple records
             final Pattern domainNamePattern = Pattern

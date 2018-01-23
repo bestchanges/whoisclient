@@ -58,9 +58,17 @@ public final class WhoisClient {
 
             if (!record.getParsed().getReferral().isPresent()) {
                 break;
-            } else if (queriedWhoisServers.contains(record.getParsed().getReferral().get().toLowerCase())) {
-                logger.warn("referral loop: {}", record.getParsed().getReferral().get());
-                break;
+            }
+            try {
+                final InternetDomainName referralParsed = InternetDomainName
+                        .from(record.getParsed().getReferral().get()
+                                .toLowerCase());
+                if (queriedWhoisServers.contains(referralParsed)) {
+                    logger.warn("referral loop: {}",
+                            record.getParsed().getReferral().get());
+                    break;
+                }
+            } catch (final IllegalArgumentException e) {
             }
 
             try {
