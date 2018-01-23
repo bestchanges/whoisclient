@@ -17,26 +17,28 @@ public final class RawWhoisRecord implements org.thryft.Struct {
         }
 
         protected RawWhoisRecord _build(final org.thryft.native_.InternetDomainName queriedName, final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers, final java.util.Date queryTimestamp, final String text) {
-            return new RawWhoisRecord(queriedName, queriedWhoisServers, queryTimestamp, text, DefaultConstructionValidator.getInstance());
+            return new RawWhoisRecord(queriedName, queriedWhoisServers, queryTimestamp, text);
         }
 
         public RawWhoisRecord build() {
+            UncheckedValidator.validate(queriedName, queriedWhoisServers, queryTimestamp, text);
+
             return _build(queriedName, queriedWhoisServers, queryTimestamp, text);
         }
 
-        public final org.thryft.native_.InternetDomainName getQueriedName() {
+        public final @javax.annotation.Nullable org.thryft.native_.InternetDomainName getQueriedName() {
             return queriedName;
         }
 
-        public final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> getQueriedWhoisServers() {
+        public final @javax.annotation.Nullable com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> getQueriedWhoisServers() {
             return queriedWhoisServers;
         }
 
-        public final java.util.Date getQueryTimestamp() {
+        public final @javax.annotation.Nullable java.util.Date getQueryTimestamp() {
             return queryTimestamp;
         }
 
-        public final String getText() {
+        public final @javax.annotation.Nullable String getText() {
             return text;
         }
 
@@ -212,22 +214,26 @@ public final class RawWhoisRecord implements org.thryft.Struct {
         }
 
         public Builder setQueriedName(final org.thryft.native_.InternetDomainName queriedName) {
-            this.queriedName = DefaultConstructionValidator.getInstance().validateQueriedName(queriedName);
+            UncheckedValidator.validateQueriedName(queriedName);
+            this.queriedName = queriedName;
             return this;
         }
 
         public Builder setQueriedWhoisServers(final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers) {
-            this.queriedWhoisServers = DefaultConstructionValidator.getInstance().validateQueriedWhoisServers(queriedWhoisServers);
+            UncheckedValidator.validateQueriedWhoisServers(queriedWhoisServers);
+            this.queriedWhoisServers = queriedWhoisServers;
             return this;
         }
 
         public Builder setQueryTimestamp(final java.util.Date queryTimestamp) {
-            this.queryTimestamp = DefaultConstructionValidator.getInstance().validateQueryTimestamp(queryTimestamp);
+            UncheckedValidator.validateQueryTimestamp(queryTimestamp);
+            this.queryTimestamp = queryTimestamp;
             return this;
         }
 
         public Builder setText(final String text) {
-            this.text = DefaultConstructionValidator.getInstance().validateText(text);
+            UncheckedValidator.validateText(text);
+            this.text = text;
             return this;
         }
 
@@ -275,10 +281,10 @@ public final class RawWhoisRecord implements org.thryft.Struct {
             return this;
         }
 
-        private org.thryft.native_.InternetDomainName queriedName;
-        private com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers;
-        private java.util.Date queryTimestamp;
-        private String text;
+        private @javax.annotation.Nullable org.thryft.native_.InternetDomainName queriedName;
+        private @javax.annotation.Nullable com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers;
+        private @javax.annotation.Nullable java.util.Date queryTimestamp;
+        private @javax.annotation.Nullable String text;
     }
 
     public final static class Factory implements org.thryft.CompoundType.Factory<RawWhoisRecord> {
@@ -312,10 +318,10 @@ public final class RawWhoisRecord implements org.thryft.Struct {
 
     @SuppressWarnings("serial")
     public enum FieldMetadata implements org.thryft.CompoundType.FieldMetadata {
-        QUERIED_NAME("queriedName", new com.google.common.reflect.TypeToken<org.thryft.native_.InternetDomainName>() {}, true, 0, "queried_name", org.thryft.protocol.Type.STRING),
-        QUERIED_WHOIS_SERVERS("queriedWhoisServers", new com.google.common.reflect.TypeToken<com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName>>() {}, true, 0, "queried_whois_servers", org.thryft.protocol.Type.LIST),
-        QUERY_TIMESTAMP("queryTimestamp", new com.google.common.reflect.TypeToken<java.util.Date>() {}, true, 0, "query_timestamp", org.thryft.protocol.Type.I64),
-        TEXT("text", new com.google.common.reflect.TypeToken<String>() {}, true, 0, "text", org.thryft.protocol.Type.STRING);
+        QUERIED_NAME("queriedName", new com.google.common.reflect.TypeToken<org.thryft.native_.InternetDomainName>() {}, true, (short)0, "queried_name", org.thryft.protocol.Type.STRING),
+        QUERIED_WHOIS_SERVERS("queriedWhoisServers", new com.google.common.reflect.TypeToken<com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName>>() {}, true, (short)0, "queried_whois_servers", org.thryft.protocol.Type.LIST),
+        QUERY_TIMESTAMP("queryTimestamp", new com.google.common.reflect.TypeToken<java.util.Date>() {}, true, (short)0, "query_timestamp", org.thryft.protocol.Type.I64),
+        TEXT("text", new com.google.common.reflect.TypeToken<String>() {}, true, (short)0, "text", org.thryft.protocol.Type.STRING);
 
         @Override
         public String getJavaName() {
@@ -328,7 +334,7 @@ public final class RawWhoisRecord implements org.thryft.Struct {
         }
 
         @Override
-        public int getThriftId() {
+        public short getThriftId() {
             return thriftId;
         }
 
@@ -379,7 +385,7 @@ public final class RawWhoisRecord implements org.thryft.Struct {
             }
         }
 
-        private FieldMetadata(final String javaName, final com.google.common.reflect.TypeToken<?> javaType, final boolean required, final int thriftId, final String thriftName, final org.thryft.protocol.Type thriftProtocolType) {
+        private FieldMetadata(final String javaName, final com.google.common.reflect.TypeToken<?> javaType, final boolean required, final short thriftId, final String thriftName, final org.thryft.protocol.Type thriftProtocolType) {
             this.javaName = javaName;
             this.javaType = javaType;
             this.required = required;
@@ -396,194 +402,101 @@ public final class RawWhoisRecord implements org.thryft.Struct {
         private final String javaName;
         private final com.google.common.reflect.TypeToken<?> javaType;
         private final boolean required;
-        private final int thriftId;
+        private final short thriftId;
         private final String thriftName;
         private final String thriftProtocolKey;
         private final org.thryft.protocol.Type thriftProtocolType;
     }
 
-    public interface Validator<ExceptionT extends Exception> {
-        public org.thryft.native_.InternetDomainName validateQueriedName(final org.thryft.native_.InternetDomainName queriedName) throws ExceptionT;
-
-        public com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> validateQueriedWhoisServers(final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers) throws ExceptionT;
-
-        public java.util.Date validateQueryTimestamp(final java.util.Date queryTimestamp) throws ExceptionT;
-
-        public String validateText(final String text) throws ExceptionT;
-    }
-
-    public interface ConstructionValidator extends Validator<RuntimeException> {
-    }
-
-    public static class DefaultConstructionValidator implements ConstructionValidator {
-        public static DefaultConstructionValidator getInstance() {
-            return instance;
+    public final static class ReadValidator {
+        public static void validate(final org.thryft.native_.InternetDomainName queriedName, final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers, final java.util.Date queryTimestamp, final String text) throws org.thryft.protocol.InputProtocolException {
+            validateQueriedName(queriedName);
+            validateQueriedWhoisServers(queriedWhoisServers);
+            validateQueryTimestamp(queryTimestamp);
+            validateText(text);
         }
 
-        public DefaultConstructionValidator() {
-        }
-
-        @Override
-        public org.thryft.native_.InternetDomainName validateQueriedName(final org.thryft.native_.InternetDomainName queriedName) throws RuntimeException {
-            if (queriedName == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.RawWhoisRecord: queriedName is null");
-            }
-            return queriedName;
-        }
-
-        @Override
-        public com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> validateQueriedWhoisServers(final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers) throws RuntimeException {
-            if (queriedWhoisServers == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.RawWhoisRecord: queriedWhoisServers is null");
-            }
-            if (queriedWhoisServers.isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.RawWhoisRecord: queriedWhoisServers is less than min length 1");
-            }
-            return queriedWhoisServers;
-        }
-
-        @Override
-        public java.util.Date validateQueryTimestamp(final java.util.Date queryTimestamp) throws RuntimeException {
-            if (queryTimestamp == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.RawWhoisRecord: queryTimestamp is null");
-            }
-            return queryTimestamp;
-        }
-
-        @Override
-        public String validateText(final String text) throws RuntimeException {
-            if (text == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.RawWhoisRecord: text is null");
-            }
-            return text;
-        }
-
-        private final static DefaultConstructionValidator instance = new DefaultConstructionValidator();
-    }
-
-    public static class NopConstructionValidator implements ConstructionValidator {
-        public static NopConstructionValidator getInstance() {
-            return instance;
-        }
-
-        public NopConstructionValidator() {
-        }
-
-        @Override
-        public org.thryft.native_.InternetDomainName validateQueriedName(final org.thryft.native_.InternetDomainName queriedName) {
-            return queriedName;
-        }
-
-        @Override
-        public com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> validateQueriedWhoisServers(final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers) {
-            return queriedWhoisServers;
-        }
-
-        @Override
-        public java.util.Date validateQueryTimestamp(final java.util.Date queryTimestamp) {
-            return queryTimestamp;
-        }
-
-        @Override
-        public String validateText(final String text) {
-            return text;
-        }
-
-        private final static NopConstructionValidator instance = new NopConstructionValidator();
-    }
-
-    public interface ReadValidator extends Validator<org.thryft.protocol.InputProtocolException> {
-    }
-
-    public static class DefaultReadValidator implements ReadValidator {
-        public static DefaultReadValidator getInstance() {
-            return instance;
-        }
-
-        public DefaultReadValidator() {
-        }
-
-        @Override
-        public org.thryft.native_.InternetDomainName validateQueriedName(final org.thryft.native_.InternetDomainName queriedName) throws org.thryft.protocol.InputProtocolException {
+        public static void validateQueriedName(final org.thryft.native_.InternetDomainName queriedName) throws org.thryft.protocol.InputProtocolException {
             if (queriedName == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.QUERIED_NAME, "io.github.minorg.whoisclient.RawWhoisRecord: queriedName is null");
             }
-            return queriedName;
         }
 
-        @Override
-        public com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> validateQueriedWhoisServers(final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers) throws org.thryft.protocol.InputProtocolException {
+        public static void validateQueriedWhoisServers(final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers) throws org.thryft.protocol.InputProtocolException {
             if (queriedWhoisServers == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.QUERIED_WHOIS_SERVERS, "io.github.minorg.whoisclient.RawWhoisRecord: queriedWhoisServers is null");
             }
             if (queriedWhoisServers.isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.QUERIED_WHOIS_SERVERS, "io.github.minorg.whoisclient.RawWhoisRecord: queriedWhoisServers is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.QUERIED_WHOIS_SERVERS, "io.github.minorg.whoisclient.RawWhoisRecord.queriedWhoisServers: less than min length 1");
             }
-            return queriedWhoisServers;
         }
 
-        @Override
-        public java.util.Date validateQueryTimestamp(final java.util.Date queryTimestamp) throws org.thryft.protocol.InputProtocolException {
+        public static void validateQueryTimestamp(final java.util.Date queryTimestamp) throws org.thryft.protocol.InputProtocolException {
             if (queryTimestamp == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.QUERY_TIMESTAMP, "io.github.minorg.whoisclient.RawWhoisRecord: queryTimestamp is null");
             }
-            return queryTimestamp;
         }
 
-        @Override
-        public String validateText(final String text) throws org.thryft.protocol.InputProtocolException {
+        public static void validateText(final String text) throws org.thryft.protocol.InputProtocolException {
             if (text == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.TEXT, "io.github.minorg.whoisclient.RawWhoisRecord: text is null");
             }
-            return text;
         }
-
-        private final static DefaultReadValidator instance = new DefaultReadValidator();
     }
 
-    public static class NopReadValidator implements ReadValidator {
-        public static NopReadValidator getInstance() {
-            return instance;
+    public final static class UncheckedValidator {
+        public static void validate(final org.thryft.native_.InternetDomainName queriedName, final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers, final java.util.Date queryTimestamp, final String text) {
+            validateQueriedName(queriedName);
+            validateQueriedWhoisServers(queriedWhoisServers);
+            validateQueryTimestamp(queryTimestamp);
+            validateText(text);
         }
 
-        public NopReadValidator() {
+        public static void validateQueriedName(final org.thryft.native_.InternetDomainName queriedName) {
+            if (queriedName == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.RawWhoisRecord: queriedName is null");
+            }
         }
 
-        @Override
-        public org.thryft.native_.InternetDomainName validateQueriedName(final org.thryft.native_.InternetDomainName queriedName) {
-            return queriedName;
+        public static void validateQueriedWhoisServers(final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers) {
+            if (queriedWhoisServers == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.RawWhoisRecord: queriedWhoisServers is null");
+            }
+            if (queriedWhoisServers.isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.RawWhoisRecord.queriedWhoisServers: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> validateQueriedWhoisServers(final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers) {
-            return queriedWhoisServers;
+        public static void validateQueryTimestamp(final java.util.Date queryTimestamp) {
+            if (queryTimestamp == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.RawWhoisRecord: queryTimestamp is null");
+            }
         }
 
-        @Override
-        public java.util.Date validateQueryTimestamp(final java.util.Date queryTimestamp) {
-            return queryTimestamp;
+        public static void validateText(final String text) {
+            if (text == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.RawWhoisRecord: text is null");
+            }
         }
-
-        @Override
-        public String validateText(final String text) {
-            return text;
-        }
-
-        private final static NopReadValidator instance = new NopReadValidator();
     }
 
     /**
      * Copy constructor
      */
     public RawWhoisRecord(final RawWhoisRecord other) {
-        this(other.getQueriedName(), other.getQueriedWhoisServers(), other.getQueryTimestamp(), other.getText(), NopConstructionValidator.getInstance());
+        this(other.getQueriedName(), other.getQueriedWhoisServers(), other.getQueryTimestamp(), other.getText());
     }
 
-    protected RawWhoisRecord(final org.thryft.native_.InternetDomainName queriedName, final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers, final java.util.Date queryTimestamp, final String text, ConstructionValidator validator) {
-        this.queriedName = validator.validateQueriedName(queriedName);
-        this.queriedWhoisServers = validator.validateQueriedWhoisServers(queriedWhoisServers);
-        this.queryTimestamp = validator.validateQueryTimestamp(queryTimestamp);
-        this.text = validator.validateText(text);
+    /**
+     * Total constructor
+     *
+     * All fields should have been validated before calling this.
+     */
+    protected RawWhoisRecord(final org.thryft.native_.InternetDomainName queriedName, final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers, final java.util.Date queryTimestamp, final String text) {
+        this.queriedName = queriedName;
+        this.queriedWhoisServers = queriedWhoisServers;
+        this.queryTimestamp = queryTimestamp;
+        this.text = text;
     }
 
     public static Builder builder() {
@@ -602,7 +515,8 @@ public final class RawWhoisRecord implements org.thryft.Struct {
      * Optional factory method
      */
     public static RawWhoisRecord create(final org.thryft.native_.InternetDomainName queriedName, final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers, final java.util.Date queryTimestamp, final String text) {
-        return new RawWhoisRecord(queriedName, queriedWhoisServers, queryTimestamp, text, DefaultConstructionValidator.getInstance());
+        UncheckedValidator.validate(queriedName, queriedWhoisServers, queryTimestamp, text);
+        return new RawWhoisRecord(queriedName, queriedWhoisServers, queryTimestamp, text);
     }
 
     @Override
@@ -701,10 +615,10 @@ public final class RawWhoisRecord implements org.thryft.Struct {
     }
 
     public static RawWhoisRecord readAsList(final org.thryft.protocol.InputProtocol iprot) throws org.thryft.protocol.InputProtocolException {
-        org.thryft.native_.InternetDomainName queriedName = null;
-        com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers = null;
-        java.util.Date queryTimestamp = null;
-        String text = null;
+        org.thryft.native_.InternetDomainName queriedName;
+        com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers;
+        java.util.Date queryTimestamp;
+        String text;
 
         try {
             iprot.readListBegin();
@@ -747,7 +661,10 @@ public final class RawWhoisRecord implements org.thryft.Struct {
         } catch (final RuntimeException e) {
             throw new IllegalStateException(e);
         }
-        return new RawWhoisRecord(DefaultReadValidator.getInstance().validateQueriedName(queriedName), DefaultReadValidator.getInstance().validateQueriedWhoisServers(queriedWhoisServers), DefaultReadValidator.getInstance().validateQueryTimestamp(queryTimestamp), DefaultReadValidator.getInstance().validateText(text), NopConstructionValidator.getInstance());
+
+        ReadValidator.validate(queriedName, queriedWhoisServers, queryTimestamp, text);
+
+        return new RawWhoisRecord(queriedName, queriedWhoisServers, queryTimestamp, text);
     }
 
     public static RawWhoisRecord readAsStruct(final org.thryft.protocol.InputProtocol iprot) throws org.thryft.protocol.InputProtocolException {
@@ -755,10 +672,10 @@ public final class RawWhoisRecord implements org.thryft.Struct {
     }
 
     public static RawWhoisRecord readAsStruct(final org.thryft.protocol.InputProtocol iprot, final com.google.common.base.Optional<UnknownFieldCallback> unknownFieldCallback) throws org.thryft.protocol.InputProtocolException {
-        org.thryft.native_.InternetDomainName queriedName = null;
-        com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers = null;
-        java.util.Date queryTimestamp = null;
-        String text = null;
+        @javax.annotation.Nullable org.thryft.native_.InternetDomainName queriedName = null;
+        @javax.annotation.Nullable com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers = null;
+        @javax.annotation.Nullable java.util.Date queryTimestamp = null;
+        @javax.annotation.Nullable String text = null;
 
         try {
             iprot.readStructBegin();
@@ -827,23 +744,30 @@ public final class RawWhoisRecord implements org.thryft.Struct {
         } catch (final RuntimeException e) {
             throw new IllegalStateException(e);
         }
-        return new RawWhoisRecord(DefaultReadValidator.getInstance().validateQueriedName(queriedName), DefaultReadValidator.getInstance().validateQueriedWhoisServers(queriedWhoisServers), DefaultReadValidator.getInstance().validateQueryTimestamp(queryTimestamp), DefaultReadValidator.getInstance().validateText(text), NopConstructionValidator.getInstance());
+
+        ReadValidator.validate(queriedName, queriedWhoisServers, queryTimestamp, text);
+
+        return new RawWhoisRecord(queriedName, queriedWhoisServers, queryTimestamp, text);
     }
 
     public RawWhoisRecord replaceQueriedName(final org.thryft.native_.InternetDomainName queriedName) {
-        return new RawWhoisRecord(DefaultConstructionValidator.getInstance().validateQueriedName(queriedName), this.queriedWhoisServers, this.queryTimestamp, this.text, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateQueriedName(queriedName);
+        return new RawWhoisRecord(queriedName, this.queriedWhoisServers, this.queryTimestamp, this.text);
     }
 
     public RawWhoisRecord replaceQueriedWhoisServers(final com.google.common.collect.ImmutableList<org.thryft.native_.InternetDomainName> queriedWhoisServers) {
-        return new RawWhoisRecord(this.queriedName, DefaultConstructionValidator.getInstance().validateQueriedWhoisServers(queriedWhoisServers), this.queryTimestamp, this.text, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateQueriedWhoisServers(queriedWhoisServers);
+        return new RawWhoisRecord(this.queriedName, queriedWhoisServers, this.queryTimestamp, this.text);
     }
 
     public RawWhoisRecord replaceQueryTimestamp(final java.util.Date queryTimestamp) {
-        return new RawWhoisRecord(this.queriedName, this.queriedWhoisServers, DefaultConstructionValidator.getInstance().validateQueryTimestamp(queryTimestamp), this.text, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateQueryTimestamp(queryTimestamp);
+        return new RawWhoisRecord(this.queriedName, this.queriedWhoisServers, queryTimestamp, this.text);
     }
 
     public RawWhoisRecord replaceText(final String text) {
-        return new RawWhoisRecord(this.queriedName, this.queriedWhoisServers, this.queryTimestamp, DefaultConstructionValidator.getInstance().validateText(text), NopConstructionValidator.getInstance());
+        UncheckedValidator.validateText(text);
+        return new RawWhoisRecord(this.queriedName, this.queriedWhoisServers, this.queryTimestamp, text);
     }
 
     @Override
@@ -891,13 +815,13 @@ public final class RawWhoisRecord implements org.thryft.Struct {
     }
 
     public void writeQueriedNameField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
-        oprot.writeFieldBegin("queried_name", org.thryft.protocol.Type.STRING, (short)0);
+        oprot.writeFieldBegin(FieldMetadata.QUERIED_NAME);
         oprot.writeString(getQueriedName().toString());
         oprot.writeFieldEnd();
     }
 
     public void writeQueriedWhoisServersField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
-        oprot.writeFieldBegin("queried_whois_servers", org.thryft.protocol.Type.LIST, (short)0);
+        oprot.writeFieldBegin(FieldMetadata.QUERIED_WHOIS_SERVERS);
         oprot.writeListBegin(org.thryft.protocol.Type.STRING, getQueriedWhoisServers().size());
         for (final org.thryft.native_.InternetDomainName _iter0 : getQueriedWhoisServers()) {
             oprot.writeString(_iter0.toString());
@@ -907,13 +831,13 @@ public final class RawWhoisRecord implements org.thryft.Struct {
     }
 
     public void writeQueryTimestampField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
-        oprot.writeFieldBegin("query_timestamp", org.thryft.protocol.Type.I64, (short)0);
+        oprot.writeFieldBegin(FieldMetadata.QUERY_TIMESTAMP);
         oprot.writeDateTime(getQueryTimestamp());
         oprot.writeFieldEnd();
     }
 
     public void writeTextField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
-        oprot.writeFieldBegin("text", org.thryft.protocol.Type.STRING, (short)0);
+        oprot.writeFieldBegin(FieldMetadata.TEXT);
         oprot.writeString(getText());
         oprot.writeFieldEnd();
     }

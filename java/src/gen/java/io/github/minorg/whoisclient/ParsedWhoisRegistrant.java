@@ -43,10 +43,12 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         protected ParsedWhoisRegistrant _build(final com.google.common.base.Optional<String> airportCode, final com.google.common.base.Optional<String> city, final com.google.common.base.Optional<String> country, final com.google.common.base.Optional<String> countryCode, final com.google.common.base.Optional<String> district, final com.google.common.base.Optional<String> email, final com.google.common.base.Optional<String> firstName, final com.google.common.base.Optional<String> handle, final com.google.common.base.Optional<String> lastName, final com.google.common.base.Optional<String> name, final com.google.common.base.Optional<String> organization, final com.google.common.base.Optional<String> phone, final com.google.common.base.Optional<String> phoneExt, final com.google.common.base.Optional<String> postalCode, final com.google.common.base.Optional<String> state, final com.google.common.base.Optional<String> stateCode, final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> street) {
-            return new ParsedWhoisRegistrant(airportCode, city, country, countryCode, district, email, firstName, handle, lastName, name, organization, phone, phoneExt, postalCode, state, stateCode, street, DefaultConstructionValidator.getInstance());
+            return new ParsedWhoisRegistrant(airportCode, city, country, countryCode, district, email, firstName, handle, lastName, name, organization, phone, phoneExt, postalCode, state, stateCode, street);
         }
 
         public ParsedWhoisRegistrant build() {
+            UncheckedValidator.validate(airportCode, city, country, countryCode, district, email, firstName, handle, lastName, name, organization, phone, phoneExt, postalCode, state, stateCode, street);
+
             return _build(airportCode, city, country, countryCode, district, email, firstName, handle, lastName, name, organization, phone, phoneExt, postalCode, state, stateCode, street);
         }
 
@@ -367,7 +369,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         public Builder setAirportCode(final com.google.common.base.Optional<String> airportCode) {
-            this.airportCode = DefaultConstructionValidator.getInstance().validateAirportCode(airportCode);
+            UncheckedValidator.validateAirportCode(airportCode);
+            this.airportCode = airportCode;
             return this;
         }
 
@@ -376,7 +379,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         public Builder setCity(final com.google.common.base.Optional<String> city) {
-            this.city = DefaultConstructionValidator.getInstance().validateCity(city);
+            UncheckedValidator.validateCity(city);
+            this.city = city;
             return this;
         }
 
@@ -385,7 +389,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         public Builder setCountry(final com.google.common.base.Optional<String> country) {
-            this.country = DefaultConstructionValidator.getInstance().validateCountry(country);
+            UncheckedValidator.validateCountry(country);
+            this.country = country;
             return this;
         }
 
@@ -394,7 +399,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         public Builder setCountryCode(final com.google.common.base.Optional<String> countryCode) {
-            this.countryCode = DefaultConstructionValidator.getInstance().validateCountryCode(countryCode);
+            UncheckedValidator.validateCountryCode(countryCode);
+            this.countryCode = countryCode;
             return this;
         }
 
@@ -403,7 +409,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         public Builder setDistrict(final com.google.common.base.Optional<String> district) {
-            this.district = DefaultConstructionValidator.getInstance().validateDistrict(district);
+            UncheckedValidator.validateDistrict(district);
+            this.district = district;
             return this;
         }
 
@@ -412,7 +419,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         public Builder setEmail(final com.google.common.base.Optional<String> email) {
-            this.email = DefaultConstructionValidator.getInstance().validateEmail(email);
+            UncheckedValidator.validateEmail(email);
+            this.email = email;
             return this;
         }
 
@@ -421,7 +429,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         public Builder setFirstName(final com.google.common.base.Optional<String> firstName) {
-            this.firstName = DefaultConstructionValidator.getInstance().validateFirstName(firstName);
+            UncheckedValidator.validateFirstName(firstName);
+            this.firstName = firstName;
             return this;
         }
 
@@ -430,7 +439,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         public Builder setHandle(final com.google.common.base.Optional<String> handle) {
-            this.handle = DefaultConstructionValidator.getInstance().validateHandle(handle);
+            UncheckedValidator.validateHandle(handle);
+            this.handle = handle;
             return this;
         }
 
@@ -497,7 +507,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         public Builder setLastName(final com.google.common.base.Optional<String> lastName) {
-            this.lastName = DefaultConstructionValidator.getInstance().validateLastName(lastName);
+            UncheckedValidator.validateLastName(lastName);
+            this.lastName = lastName;
             return this;
         }
 
@@ -506,7 +517,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         public Builder setName(final com.google.common.base.Optional<String> name) {
-            this.name = DefaultConstructionValidator.getInstance().validateName(name);
+            UncheckedValidator.validateName(name);
+            this.name = name;
             return this;
         }
 
@@ -515,7 +527,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         public Builder setOrganization(final com.google.common.base.Optional<String> organization) {
-            this.organization = DefaultConstructionValidator.getInstance().validateOrganization(organization);
+            UncheckedValidator.validateOrganization(organization);
+            this.organization = organization;
             return this;
         }
 
@@ -524,7 +537,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         public Builder setPhone(final com.google.common.base.Optional<String> phone) {
-            this.phone = DefaultConstructionValidator.getInstance().validatePhone(phone);
+            UncheckedValidator.validatePhone(phone);
+            this.phone = phone;
             return this;
         }
 
@@ -533,7 +547,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         public Builder setPhoneExt(final com.google.common.base.Optional<String> phoneExt) {
-            this.phoneExt = DefaultConstructionValidator.getInstance().validatePhoneExt(phoneExt);
+            UncheckedValidator.validatePhoneExt(phoneExt);
+            this.phoneExt = phoneExt;
             return this;
         }
 
@@ -542,7 +557,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         public Builder setPostalCode(final com.google.common.base.Optional<String> postalCode) {
-            this.postalCode = DefaultConstructionValidator.getInstance().validatePostalCode(postalCode);
+            UncheckedValidator.validatePostalCode(postalCode);
+            this.postalCode = postalCode;
             return this;
         }
 
@@ -551,7 +567,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         public Builder setState(final com.google.common.base.Optional<String> state) {
-            this.state = DefaultConstructionValidator.getInstance().validateState(state);
+            UncheckedValidator.validateState(state);
+            this.state = state;
             return this;
         }
 
@@ -560,7 +577,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         public Builder setStateCode(final com.google.common.base.Optional<String> stateCode) {
-            this.stateCode = DefaultConstructionValidator.getInstance().validateStateCode(stateCode);
+            UncheckedValidator.validateStateCode(stateCode);
+            this.stateCode = stateCode;
             return this;
         }
 
@@ -569,7 +587,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         public Builder setStreet(final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> street) {
-            this.street = DefaultConstructionValidator.getInstance().validateStreet(street);
+            UncheckedValidator.validateStreet(street);
+            this.street = street;
             return this;
         }
 
@@ -749,23 +768,23 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     @SuppressWarnings("serial")
     public enum FieldMetadata implements org.thryft.CompoundType.FieldMetadata {
-        AIRPORT_CODE("airportCode", new com.google.common.reflect.TypeToken<String>() {}, false, 0, "airport_code", org.thryft.protocol.Type.STRING),
-        CITY("city", new com.google.common.reflect.TypeToken<String>() {}, false, 0, "city", org.thryft.protocol.Type.STRING),
-        COUNTRY("country", new com.google.common.reflect.TypeToken<String>() {}, false, 0, "country", org.thryft.protocol.Type.STRING),
-        COUNTRY_CODE("countryCode", new com.google.common.reflect.TypeToken<String>() {}, false, 0, "country_code", org.thryft.protocol.Type.STRING),
-        DISTRICT("district", new com.google.common.reflect.TypeToken<String>() {}, false, 0, "district", org.thryft.protocol.Type.STRING),
-        EMAIL("email", new com.google.common.reflect.TypeToken<String>() {}, false, 0, "email", org.thryft.protocol.Type.STRING),
-        FIRST_NAME("firstName", new com.google.common.reflect.TypeToken<String>() {}, false, 0, "first_name", org.thryft.protocol.Type.STRING),
-        HANDLE("handle", new com.google.common.reflect.TypeToken<String>() {}, false, 0, "handle", org.thryft.protocol.Type.STRING),
-        LAST_NAME("lastName", new com.google.common.reflect.TypeToken<String>() {}, false, 0, "last_name", org.thryft.protocol.Type.STRING),
-        NAME("name", new com.google.common.reflect.TypeToken<String>() {}, false, 0, "name", org.thryft.protocol.Type.STRING),
-        ORGANIZATION("organization", new com.google.common.reflect.TypeToken<String>() {}, false, 0, "organization", org.thryft.protocol.Type.STRING),
-        PHONE("phone", new com.google.common.reflect.TypeToken<String>() {}, false, 0, "phone", org.thryft.protocol.Type.STRING),
-        PHONE_EXT("phoneExt", new com.google.common.reflect.TypeToken<String>() {}, false, 0, "phone_ext", org.thryft.protocol.Type.STRING),
-        POSTAL_CODE("postalCode", new com.google.common.reflect.TypeToken<String>() {}, false, 0, "postal_code", org.thryft.protocol.Type.STRING),
-        STATE("state", new com.google.common.reflect.TypeToken<String>() {}, false, 0, "state", org.thryft.protocol.Type.STRING),
-        STATE_CODE("stateCode", new com.google.common.reflect.TypeToken<String>() {}, false, 0, "state_code", org.thryft.protocol.Type.STRING),
-        STREET("street", new com.google.common.reflect.TypeToken<com.google.common.collect.ImmutableList<String>>() {}, false, 0, "street", org.thryft.protocol.Type.LIST);
+        AIRPORT_CODE("airportCode", new com.google.common.reflect.TypeToken<String>() {}, false, (short)0, "airport_code", org.thryft.protocol.Type.STRING),
+        CITY("city", new com.google.common.reflect.TypeToken<String>() {}, false, (short)0, "city", org.thryft.protocol.Type.STRING),
+        COUNTRY("country", new com.google.common.reflect.TypeToken<String>() {}, false, (short)0, "country", org.thryft.protocol.Type.STRING),
+        COUNTRY_CODE("countryCode", new com.google.common.reflect.TypeToken<String>() {}, false, (short)0, "country_code", org.thryft.protocol.Type.STRING),
+        DISTRICT("district", new com.google.common.reflect.TypeToken<String>() {}, false, (short)0, "district", org.thryft.protocol.Type.STRING),
+        EMAIL("email", new com.google.common.reflect.TypeToken<String>() {}, false, (short)0, "email", org.thryft.protocol.Type.STRING),
+        FIRST_NAME("firstName", new com.google.common.reflect.TypeToken<String>() {}, false, (short)0, "first_name", org.thryft.protocol.Type.STRING),
+        HANDLE("handle", new com.google.common.reflect.TypeToken<String>() {}, false, (short)0, "handle", org.thryft.protocol.Type.STRING),
+        LAST_NAME("lastName", new com.google.common.reflect.TypeToken<String>() {}, false, (short)0, "last_name", org.thryft.protocol.Type.STRING),
+        NAME("name", new com.google.common.reflect.TypeToken<String>() {}, false, (short)0, "name", org.thryft.protocol.Type.STRING),
+        ORGANIZATION("organization", new com.google.common.reflect.TypeToken<String>() {}, false, (short)0, "organization", org.thryft.protocol.Type.STRING),
+        PHONE("phone", new com.google.common.reflect.TypeToken<String>() {}, false, (short)0, "phone", org.thryft.protocol.Type.STRING),
+        PHONE_EXT("phoneExt", new com.google.common.reflect.TypeToken<String>() {}, false, (short)0, "phone_ext", org.thryft.protocol.Type.STRING),
+        POSTAL_CODE("postalCode", new com.google.common.reflect.TypeToken<String>() {}, false, (short)0, "postal_code", org.thryft.protocol.Type.STRING),
+        STATE("state", new com.google.common.reflect.TypeToken<String>() {}, false, (short)0, "state", org.thryft.protocol.Type.STRING),
+        STATE_CODE("stateCode", new com.google.common.reflect.TypeToken<String>() {}, false, (short)0, "state_code", org.thryft.protocol.Type.STRING),
+        STREET("street", new com.google.common.reflect.TypeToken<com.google.common.collect.ImmutableList<String>>() {}, false, (short)0, "street", org.thryft.protocol.Type.LIST);
 
         @Override
         public String getJavaName() {
@@ -778,7 +797,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         }
 
         @Override
-        public int getThriftId() {
+        public short getThriftId() {
             return thriftId;
         }
 
@@ -855,7 +874,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
             }
         }
 
-        private FieldMetadata(final String javaName, final com.google.common.reflect.TypeToken<?> javaType, final boolean required, final int thriftId, final String thriftName, final org.thryft.protocol.Type thriftProtocolType) {
+        private FieldMetadata(final String javaName, final com.google.common.reflect.TypeToken<?> javaType, final boolean required, final short thriftId, final String thriftName, final org.thryft.protocol.Type thriftProtocolType) {
             this.javaName = javaName;
             this.javaType = javaType;
             this.required = required;
@@ -872,628 +891,39 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         private final String javaName;
         private final com.google.common.reflect.TypeToken<?> javaType;
         private final boolean required;
-        private final int thriftId;
+        private final short thriftId;
         private final String thriftName;
         private final String thriftProtocolKey;
         private final org.thryft.protocol.Type thriftProtocolType;
     }
 
-    public interface Validator<ExceptionT extends Exception> {
-        public com.google.common.base.Optional<String> validateAirportCode(final com.google.common.base.Optional<String> airportCode) throws ExceptionT;
-
-        public com.google.common.base.Optional<String> validateCity(final com.google.common.base.Optional<String> city) throws ExceptionT;
-
-        public com.google.common.base.Optional<String> validateCountry(final com.google.common.base.Optional<String> country) throws ExceptionT;
-
-        public com.google.common.base.Optional<String> validateCountryCode(final com.google.common.base.Optional<String> countryCode) throws ExceptionT;
-
-        public com.google.common.base.Optional<String> validateDistrict(final com.google.common.base.Optional<String> district) throws ExceptionT;
-
-        public com.google.common.base.Optional<String> validateEmail(final com.google.common.base.Optional<String> email) throws ExceptionT;
-
-        public com.google.common.base.Optional<String> validateFirstName(final com.google.common.base.Optional<String> firstName) throws ExceptionT;
-
-        public com.google.common.base.Optional<String> validateHandle(final com.google.common.base.Optional<String> handle) throws ExceptionT;
-
-        public com.google.common.base.Optional<String> validateLastName(final com.google.common.base.Optional<String> lastName) throws ExceptionT;
-
-        public com.google.common.base.Optional<String> validateName(final com.google.common.base.Optional<String> name) throws ExceptionT;
-
-        public com.google.common.base.Optional<String> validateOrganization(final com.google.common.base.Optional<String> organization) throws ExceptionT;
-
-        public com.google.common.base.Optional<String> validatePhone(final com.google.common.base.Optional<String> phone) throws ExceptionT;
-
-        public com.google.common.base.Optional<String> validatePhoneExt(final com.google.common.base.Optional<String> phoneExt) throws ExceptionT;
-
-        public com.google.common.base.Optional<String> validatePostalCode(final com.google.common.base.Optional<String> postalCode) throws ExceptionT;
-
-        public com.google.common.base.Optional<String> validateState(final com.google.common.base.Optional<String> state) throws ExceptionT;
-
-        public com.google.common.base.Optional<String> validateStateCode(final com.google.common.base.Optional<String> stateCode) throws ExceptionT;
-
-        public com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> validateStreet(final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> street) throws ExceptionT;
-    }
-
-    public interface ConstructionValidator extends Validator<RuntimeException> {
-    }
-
-    public static class DefaultConstructionValidator implements ConstructionValidator {
-        public static DefaultConstructionValidator getInstance() {
-            return instance;
+    public final static class ReadValidator {
+        public static void validate(final com.google.common.base.Optional<String> airportCode, final com.google.common.base.Optional<String> city, final com.google.common.base.Optional<String> country, final com.google.common.base.Optional<String> countryCode, final com.google.common.base.Optional<String> district, final com.google.common.base.Optional<String> email, final com.google.common.base.Optional<String> firstName, final com.google.common.base.Optional<String> handle, final com.google.common.base.Optional<String> lastName, final com.google.common.base.Optional<String> name, final com.google.common.base.Optional<String> organization, final com.google.common.base.Optional<String> phone, final com.google.common.base.Optional<String> phoneExt, final com.google.common.base.Optional<String> postalCode, final com.google.common.base.Optional<String> state, final com.google.common.base.Optional<String> stateCode, final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> street) throws org.thryft.protocol.InputProtocolException {
+            validateAirportCode(airportCode);
+            validateCity(city);
+            validateCountry(country);
+            validateCountryCode(countryCode);
+            validateDistrict(district);
+            validateEmail(email);
+            validateFirstName(firstName);
+            validateHandle(handle);
+            validateLastName(lastName);
+            validateName(name);
+            validateOrganization(organization);
+            validatePhone(phone);
+            validatePhoneExt(phoneExt);
+            validatePostalCode(postalCode);
+            validateState(state);
+            validateStateCode(stateCode);
+            validateStreet(street);
         }
 
-        public DefaultConstructionValidator() {
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateAirportCode(final com.google.common.base.Optional<String> airportCode) throws RuntimeException {
-            if (airportCode == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: airportCode is null");
-            }
-            if (!airportCode.isPresent()) {
-                return airportCode;
-            }
-            if (airportCode.get().isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: airportCode is less than min length 1");
-            }
-            {
-                final int __strLen = airportCode.get().length();
-                boolean __blank = true;
-                for (int i = 0; i < __strLen; i++) {
-                    if (!Character.isWhitespace(airportCode.get().charAt(i))) {
-                        __blank = false;
-                        break;
-                    }
-                }
-                if (__blank) {
-                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: airportCode is blank: '%s' (length=%d)", airportCode.get(), __strLen));
-                }
-            }
-            return airportCode;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateCity(final com.google.common.base.Optional<String> city) throws RuntimeException {
-            if (city == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: city is null");
-            }
-            if (!city.isPresent()) {
-                return city;
-            }
-            if (city.get().isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: city is less than min length 1");
-            }
-            {
-                final int __strLen = city.get().length();
-                boolean __blank = true;
-                for (int i = 0; i < __strLen; i++) {
-                    if (!Character.isWhitespace(city.get().charAt(i))) {
-                        __blank = false;
-                        break;
-                    }
-                }
-                if (__blank) {
-                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: city is blank: '%s' (length=%d)", city.get(), __strLen));
-                }
-            }
-            return city;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateCountry(final com.google.common.base.Optional<String> country) throws RuntimeException {
-            if (country == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: country is null");
-            }
-            if (!country.isPresent()) {
-                return country;
-            }
-            if (country.get().isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: country is less than min length 1");
-            }
-            {
-                final int __strLen = country.get().length();
-                boolean __blank = true;
-                for (int i = 0; i < __strLen; i++) {
-                    if (!Character.isWhitespace(country.get().charAt(i))) {
-                        __blank = false;
-                        break;
-                    }
-                }
-                if (__blank) {
-                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: country is blank: '%s' (length=%d)", country.get(), __strLen));
-                }
-            }
-            return country;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateCountryCode(final com.google.common.base.Optional<String> countryCode) throws RuntimeException {
-            if (countryCode == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: countryCode is null");
-            }
-            if (!countryCode.isPresent()) {
-                return countryCode;
-            }
-            if (countryCode.get().length() < 2) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: countryCode is less than min length 2");
-            }
-            {
-                final int __strLen = countryCode.get().length();
-                boolean __blank = true;
-                for (int i = 0; i < __strLen; i++) {
-                    if (!Character.isWhitespace(countryCode.get().charAt(i))) {
-                        __blank = false;
-                        break;
-                    }
-                }
-                if (__blank) {
-                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: countryCode is blank: '%s' (length=%d)", countryCode.get(), __strLen));
-                }
-            }
-            if (countryCode.get().length() > 3) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: countryCode is greater than max length 3");
-            }
-            return countryCode;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateDistrict(final com.google.common.base.Optional<String> district) throws RuntimeException {
-            if (district == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: district is null");
-            }
-            if (!district.isPresent()) {
-                return district;
-            }
-            if (district.get().isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: district is less than min length 1");
-            }
-            {
-                final int __strLen = district.get().length();
-                boolean __blank = true;
-                for (int i = 0; i < __strLen; i++) {
-                    if (!Character.isWhitespace(district.get().charAt(i))) {
-                        __blank = false;
-                        break;
-                    }
-                }
-                if (__blank) {
-                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: district is blank: '%s' (length=%d)", district.get(), __strLen));
-                }
-            }
-            return district;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateEmail(final com.google.common.base.Optional<String> email) throws RuntimeException {
-            if (email == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: email is null");
-            }
-            if (!email.isPresent()) {
-                return email;
-            }
-            if (email.get().isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: email is less than min length 1");
-            }
-            {
-                final int __strLen = email.get().length();
-                boolean __blank = true;
-                for (int i = 0; i < __strLen; i++) {
-                    if (!Character.isWhitespace(email.get().charAt(i))) {
-                        __blank = false;
-                        break;
-                    }
-                }
-                if (__blank) {
-                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: email is blank: '%s' (length=%d)", email.get(), __strLen));
-                }
-            }
-            return email;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateFirstName(final com.google.common.base.Optional<String> firstName) throws RuntimeException {
-            if (firstName == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: firstName is null");
-            }
-            if (!firstName.isPresent()) {
-                return firstName;
-            }
-            if (firstName.get().isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: firstName is less than min length 1");
-            }
-            {
-                final int __strLen = firstName.get().length();
-                boolean __blank = true;
-                for (int i = 0; i < __strLen; i++) {
-                    if (!Character.isWhitespace(firstName.get().charAt(i))) {
-                        __blank = false;
-                        break;
-                    }
-                }
-                if (__blank) {
-                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: firstName is blank: '%s' (length=%d)", firstName.get(), __strLen));
-                }
-            }
-            return firstName;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateHandle(final com.google.common.base.Optional<String> handle) throws RuntimeException {
-            if (handle == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: handle is null");
-            }
-            if (!handle.isPresent()) {
-                return handle;
-            }
-            if (handle.get().isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: handle is less than min length 1");
-            }
-            {
-                final int __strLen = handle.get().length();
-                boolean __blank = true;
-                for (int i = 0; i < __strLen; i++) {
-                    if (!Character.isWhitespace(handle.get().charAt(i))) {
-                        __blank = false;
-                        break;
-                    }
-                }
-                if (__blank) {
-                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: handle is blank: '%s' (length=%d)", handle.get(), __strLen));
-                }
-            }
-            return handle;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateLastName(final com.google.common.base.Optional<String> lastName) throws RuntimeException {
-            if (lastName == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: lastName is null");
-            }
-            if (!lastName.isPresent()) {
-                return lastName;
-            }
-            if (lastName.get().isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: lastName is less than min length 1");
-            }
-            {
-                final int __strLen = lastName.get().length();
-                boolean __blank = true;
-                for (int i = 0; i < __strLen; i++) {
-                    if (!Character.isWhitespace(lastName.get().charAt(i))) {
-                        __blank = false;
-                        break;
-                    }
-                }
-                if (__blank) {
-                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: lastName is blank: '%s' (length=%d)", lastName.get(), __strLen));
-                }
-            }
-            return lastName;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateName(final com.google.common.base.Optional<String> name) throws RuntimeException {
-            if (name == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: name is null");
-            }
-            if (!name.isPresent()) {
-                return name;
-            }
-            if (name.get().isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: name is less than min length 1");
-            }
-            {
-                final int __strLen = name.get().length();
-                boolean __blank = true;
-                for (int i = 0; i < __strLen; i++) {
-                    if (!Character.isWhitespace(name.get().charAt(i))) {
-                        __blank = false;
-                        break;
-                    }
-                }
-                if (__blank) {
-                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: name is blank: '%s' (length=%d)", name.get(), __strLen));
-                }
-            }
-            return name;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateOrganization(final com.google.common.base.Optional<String> organization) throws RuntimeException {
-            if (organization == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: organization is null");
-            }
-            if (!organization.isPresent()) {
-                return organization;
-            }
-            if (organization.get().isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: organization is less than min length 1");
-            }
-            {
-                final int __strLen = organization.get().length();
-                boolean __blank = true;
-                for (int i = 0; i < __strLen; i++) {
-                    if (!Character.isWhitespace(organization.get().charAt(i))) {
-                        __blank = false;
-                        break;
-                    }
-                }
-                if (__blank) {
-                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: organization is blank: '%s' (length=%d)", organization.get(), __strLen));
-                }
-            }
-            return organization;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validatePhone(final com.google.common.base.Optional<String> phone) throws RuntimeException {
-            if (phone == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: phone is null");
-            }
-            if (!phone.isPresent()) {
-                return phone;
-            }
-            if (phone.get().isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: phone is less than min length 1");
-            }
-            {
-                final int __strLen = phone.get().length();
-                boolean __blank = true;
-                for (int i = 0; i < __strLen; i++) {
-                    if (!Character.isWhitespace(phone.get().charAt(i))) {
-                        __blank = false;
-                        break;
-                    }
-                }
-                if (__blank) {
-                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: phone is blank: '%s' (length=%d)", phone.get(), __strLen));
-                }
-            }
-            return phone;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validatePhoneExt(final com.google.common.base.Optional<String> phoneExt) throws RuntimeException {
-            if (phoneExt == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: phoneExt is null");
-            }
-            if (!phoneExt.isPresent()) {
-                return phoneExt;
-            }
-            if (phoneExt.get().isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: phoneExt is less than min length 1");
-            }
-            {
-                final int __strLen = phoneExt.get().length();
-                boolean __blank = true;
-                for (int i = 0; i < __strLen; i++) {
-                    if (!Character.isWhitespace(phoneExt.get().charAt(i))) {
-                        __blank = false;
-                        break;
-                    }
-                }
-                if (__blank) {
-                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: phoneExt is blank: '%s' (length=%d)", phoneExt.get(), __strLen));
-                }
-            }
-            return phoneExt;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validatePostalCode(final com.google.common.base.Optional<String> postalCode) throws RuntimeException {
-            if (postalCode == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: postalCode is null");
-            }
-            if (!postalCode.isPresent()) {
-                return postalCode;
-            }
-            if (postalCode.get().isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: postalCode is less than min length 1");
-            }
-            {
-                final int __strLen = postalCode.get().length();
-                boolean __blank = true;
-                for (int i = 0; i < __strLen; i++) {
-                    if (!Character.isWhitespace(postalCode.get().charAt(i))) {
-                        __blank = false;
-                        break;
-                    }
-                }
-                if (__blank) {
-                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: postalCode is blank: '%s' (length=%d)", postalCode.get(), __strLen));
-                }
-            }
-            return postalCode;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateState(final com.google.common.base.Optional<String> state) throws RuntimeException {
-            if (state == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: state is null");
-            }
-            if (!state.isPresent()) {
-                return state;
-            }
-            if (state.get().isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: state is less than min length 1");
-            }
-            {
-                final int __strLen = state.get().length();
-                boolean __blank = true;
-                for (int i = 0; i < __strLen; i++) {
-                    if (!Character.isWhitespace(state.get().charAt(i))) {
-                        __blank = false;
-                        break;
-                    }
-                }
-                if (__blank) {
-                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: state is blank: '%s' (length=%d)", state.get(), __strLen));
-                }
-            }
-            return state;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateStateCode(final com.google.common.base.Optional<String> stateCode) throws RuntimeException {
-            if (stateCode == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: stateCode is null");
-            }
-            if (!stateCode.isPresent()) {
-                return stateCode;
-            }
-            if (stateCode.get().isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: stateCode is less than min length 1");
-            }
-            {
-                final int __strLen = stateCode.get().length();
-                boolean __blank = true;
-                for (int i = 0; i < __strLen; i++) {
-                    if (!Character.isWhitespace(stateCode.get().charAt(i))) {
-                        __blank = false;
-                        break;
-                    }
-                }
-                if (__blank) {
-                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: stateCode is blank: '%s' (length=%d)", stateCode.get(), __strLen));
-                }
-            }
-            return stateCode;
-        }
-
-        @Override
-        public com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> validateStreet(final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> street) throws RuntimeException {
-            if (street == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: street is null");
-            }
-            if (!street.isPresent()) {
-                return street;
-            }
-            if (street.get().isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: street is less than min length 1");
-            }
-            return street;
-        }
-
-        private final static DefaultConstructionValidator instance = new DefaultConstructionValidator();
-    }
-
-    public static class NopConstructionValidator implements ConstructionValidator {
-        public static NopConstructionValidator getInstance() {
-            return instance;
-        }
-
-        public NopConstructionValidator() {
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateAirportCode(final com.google.common.base.Optional<String> airportCode) {
-            return airportCode;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateCity(final com.google.common.base.Optional<String> city) {
-            return city;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateCountry(final com.google.common.base.Optional<String> country) {
-            return country;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateCountryCode(final com.google.common.base.Optional<String> countryCode) {
-            return countryCode;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateDistrict(final com.google.common.base.Optional<String> district) {
-            return district;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateEmail(final com.google.common.base.Optional<String> email) {
-            return email;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateFirstName(final com.google.common.base.Optional<String> firstName) {
-            return firstName;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateHandle(final com.google.common.base.Optional<String> handle) {
-            return handle;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateLastName(final com.google.common.base.Optional<String> lastName) {
-            return lastName;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateName(final com.google.common.base.Optional<String> name) {
-            return name;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateOrganization(final com.google.common.base.Optional<String> organization) {
-            return organization;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validatePhone(final com.google.common.base.Optional<String> phone) {
-            return phone;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validatePhoneExt(final com.google.common.base.Optional<String> phoneExt) {
-            return phoneExt;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validatePostalCode(final com.google.common.base.Optional<String> postalCode) {
-            return postalCode;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateState(final com.google.common.base.Optional<String> state) {
-            return state;
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateStateCode(final com.google.common.base.Optional<String> stateCode) {
-            return stateCode;
-        }
-
-        @Override
-        public com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> validateStreet(final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> street) {
-            return street;
-        }
-
-        private final static NopConstructionValidator instance = new NopConstructionValidator();
-    }
-
-    public interface ReadValidator extends Validator<org.thryft.protocol.InputProtocolException> {
-    }
-
-    public static class DefaultReadValidator implements ReadValidator {
-        public static DefaultReadValidator getInstance() {
-            return instance;
-        }
-
-        public DefaultReadValidator() {
-        }
-
-        @Override
-        public com.google.common.base.Optional<String> validateAirportCode(final com.google.common.base.Optional<String> airportCode) throws org.thryft.protocol.InputProtocolException {
+        public static void validateAirportCode(final com.google.common.base.Optional<String> airportCode) throws org.thryft.protocol.InputProtocolException {
             if (airportCode == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.AIRPORT_CODE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: airportCode is null");
             }
             if (!airportCode.isPresent()) {
-                return airportCode;
-            }
-            if (airportCode.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.AIRPORT_CODE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: airportCode is less than min length 1");
+                return;
             }
             {
                 final int __strLen = airportCode.get().length();
@@ -1505,22 +935,20 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.AIRPORT_CODE, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: airportCode is blank: '%s' (length=%d)", airportCode.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.AIRPORT_CODE, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.airportCode: blank '%s' (length=%d)", airportCode.get(), __strLen));
                 }
             }
-            return airportCode;
+            if (airportCode.get().isEmpty()) {
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.AIRPORT_CODE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.airportCode: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateCity(final com.google.common.base.Optional<String> city) throws org.thryft.protocol.InputProtocolException {
+        public static void validateCity(final com.google.common.base.Optional<String> city) throws org.thryft.protocol.InputProtocolException {
             if (city == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.CITY, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: city is null");
             }
             if (!city.isPresent()) {
-                return city;
-            }
-            if (city.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.CITY, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: city is less than min length 1");
+                return;
             }
             {
                 final int __strLen = city.get().length();
@@ -1532,22 +960,20 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.CITY, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: city is blank: '%s' (length=%d)", city.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.CITY, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.city: blank '%s' (length=%d)", city.get(), __strLen));
                 }
             }
-            return city;
+            if (city.get().isEmpty()) {
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.CITY, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.city: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateCountry(final com.google.common.base.Optional<String> country) throws org.thryft.protocol.InputProtocolException {
+        public static void validateCountry(final com.google.common.base.Optional<String> country) throws org.thryft.protocol.InputProtocolException {
             if (country == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.COUNTRY, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: country is null");
             }
             if (!country.isPresent()) {
-                return country;
-            }
-            if (country.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: country is less than min length 1");
+                return;
             }
             {
                 final int __strLen = country.get().length();
@@ -1559,22 +985,20 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: country is blank: '%s' (length=%d)", country.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.country: blank '%s' (length=%d)", country.get(), __strLen));
                 }
             }
-            return country;
+            if (country.get().isEmpty()) {
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.country: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateCountryCode(final com.google.common.base.Optional<String> countryCode) throws org.thryft.protocol.InputProtocolException {
+        public static void validateCountryCode(final com.google.common.base.Optional<String> countryCode) throws org.thryft.protocol.InputProtocolException {
             if (countryCode == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.COUNTRY_CODE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: countryCode is null");
             }
             if (!countryCode.isPresent()) {
-                return countryCode;
-            }
-            if (countryCode.get().length() < 2) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY_CODE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: countryCode is less than min length 2");
+                return;
             }
             {
                 final int __strLen = countryCode.get().length();
@@ -1586,25 +1010,23 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY_CODE, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: countryCode is blank: '%s' (length=%d)", countryCode.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY_CODE, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.countryCode: blank '%s' (length=%d)", countryCode.get(), __strLen));
                 }
             }
             if (countryCode.get().length() > 3) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY_CODE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: countryCode is greater than max length 3");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY_CODE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.countryCode: greater than max length 3");
             }
-            return countryCode;
+            if (countryCode.get().length() < 2) {
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.COUNTRY_CODE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.countryCode: less than min length 2");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateDistrict(final com.google.common.base.Optional<String> district) throws org.thryft.protocol.InputProtocolException {
+        public static void validateDistrict(final com.google.common.base.Optional<String> district) throws org.thryft.protocol.InputProtocolException {
             if (district == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.DISTRICT, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: district is null");
             }
             if (!district.isPresent()) {
-                return district;
-            }
-            if (district.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.DISTRICT, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: district is less than min length 1");
+                return;
             }
             {
                 final int __strLen = district.get().length();
@@ -1616,22 +1038,20 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.DISTRICT, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: district is blank: '%s' (length=%d)", district.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.DISTRICT, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.district: blank '%s' (length=%d)", district.get(), __strLen));
                 }
             }
-            return district;
+            if (district.get().isEmpty()) {
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.DISTRICT, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.district: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateEmail(final com.google.common.base.Optional<String> email) throws org.thryft.protocol.InputProtocolException {
+        public static void validateEmail(final com.google.common.base.Optional<String> email) throws org.thryft.protocol.InputProtocolException {
             if (email == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.EMAIL, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: email is null");
             }
             if (!email.isPresent()) {
-                return email;
-            }
-            if (email.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.EMAIL, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: email is less than min length 1");
+                return;
             }
             {
                 final int __strLen = email.get().length();
@@ -1643,22 +1063,20 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.EMAIL, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: email is blank: '%s' (length=%d)", email.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.EMAIL, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.email: blank '%s' (length=%d)", email.get(), __strLen));
                 }
             }
-            return email;
+            if (email.get().isEmpty()) {
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.EMAIL, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.email: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateFirstName(final com.google.common.base.Optional<String> firstName) throws org.thryft.protocol.InputProtocolException {
+        public static void validateFirstName(final com.google.common.base.Optional<String> firstName) throws org.thryft.protocol.InputProtocolException {
             if (firstName == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.FIRST_NAME, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: firstName is null");
             }
             if (!firstName.isPresent()) {
-                return firstName;
-            }
-            if (firstName.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.FIRST_NAME, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: firstName is less than min length 1");
+                return;
             }
             {
                 final int __strLen = firstName.get().length();
@@ -1670,22 +1088,20 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.FIRST_NAME, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: firstName is blank: '%s' (length=%d)", firstName.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.FIRST_NAME, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.firstName: blank '%s' (length=%d)", firstName.get(), __strLen));
                 }
             }
-            return firstName;
+            if (firstName.get().isEmpty()) {
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.FIRST_NAME, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.firstName: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateHandle(final com.google.common.base.Optional<String> handle) throws org.thryft.protocol.InputProtocolException {
+        public static void validateHandle(final com.google.common.base.Optional<String> handle) throws org.thryft.protocol.InputProtocolException {
             if (handle == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.HANDLE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: handle is null");
             }
             if (!handle.isPresent()) {
-                return handle;
-            }
-            if (handle.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.HANDLE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: handle is less than min length 1");
+                return;
             }
             {
                 final int __strLen = handle.get().length();
@@ -1697,22 +1113,20 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.HANDLE, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: handle is blank: '%s' (length=%d)", handle.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.HANDLE, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.handle: blank '%s' (length=%d)", handle.get(), __strLen));
                 }
             }
-            return handle;
+            if (handle.get().isEmpty()) {
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.HANDLE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.handle: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateLastName(final com.google.common.base.Optional<String> lastName) throws org.thryft.protocol.InputProtocolException {
+        public static void validateLastName(final com.google.common.base.Optional<String> lastName) throws org.thryft.protocol.InputProtocolException {
             if (lastName == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.LAST_NAME, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: lastName is null");
             }
             if (!lastName.isPresent()) {
-                return lastName;
-            }
-            if (lastName.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.LAST_NAME, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: lastName is less than min length 1");
+                return;
             }
             {
                 final int __strLen = lastName.get().length();
@@ -1724,22 +1138,20 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.LAST_NAME, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: lastName is blank: '%s' (length=%d)", lastName.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.LAST_NAME, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.lastName: blank '%s' (length=%d)", lastName.get(), __strLen));
                 }
             }
-            return lastName;
+            if (lastName.get().isEmpty()) {
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.LAST_NAME, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.lastName: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateName(final com.google.common.base.Optional<String> name) throws org.thryft.protocol.InputProtocolException {
+        public static void validateName(final com.google.common.base.Optional<String> name) throws org.thryft.protocol.InputProtocolException {
             if (name == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.NAME, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: name is null");
             }
             if (!name.isPresent()) {
-                return name;
-            }
-            if (name.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.NAME, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: name is less than min length 1");
+                return;
             }
             {
                 final int __strLen = name.get().length();
@@ -1751,22 +1163,20 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.NAME, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: name is blank: '%s' (length=%d)", name.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.NAME, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.name: blank '%s' (length=%d)", name.get(), __strLen));
                 }
             }
-            return name;
+            if (name.get().isEmpty()) {
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.NAME, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.name: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateOrganization(final com.google.common.base.Optional<String> organization) throws org.thryft.protocol.InputProtocolException {
+        public static void validateOrganization(final com.google.common.base.Optional<String> organization) throws org.thryft.protocol.InputProtocolException {
             if (organization == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.ORGANIZATION, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: organization is null");
             }
             if (!organization.isPresent()) {
-                return organization;
-            }
-            if (organization.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.ORGANIZATION, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: organization is less than min length 1");
+                return;
             }
             {
                 final int __strLen = organization.get().length();
@@ -1778,22 +1188,20 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.ORGANIZATION, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: organization is blank: '%s' (length=%d)", organization.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.ORGANIZATION, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.organization: blank '%s' (length=%d)", organization.get(), __strLen));
                 }
             }
-            return organization;
+            if (organization.get().isEmpty()) {
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.ORGANIZATION, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.organization: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validatePhone(final com.google.common.base.Optional<String> phone) throws org.thryft.protocol.InputProtocolException {
+        public static void validatePhone(final com.google.common.base.Optional<String> phone) throws org.thryft.protocol.InputProtocolException {
             if (phone == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.PHONE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: phone is null");
             }
             if (!phone.isPresent()) {
-                return phone;
-            }
-            if (phone.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.PHONE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: phone is less than min length 1");
+                return;
             }
             {
                 final int __strLen = phone.get().length();
@@ -1805,22 +1213,20 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.PHONE, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: phone is blank: '%s' (length=%d)", phone.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.PHONE, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.phone: blank '%s' (length=%d)", phone.get(), __strLen));
                 }
             }
-            return phone;
+            if (phone.get().isEmpty()) {
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.PHONE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.phone: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validatePhoneExt(final com.google.common.base.Optional<String> phoneExt) throws org.thryft.protocol.InputProtocolException {
+        public static void validatePhoneExt(final com.google.common.base.Optional<String> phoneExt) throws org.thryft.protocol.InputProtocolException {
             if (phoneExt == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.PHONE_EXT, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: phoneExt is null");
             }
             if (!phoneExt.isPresent()) {
-                return phoneExt;
-            }
-            if (phoneExt.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.PHONE_EXT, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: phoneExt is less than min length 1");
+                return;
             }
             {
                 final int __strLen = phoneExt.get().length();
@@ -1832,22 +1238,20 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.PHONE_EXT, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: phoneExt is blank: '%s' (length=%d)", phoneExt.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.PHONE_EXT, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.phoneExt: blank '%s' (length=%d)", phoneExt.get(), __strLen));
                 }
             }
-            return phoneExt;
+            if (phoneExt.get().isEmpty()) {
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.PHONE_EXT, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.phoneExt: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validatePostalCode(final com.google.common.base.Optional<String> postalCode) throws org.thryft.protocol.InputProtocolException {
+        public static void validatePostalCode(final com.google.common.base.Optional<String> postalCode) throws org.thryft.protocol.InputProtocolException {
             if (postalCode == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.POSTAL_CODE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: postalCode is null");
             }
             if (!postalCode.isPresent()) {
-                return postalCode;
-            }
-            if (postalCode.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.POSTAL_CODE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: postalCode is less than min length 1");
+                return;
             }
             {
                 final int __strLen = postalCode.get().length();
@@ -1859,22 +1263,20 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.POSTAL_CODE, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: postalCode is blank: '%s' (length=%d)", postalCode.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.POSTAL_CODE, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.postalCode: blank '%s' (length=%d)", postalCode.get(), __strLen));
                 }
             }
-            return postalCode;
+            if (postalCode.get().isEmpty()) {
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.POSTAL_CODE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.postalCode: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateState(final com.google.common.base.Optional<String> state) throws org.thryft.protocol.InputProtocolException {
+        public static void validateState(final com.google.common.base.Optional<String> state) throws org.thryft.protocol.InputProtocolException {
             if (state == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.STATE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: state is null");
             }
             if (!state.isPresent()) {
-                return state;
-            }
-            if (state.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STATE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: state is less than min length 1");
+                return;
             }
             {
                 final int __strLen = state.get().length();
@@ -1886,22 +1288,20 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STATE, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: state is blank: '%s' (length=%d)", state.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STATE, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.state: blank '%s' (length=%d)", state.get(), __strLen));
                 }
             }
-            return state;
+            if (state.get().isEmpty()) {
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STATE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.state: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateStateCode(final com.google.common.base.Optional<String> stateCode) throws org.thryft.protocol.InputProtocolException {
+        public static void validateStateCode(final com.google.common.base.Optional<String> stateCode) throws org.thryft.protocol.InputProtocolException {
             if (stateCode == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.STATE_CODE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: stateCode is null");
             }
             if (!stateCode.isPresent()) {
-                return stateCode;
-            }
-            if (stateCode.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STATE_CODE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: stateCode is less than min length 1");
+                return;
             }
             {
                 final int __strLen = stateCode.get().length();
@@ -1913,128 +1313,504 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STATE_CODE, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant: stateCode is blank: '%s' (length=%d)", stateCode.get(), __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STATE_CODE, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.stateCode: blank '%s' (length=%d)", stateCode.get(), __strLen));
                 }
             }
-            return stateCode;
+            if (stateCode.get().isEmpty()) {
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STATE_CODE, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.stateCode: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> validateStreet(final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> street) throws org.thryft.protocol.InputProtocolException {
+        public static void validateStreet(final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> street) throws org.thryft.protocol.InputProtocolException {
             if (street == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.STREET, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: street is null");
             }
             if (!street.isPresent()) {
-                return street;
+                return;
             }
             if (street.get().isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STREET, "io.github.minorg.whoisclient.ParsedWhoisRegistrant: street is less than min length 1");
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STREET, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.street: less than min length 1");
             }
-            return street;
+            for (final String __element0 : street.get()) {
+                {
+                    final int __strLen = __element0.length();
+                    boolean __blank = true;
+                    for (int i = 0; i < __strLen; i++) {
+                        if (!Character.isWhitespace(__element0.charAt(i))) {
+                            __blank = false;
+                            break;
+                        }
+                    }
+                    if (__blank) {
+                        throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STREET, String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.street: element: blank '%s' (length=%d)", __element0, __strLen));
+                    }
+                }
+                if (__element0.isEmpty()) {
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.STREET, "io.github.minorg.whoisclient.ParsedWhoisRegistrant.street: element: less than min length 1");
+                }
+            }
         }
-
-        private final static DefaultReadValidator instance = new DefaultReadValidator();
     }
 
-    public static class NopReadValidator implements ReadValidator {
-        public static NopReadValidator getInstance() {
-            return instance;
+    public final static class UncheckedValidator {
+        public static void validate(final com.google.common.base.Optional<String> airportCode, final com.google.common.base.Optional<String> city, final com.google.common.base.Optional<String> country, final com.google.common.base.Optional<String> countryCode, final com.google.common.base.Optional<String> district, final com.google.common.base.Optional<String> email, final com.google.common.base.Optional<String> firstName, final com.google.common.base.Optional<String> handle, final com.google.common.base.Optional<String> lastName, final com.google.common.base.Optional<String> name, final com.google.common.base.Optional<String> organization, final com.google.common.base.Optional<String> phone, final com.google.common.base.Optional<String> phoneExt, final com.google.common.base.Optional<String> postalCode, final com.google.common.base.Optional<String> state, final com.google.common.base.Optional<String> stateCode, final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> street) {
+            validateAirportCode(airportCode);
+            validateCity(city);
+            validateCountry(country);
+            validateCountryCode(countryCode);
+            validateDistrict(district);
+            validateEmail(email);
+            validateFirstName(firstName);
+            validateHandle(handle);
+            validateLastName(lastName);
+            validateName(name);
+            validateOrganization(organization);
+            validatePhone(phone);
+            validatePhoneExt(phoneExt);
+            validatePostalCode(postalCode);
+            validateState(state);
+            validateStateCode(stateCode);
+            validateStreet(street);
         }
 
-        public NopReadValidator() {
+        public static void validateAirportCode(final com.google.common.base.Optional<String> airportCode) {
+            if (airportCode == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: airportCode is null");
+            }
+            if (!airportCode.isPresent()) {
+                return;
+            }
+            {
+                final int __strLen = airportCode.get().length();
+                boolean __blank = true;
+                for (int i = 0; i < __strLen; i++) {
+                    if (!Character.isWhitespace(airportCode.get().charAt(i))) {
+                        __blank = false;
+                        break;
+                    }
+                }
+                if (__blank) {
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.airportCode: blank '%s' (length=%d)", airportCode.get(), __strLen));
+                }
+            }
+            if (airportCode.get().isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.airportCode: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateAirportCode(final com.google.common.base.Optional<String> airportCode) {
-            return airportCode;
+        public static void validateCity(final com.google.common.base.Optional<String> city) {
+            if (city == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: city is null");
+            }
+            if (!city.isPresent()) {
+                return;
+            }
+            {
+                final int __strLen = city.get().length();
+                boolean __blank = true;
+                for (int i = 0; i < __strLen; i++) {
+                    if (!Character.isWhitespace(city.get().charAt(i))) {
+                        __blank = false;
+                        break;
+                    }
+                }
+                if (__blank) {
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.city: blank '%s' (length=%d)", city.get(), __strLen));
+                }
+            }
+            if (city.get().isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.city: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateCity(final com.google.common.base.Optional<String> city) {
-            return city;
+        public static void validateCountry(final com.google.common.base.Optional<String> country) {
+            if (country == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: country is null");
+            }
+            if (!country.isPresent()) {
+                return;
+            }
+            {
+                final int __strLen = country.get().length();
+                boolean __blank = true;
+                for (int i = 0; i < __strLen; i++) {
+                    if (!Character.isWhitespace(country.get().charAt(i))) {
+                        __blank = false;
+                        break;
+                    }
+                }
+                if (__blank) {
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.country: blank '%s' (length=%d)", country.get(), __strLen));
+                }
+            }
+            if (country.get().isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.country: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateCountry(final com.google.common.base.Optional<String> country) {
-            return country;
+        public static void validateCountryCode(final com.google.common.base.Optional<String> countryCode) {
+            if (countryCode == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: countryCode is null");
+            }
+            if (!countryCode.isPresent()) {
+                return;
+            }
+            {
+                final int __strLen = countryCode.get().length();
+                boolean __blank = true;
+                for (int i = 0; i < __strLen; i++) {
+                    if (!Character.isWhitespace(countryCode.get().charAt(i))) {
+                        __blank = false;
+                        break;
+                    }
+                }
+                if (__blank) {
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.countryCode: blank '%s' (length=%d)", countryCode.get(), __strLen));
+                }
+            }
+            if (countryCode.get().length() > 3) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.countryCode: greater than max length 3");
+            }
+            if (countryCode.get().length() < 2) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.countryCode: less than min length 2");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateCountryCode(final com.google.common.base.Optional<String> countryCode) {
-            return countryCode;
+        public static void validateDistrict(final com.google.common.base.Optional<String> district) {
+            if (district == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: district is null");
+            }
+            if (!district.isPresent()) {
+                return;
+            }
+            {
+                final int __strLen = district.get().length();
+                boolean __blank = true;
+                for (int i = 0; i < __strLen; i++) {
+                    if (!Character.isWhitespace(district.get().charAt(i))) {
+                        __blank = false;
+                        break;
+                    }
+                }
+                if (__blank) {
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.district: blank '%s' (length=%d)", district.get(), __strLen));
+                }
+            }
+            if (district.get().isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.district: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateDistrict(final com.google.common.base.Optional<String> district) {
-            return district;
+        public static void validateEmail(final com.google.common.base.Optional<String> email) {
+            if (email == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: email is null");
+            }
+            if (!email.isPresent()) {
+                return;
+            }
+            {
+                final int __strLen = email.get().length();
+                boolean __blank = true;
+                for (int i = 0; i < __strLen; i++) {
+                    if (!Character.isWhitespace(email.get().charAt(i))) {
+                        __blank = false;
+                        break;
+                    }
+                }
+                if (__blank) {
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.email: blank '%s' (length=%d)", email.get(), __strLen));
+                }
+            }
+            if (email.get().isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.email: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateEmail(final com.google.common.base.Optional<String> email) {
-            return email;
+        public static void validateFirstName(final com.google.common.base.Optional<String> firstName) {
+            if (firstName == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: firstName is null");
+            }
+            if (!firstName.isPresent()) {
+                return;
+            }
+            {
+                final int __strLen = firstName.get().length();
+                boolean __blank = true;
+                for (int i = 0; i < __strLen; i++) {
+                    if (!Character.isWhitespace(firstName.get().charAt(i))) {
+                        __blank = false;
+                        break;
+                    }
+                }
+                if (__blank) {
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.firstName: blank '%s' (length=%d)", firstName.get(), __strLen));
+                }
+            }
+            if (firstName.get().isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.firstName: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateFirstName(final com.google.common.base.Optional<String> firstName) {
-            return firstName;
+        public static void validateHandle(final com.google.common.base.Optional<String> handle) {
+            if (handle == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: handle is null");
+            }
+            if (!handle.isPresent()) {
+                return;
+            }
+            {
+                final int __strLen = handle.get().length();
+                boolean __blank = true;
+                for (int i = 0; i < __strLen; i++) {
+                    if (!Character.isWhitespace(handle.get().charAt(i))) {
+                        __blank = false;
+                        break;
+                    }
+                }
+                if (__blank) {
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.handle: blank '%s' (length=%d)", handle.get(), __strLen));
+                }
+            }
+            if (handle.get().isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.handle: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateHandle(final com.google.common.base.Optional<String> handle) {
-            return handle;
+        public static void validateLastName(final com.google.common.base.Optional<String> lastName) {
+            if (lastName == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: lastName is null");
+            }
+            if (!lastName.isPresent()) {
+                return;
+            }
+            {
+                final int __strLen = lastName.get().length();
+                boolean __blank = true;
+                for (int i = 0; i < __strLen; i++) {
+                    if (!Character.isWhitespace(lastName.get().charAt(i))) {
+                        __blank = false;
+                        break;
+                    }
+                }
+                if (__blank) {
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.lastName: blank '%s' (length=%d)", lastName.get(), __strLen));
+                }
+            }
+            if (lastName.get().isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.lastName: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateLastName(final com.google.common.base.Optional<String> lastName) {
-            return lastName;
+        public static void validateName(final com.google.common.base.Optional<String> name) {
+            if (name == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: name is null");
+            }
+            if (!name.isPresent()) {
+                return;
+            }
+            {
+                final int __strLen = name.get().length();
+                boolean __blank = true;
+                for (int i = 0; i < __strLen; i++) {
+                    if (!Character.isWhitespace(name.get().charAt(i))) {
+                        __blank = false;
+                        break;
+                    }
+                }
+                if (__blank) {
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.name: blank '%s' (length=%d)", name.get(), __strLen));
+                }
+            }
+            if (name.get().isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.name: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateName(final com.google.common.base.Optional<String> name) {
-            return name;
+        public static void validateOrganization(final com.google.common.base.Optional<String> organization) {
+            if (organization == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: organization is null");
+            }
+            if (!organization.isPresent()) {
+                return;
+            }
+            {
+                final int __strLen = organization.get().length();
+                boolean __blank = true;
+                for (int i = 0; i < __strLen; i++) {
+                    if (!Character.isWhitespace(organization.get().charAt(i))) {
+                        __blank = false;
+                        break;
+                    }
+                }
+                if (__blank) {
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.organization: blank '%s' (length=%d)", organization.get(), __strLen));
+                }
+            }
+            if (organization.get().isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.organization: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateOrganization(final com.google.common.base.Optional<String> organization) {
-            return organization;
+        public static void validatePhone(final com.google.common.base.Optional<String> phone) {
+            if (phone == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: phone is null");
+            }
+            if (!phone.isPresent()) {
+                return;
+            }
+            {
+                final int __strLen = phone.get().length();
+                boolean __blank = true;
+                for (int i = 0; i < __strLen; i++) {
+                    if (!Character.isWhitespace(phone.get().charAt(i))) {
+                        __blank = false;
+                        break;
+                    }
+                }
+                if (__blank) {
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.phone: blank '%s' (length=%d)", phone.get(), __strLen));
+                }
+            }
+            if (phone.get().isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.phone: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validatePhone(final com.google.common.base.Optional<String> phone) {
-            return phone;
+        public static void validatePhoneExt(final com.google.common.base.Optional<String> phoneExt) {
+            if (phoneExt == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: phoneExt is null");
+            }
+            if (!phoneExt.isPresent()) {
+                return;
+            }
+            {
+                final int __strLen = phoneExt.get().length();
+                boolean __blank = true;
+                for (int i = 0; i < __strLen; i++) {
+                    if (!Character.isWhitespace(phoneExt.get().charAt(i))) {
+                        __blank = false;
+                        break;
+                    }
+                }
+                if (__blank) {
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.phoneExt: blank '%s' (length=%d)", phoneExt.get(), __strLen));
+                }
+            }
+            if (phoneExt.get().isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.phoneExt: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validatePhoneExt(final com.google.common.base.Optional<String> phoneExt) {
-            return phoneExt;
+        public static void validatePostalCode(final com.google.common.base.Optional<String> postalCode) {
+            if (postalCode == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: postalCode is null");
+            }
+            if (!postalCode.isPresent()) {
+                return;
+            }
+            {
+                final int __strLen = postalCode.get().length();
+                boolean __blank = true;
+                for (int i = 0; i < __strLen; i++) {
+                    if (!Character.isWhitespace(postalCode.get().charAt(i))) {
+                        __blank = false;
+                        break;
+                    }
+                }
+                if (__blank) {
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.postalCode: blank '%s' (length=%d)", postalCode.get(), __strLen));
+                }
+            }
+            if (postalCode.get().isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.postalCode: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validatePostalCode(final com.google.common.base.Optional<String> postalCode) {
-            return postalCode;
+        public static void validateState(final com.google.common.base.Optional<String> state) {
+            if (state == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: state is null");
+            }
+            if (!state.isPresent()) {
+                return;
+            }
+            {
+                final int __strLen = state.get().length();
+                boolean __blank = true;
+                for (int i = 0; i < __strLen; i++) {
+                    if (!Character.isWhitespace(state.get().charAt(i))) {
+                        __blank = false;
+                        break;
+                    }
+                }
+                if (__blank) {
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.state: blank '%s' (length=%d)", state.get(), __strLen));
+                }
+            }
+            if (state.get().isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.state: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateState(final com.google.common.base.Optional<String> state) {
-            return state;
+        public static void validateStateCode(final com.google.common.base.Optional<String> stateCode) {
+            if (stateCode == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: stateCode is null");
+            }
+            if (!stateCode.isPresent()) {
+                return;
+            }
+            {
+                final int __strLen = stateCode.get().length();
+                boolean __blank = true;
+                for (int i = 0; i < __strLen; i++) {
+                    if (!Character.isWhitespace(stateCode.get().charAt(i))) {
+                        __blank = false;
+                        break;
+                    }
+                }
+                if (__blank) {
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.stateCode: blank '%s' (length=%d)", stateCode.get(), __strLen));
+                }
+            }
+            if (stateCode.get().isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.stateCode: less than min length 1");
+            }
         }
 
-        @Override
-        public com.google.common.base.Optional<String> validateStateCode(final com.google.common.base.Optional<String> stateCode) {
-            return stateCode;
+        public static void validateStreet(final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> street) {
+            if (street == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.ParsedWhoisRegistrant: street is null");
+            }
+            if (!street.isPresent()) {
+                return;
+            }
+            if (street.get().isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.street: less than min length 1");
+            }
+            for (final String __element0 : street.get()) {
+                {
+                    final int __strLen = __element0.length();
+                    boolean __blank = true;
+                    for (int i = 0; i < __strLen; i++) {
+                        if (!Character.isWhitespace(__element0.charAt(i))) {
+                            __blank = false;
+                            break;
+                        }
+                    }
+                    if (__blank) {
+                        throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.ParsedWhoisRegistrant.street: element: blank '%s' (length=%d)", __element0, __strLen));
+                    }
+                }
+                if (__element0.isEmpty()) {
+                    throw new IllegalArgumentException("io.github.minorg.whoisclient.ParsedWhoisRegistrant.street: element: less than min length 1");
+                }
+            }
         }
-
-        @Override
-        public com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> validateStreet(final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> street) {
-            return street;
-        }
-
-        private final static NopReadValidator instance = new NopReadValidator();
     }
 
     /**
      * Default constructor
      */
+    @Deprecated
     public ParsedWhoisRegistrant() {
         airportCode = com.google.common.base.Optional.<String> absent();
         city = com.google.common.base.Optional.<String> absent();
@@ -2059,27 +1835,32 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
      * Copy constructor
      */
     public ParsedWhoisRegistrant(final ParsedWhoisRegistrant other) {
-        this(other.getAirportCode(), other.getCity(), other.getCountry(), other.getCountryCode(), other.getDistrict(), other.getEmail(), other.getFirstName(), other.getHandle(), other.getLastName(), other.getName(), other.getOrganization(), other.getPhone(), other.getPhoneExt(), other.getPostalCode(), other.getState(), other.getStateCode(), other.getStreet(), NopConstructionValidator.getInstance());
+        this(other.getAirportCode(), other.getCity(), other.getCountry(), other.getCountryCode(), other.getDistrict(), other.getEmail(), other.getFirstName(), other.getHandle(), other.getLastName(), other.getName(), other.getOrganization(), other.getPhone(), other.getPhoneExt(), other.getPostalCode(), other.getState(), other.getStateCode(), other.getStreet());
     }
 
-    protected ParsedWhoisRegistrant(final com.google.common.base.Optional<String> airportCode, final com.google.common.base.Optional<String> city, final com.google.common.base.Optional<String> country, final com.google.common.base.Optional<String> countryCode, final com.google.common.base.Optional<String> district, final com.google.common.base.Optional<String> email, final com.google.common.base.Optional<String> firstName, final com.google.common.base.Optional<String> handle, final com.google.common.base.Optional<String> lastName, final com.google.common.base.Optional<String> name, final com.google.common.base.Optional<String> organization, final com.google.common.base.Optional<String> phone, final com.google.common.base.Optional<String> phoneExt, final com.google.common.base.Optional<String> postalCode, final com.google.common.base.Optional<String> state, final com.google.common.base.Optional<String> stateCode, final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> street, ConstructionValidator validator) {
-        this.airportCode = validator.validateAirportCode(airportCode);
-        this.city = validator.validateCity(city);
-        this.country = validator.validateCountry(country);
-        this.countryCode = validator.validateCountryCode(countryCode);
-        this.district = validator.validateDistrict(district);
-        this.email = validator.validateEmail(email);
-        this.firstName = validator.validateFirstName(firstName);
-        this.handle = validator.validateHandle(handle);
-        this.lastName = validator.validateLastName(lastName);
-        this.name = validator.validateName(name);
-        this.organization = validator.validateOrganization(organization);
-        this.phone = validator.validatePhone(phone);
-        this.phoneExt = validator.validatePhoneExt(phoneExt);
-        this.postalCode = validator.validatePostalCode(postalCode);
-        this.state = validator.validateState(state);
-        this.stateCode = validator.validateStateCode(stateCode);
-        this.street = validator.validateStreet(street);
+    /**
+     * Total constructor
+     *
+     * All fields should have been validated before calling this.
+     */
+    protected ParsedWhoisRegistrant(final com.google.common.base.Optional<String> airportCode, final com.google.common.base.Optional<String> city, final com.google.common.base.Optional<String> country, final com.google.common.base.Optional<String> countryCode, final com.google.common.base.Optional<String> district, final com.google.common.base.Optional<String> email, final com.google.common.base.Optional<String> firstName, final com.google.common.base.Optional<String> handle, final com.google.common.base.Optional<String> lastName, final com.google.common.base.Optional<String> name, final com.google.common.base.Optional<String> organization, final com.google.common.base.Optional<String> phone, final com.google.common.base.Optional<String> phoneExt, final com.google.common.base.Optional<String> postalCode, final com.google.common.base.Optional<String> state, final com.google.common.base.Optional<String> stateCode, final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> street) {
+        this.airportCode = airportCode;
+        this.city = city;
+        this.country = country;
+        this.countryCode = countryCode;
+        this.district = district;
+        this.email = email;
+        this.firstName = firstName;
+        this.handle = handle;
+        this.lastName = lastName;
+        this.name = name;
+        this.organization = organization;
+        this.phone = phone;
+        this.phoneExt = phoneExt;
+        this.postalCode = postalCode;
+        this.state = state;
+        this.stateCode = stateCode;
+        this.street = street;
     }
 
     public static Builder builder() {
@@ -2094,6 +1875,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         return other.isPresent() ? new Builder(other.get()) : new Builder();
     }
 
+    @Deprecated
     public static ParsedWhoisRegistrant create() {
         return new ParsedWhoisRegistrant();
     }
@@ -2101,15 +1883,34 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
     /**
      * Total Nullable factory method
      */
-    public static ParsedWhoisRegistrant create(final @javax.annotation.Nullable String airportCode, final @javax.annotation.Nullable String city, final @javax.annotation.Nullable String country, final @javax.annotation.Nullable String countryCode, final @javax.annotation.Nullable String district, final @javax.annotation.Nullable String email, final @javax.annotation.Nullable String firstName, final @javax.annotation.Nullable String handle, final @javax.annotation.Nullable String lastName, final @javax.annotation.Nullable String name, final @javax.annotation.Nullable String organization, final @javax.annotation.Nullable String phone, final @javax.annotation.Nullable String phoneExt, final @javax.annotation.Nullable String postalCode, final @javax.annotation.Nullable String state, final @javax.annotation.Nullable String stateCode, final @javax.annotation.Nullable com.google.common.collect.ImmutableList<String> street) {
-        return new ParsedWhoisRegistrant(com.google.common.base.Optional.fromNullable(airportCode), com.google.common.base.Optional.fromNullable(city), com.google.common.base.Optional.fromNullable(country), com.google.common.base.Optional.fromNullable(countryCode), com.google.common.base.Optional.fromNullable(district), com.google.common.base.Optional.fromNullable(email), com.google.common.base.Optional.fromNullable(firstName), com.google.common.base.Optional.fromNullable(handle), com.google.common.base.Optional.fromNullable(lastName), com.google.common.base.Optional.fromNullable(name), com.google.common.base.Optional.fromNullable(organization), com.google.common.base.Optional.fromNullable(phone), com.google.common.base.Optional.fromNullable(phoneExt), com.google.common.base.Optional.fromNullable(postalCode), com.google.common.base.Optional.fromNullable(state), com.google.common.base.Optional.fromNullable(stateCode), com.google.common.base.Optional.fromNullable(street), DefaultConstructionValidator.getInstance());
+    public static ParsedWhoisRegistrant create(@javax.annotation.Nullable final String airportCode, @javax.annotation.Nullable final String city, @javax.annotation.Nullable final String country, @javax.annotation.Nullable final String countryCode, @javax.annotation.Nullable final String district, @javax.annotation.Nullable final String email, @javax.annotation.Nullable final String firstName, @javax.annotation.Nullable final String handle, @javax.annotation.Nullable final String lastName, @javax.annotation.Nullable final String name, @javax.annotation.Nullable final String organization, @javax.annotation.Nullable final String phone, @javax.annotation.Nullable final String phoneExt, @javax.annotation.Nullable final String postalCode, @javax.annotation.Nullable final String state, @javax.annotation.Nullable final String stateCode, @javax.annotation.Nullable final com.google.common.collect.ImmutableList<String> street) {
+        final com.google.common.base.Optional<String> airportCodeOptional = com.google.common.base.Optional.fromNullable(airportCode);
+        final com.google.common.base.Optional<String> cityOptional = com.google.common.base.Optional.fromNullable(city);
+        final com.google.common.base.Optional<String> countryOptional = com.google.common.base.Optional.fromNullable(country);
+        final com.google.common.base.Optional<String> countryCodeOptional = com.google.common.base.Optional.fromNullable(countryCode);
+        final com.google.common.base.Optional<String> districtOptional = com.google.common.base.Optional.fromNullable(district);
+        final com.google.common.base.Optional<String> emailOptional = com.google.common.base.Optional.fromNullable(email);
+        final com.google.common.base.Optional<String> firstNameOptional = com.google.common.base.Optional.fromNullable(firstName);
+        final com.google.common.base.Optional<String> handleOptional = com.google.common.base.Optional.fromNullable(handle);
+        final com.google.common.base.Optional<String> lastNameOptional = com.google.common.base.Optional.fromNullable(lastName);
+        final com.google.common.base.Optional<String> nameOptional = com.google.common.base.Optional.fromNullable(name);
+        final com.google.common.base.Optional<String> organizationOptional = com.google.common.base.Optional.fromNullable(organization);
+        final com.google.common.base.Optional<String> phoneOptional = com.google.common.base.Optional.fromNullable(phone);
+        final com.google.common.base.Optional<String> phoneExtOptional = com.google.common.base.Optional.fromNullable(phoneExt);
+        final com.google.common.base.Optional<String> postalCodeOptional = com.google.common.base.Optional.fromNullable(postalCode);
+        final com.google.common.base.Optional<String> stateOptional = com.google.common.base.Optional.fromNullable(state);
+        final com.google.common.base.Optional<String> stateCodeOptional = com.google.common.base.Optional.fromNullable(stateCode);
+        final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> streetOptional = com.google.common.base.Optional.fromNullable(street);
+        UncheckedValidator.validate(airportCodeOptional, cityOptional, countryOptional, countryCodeOptional, districtOptional, emailOptional, firstNameOptional, handleOptional, lastNameOptional, nameOptional, organizationOptional, phoneOptional, phoneExtOptional, postalCodeOptional, stateOptional, stateCodeOptional, streetOptional);
+        return new ParsedWhoisRegistrant(airportCodeOptional, cityOptional, countryOptional, countryCodeOptional, districtOptional, emailOptional, firstNameOptional, handleOptional, lastNameOptional, nameOptional, organizationOptional, phoneOptional, phoneExtOptional, postalCodeOptional, stateOptional, stateCodeOptional, streetOptional);
     }
 
     /**
      * Optional factory method
      */
     public static ParsedWhoisRegistrant create(final com.google.common.base.Optional<String> airportCode, final com.google.common.base.Optional<String> city, final com.google.common.base.Optional<String> country, final com.google.common.base.Optional<String> countryCode, final com.google.common.base.Optional<String> district, final com.google.common.base.Optional<String> email, final com.google.common.base.Optional<String> firstName, final com.google.common.base.Optional<String> handle, final com.google.common.base.Optional<String> lastName, final com.google.common.base.Optional<String> name, final com.google.common.base.Optional<String> organization, final com.google.common.base.Optional<String> phone, final com.google.common.base.Optional<String> phoneExt, final com.google.common.base.Optional<String> postalCode, final com.google.common.base.Optional<String> state, final com.google.common.base.Optional<String> stateCode, final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> street) {
-        return new ParsedWhoisRegistrant(airportCode, city, country, countryCode, district, email, firstName, handle, lastName, name, organization, phone, phoneExt, postalCode, state, stateCode, street, DefaultConstructionValidator.getInstance());
+        UncheckedValidator.validate(airportCode, city, country, countryCode, district, email, firstName, handle, lastName, name, organization, phone, phoneExt, postalCode, state, stateCode, street);
+        return new ParsedWhoisRegistrant(airportCode, city, country, countryCode, district, email, firstName, handle, lastName, name, organization, phone, phoneExt, postalCode, state, stateCode, street);
     }
 
     @Override
@@ -2466,7 +2267,10 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         } catch (final RuntimeException e) {
             throw new IllegalStateException(e);
         }
-        return new ParsedWhoisRegistrant(DefaultReadValidator.getInstance().validateAirportCode(airportCode), DefaultReadValidator.getInstance().validateCity(city), DefaultReadValidator.getInstance().validateCountry(country), DefaultReadValidator.getInstance().validateCountryCode(countryCode), DefaultReadValidator.getInstance().validateDistrict(district), DefaultReadValidator.getInstance().validateEmail(email), DefaultReadValidator.getInstance().validateFirstName(firstName), DefaultReadValidator.getInstance().validateHandle(handle), DefaultReadValidator.getInstance().validateLastName(lastName), DefaultReadValidator.getInstance().validateName(name), DefaultReadValidator.getInstance().validateOrganization(organization), DefaultReadValidator.getInstance().validatePhone(phone), DefaultReadValidator.getInstance().validatePhoneExt(phoneExt), DefaultReadValidator.getInstance().validatePostalCode(postalCode), DefaultReadValidator.getInstance().validateState(state), DefaultReadValidator.getInstance().validateStateCode(stateCode), DefaultReadValidator.getInstance().validateStreet(street), NopConstructionValidator.getInstance());
+
+        ReadValidator.validate(airportCode, city, country, countryCode, district, email, firstName, handle, lastName, name, organization, phone, phoneExt, postalCode, state, stateCode, street);
+
+        return new ParsedWhoisRegistrant(airportCode, city, country, countryCode, district, email, firstName, handle, lastName, name, organization, phone, phoneExt, postalCode, state, stateCode, street);
     }
 
     public static ParsedWhoisRegistrant readAsStruct(final org.thryft.protocol.InputProtocol iprot) throws org.thryft.protocol.InputProtocolException {
@@ -2599,11 +2403,15 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
         } catch (final RuntimeException e) {
             throw new IllegalStateException(e);
         }
-        return new ParsedWhoisRegistrant(DefaultReadValidator.getInstance().validateAirportCode(airportCode), DefaultReadValidator.getInstance().validateCity(city), DefaultReadValidator.getInstance().validateCountry(country), DefaultReadValidator.getInstance().validateCountryCode(countryCode), DefaultReadValidator.getInstance().validateDistrict(district), DefaultReadValidator.getInstance().validateEmail(email), DefaultReadValidator.getInstance().validateFirstName(firstName), DefaultReadValidator.getInstance().validateHandle(handle), DefaultReadValidator.getInstance().validateLastName(lastName), DefaultReadValidator.getInstance().validateName(name), DefaultReadValidator.getInstance().validateOrganization(organization), DefaultReadValidator.getInstance().validatePhone(phone), DefaultReadValidator.getInstance().validatePhoneExt(phoneExt), DefaultReadValidator.getInstance().validatePostalCode(postalCode), DefaultReadValidator.getInstance().validateState(state), DefaultReadValidator.getInstance().validateStateCode(stateCode), DefaultReadValidator.getInstance().validateStreet(street), NopConstructionValidator.getInstance());
+
+        ReadValidator.validate(airportCode, city, country, countryCode, district, email, firstName, handle, lastName, name, organization, phone, phoneExt, postalCode, state, stateCode, street);
+
+        return new ParsedWhoisRegistrant(airportCode, city, country, countryCode, district, email, firstName, handle, lastName, name, organization, phone, phoneExt, postalCode, state, stateCode, street);
     }
 
     public ParsedWhoisRegistrant replaceAirportCode(final com.google.common.base.Optional<String> airportCode) {
-        return new ParsedWhoisRegistrant(DefaultConstructionValidator.getInstance().validateAirportCode(airportCode), this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateAirportCode(airportCode);
+        return new ParsedWhoisRegistrant(airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street);
     }
 
     public ParsedWhoisRegistrant replaceAirportCode(final String airportCode) {
@@ -2611,7 +2419,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
     }
 
     public ParsedWhoisRegistrant replaceCity(final com.google.common.base.Optional<String> city) {
-        return new ParsedWhoisRegistrant(this.airportCode, DefaultConstructionValidator.getInstance().validateCity(city), this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateCity(city);
+        return new ParsedWhoisRegistrant(this.airportCode, city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street);
     }
 
     public ParsedWhoisRegistrant replaceCity(final String city) {
@@ -2619,11 +2428,13 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
     }
 
     public ParsedWhoisRegistrant replaceCountry(final com.google.common.base.Optional<String> country) {
-        return new ParsedWhoisRegistrant(this.airportCode, this.city, DefaultConstructionValidator.getInstance().validateCountry(country), this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateCountry(country);
+        return new ParsedWhoisRegistrant(this.airportCode, this.city, country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street);
     }
 
     public ParsedWhoisRegistrant replaceCountryCode(final com.google.common.base.Optional<String> countryCode) {
-        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, DefaultConstructionValidator.getInstance().validateCountryCode(countryCode), this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateCountryCode(countryCode);
+        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street);
     }
 
     public ParsedWhoisRegistrant replaceCountryCode(final String countryCode) {
@@ -2635,7 +2446,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
     }
 
     public ParsedWhoisRegistrant replaceDistrict(final com.google.common.base.Optional<String> district) {
-        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, DefaultConstructionValidator.getInstance().validateDistrict(district), this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateDistrict(district);
+        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street);
     }
 
     public ParsedWhoisRegistrant replaceDistrict(final String district) {
@@ -2643,7 +2455,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
     }
 
     public ParsedWhoisRegistrant replaceEmail(final com.google.common.base.Optional<String> email) {
-        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, DefaultConstructionValidator.getInstance().validateEmail(email), this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateEmail(email);
+        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street);
     }
 
     public ParsedWhoisRegistrant replaceEmail(final String email) {
@@ -2651,7 +2464,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
     }
 
     public ParsedWhoisRegistrant replaceFirstName(final com.google.common.base.Optional<String> firstName) {
-        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, DefaultConstructionValidator.getInstance().validateFirstName(firstName), this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateFirstName(firstName);
+        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street);
     }
 
     public ParsedWhoisRegistrant replaceFirstName(final String firstName) {
@@ -2659,7 +2473,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
     }
 
     public ParsedWhoisRegistrant replaceHandle(final com.google.common.base.Optional<String> handle) {
-        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, DefaultConstructionValidator.getInstance().validateHandle(handle), this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateHandle(handle);
+        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street);
     }
 
     public ParsedWhoisRegistrant replaceHandle(final String handle) {
@@ -2667,7 +2482,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
     }
 
     public ParsedWhoisRegistrant replaceLastName(final com.google.common.base.Optional<String> lastName) {
-        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, DefaultConstructionValidator.getInstance().validateLastName(lastName), this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateLastName(lastName);
+        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street);
     }
 
     public ParsedWhoisRegistrant replaceLastName(final String lastName) {
@@ -2675,7 +2491,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
     }
 
     public ParsedWhoisRegistrant replaceName(final com.google.common.base.Optional<String> name) {
-        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, DefaultConstructionValidator.getInstance().validateName(name), this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateName(name);
+        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street);
     }
 
     public ParsedWhoisRegistrant replaceName(final String name) {
@@ -2683,7 +2500,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
     }
 
     public ParsedWhoisRegistrant replaceOrganization(final com.google.common.base.Optional<String> organization) {
-        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, DefaultConstructionValidator.getInstance().validateOrganization(organization), this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateOrganization(organization);
+        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street);
     }
 
     public ParsedWhoisRegistrant replaceOrganization(final String organization) {
@@ -2691,7 +2509,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
     }
 
     public ParsedWhoisRegistrant replacePhone(final com.google.common.base.Optional<String> phone) {
-        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, DefaultConstructionValidator.getInstance().validatePhone(phone), this.phoneExt, this.postalCode, this.state, this.stateCode, this.street, NopConstructionValidator.getInstance());
+        UncheckedValidator.validatePhone(phone);
+        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, phone, this.phoneExt, this.postalCode, this.state, this.stateCode, this.street);
     }
 
     public ParsedWhoisRegistrant replacePhone(final String phone) {
@@ -2699,7 +2518,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
     }
 
     public ParsedWhoisRegistrant replacePhoneExt(final com.google.common.base.Optional<String> phoneExt) {
-        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, DefaultConstructionValidator.getInstance().validatePhoneExt(phoneExt), this.postalCode, this.state, this.stateCode, this.street, NopConstructionValidator.getInstance());
+        UncheckedValidator.validatePhoneExt(phoneExt);
+        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, phoneExt, this.postalCode, this.state, this.stateCode, this.street);
     }
 
     public ParsedWhoisRegistrant replacePhoneExt(final String phoneExt) {
@@ -2707,7 +2527,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
     }
 
     public ParsedWhoisRegistrant replacePostalCode(final com.google.common.base.Optional<String> postalCode) {
-        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, DefaultConstructionValidator.getInstance().validatePostalCode(postalCode), this.state, this.stateCode, this.street, NopConstructionValidator.getInstance());
+        UncheckedValidator.validatePostalCode(postalCode);
+        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, postalCode, this.state, this.stateCode, this.street);
     }
 
     public ParsedWhoisRegistrant replacePostalCode(final String postalCode) {
@@ -2715,11 +2536,13 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
     }
 
     public ParsedWhoisRegistrant replaceState(final com.google.common.base.Optional<String> state) {
-        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, DefaultConstructionValidator.getInstance().validateState(state), this.stateCode, this.street, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateState(state);
+        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, state, this.stateCode, this.street);
     }
 
     public ParsedWhoisRegistrant replaceStateCode(final com.google.common.base.Optional<String> stateCode) {
-        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, DefaultConstructionValidator.getInstance().validateStateCode(stateCode), this.street, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateStateCode(stateCode);
+        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, stateCode, this.street);
     }
 
     public ParsedWhoisRegistrant replaceStateCode(final String stateCode) {
@@ -2731,7 +2554,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
     }
 
     public ParsedWhoisRegistrant replaceStreet(final com.google.common.base.Optional<com.google.common.collect.ImmutableList<String>> street) {
-        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, DefaultConstructionValidator.getInstance().validateStreet(street), NopConstructionValidator.getInstance());
+        UncheckedValidator.validateStreet(street);
+        return new ParsedWhoisRegistrant(this.airportCode, this.city, this.country, this.countryCode, this.district, this.email, this.firstName, this.handle, this.lastName, this.name, this.organization, this.phone, this.phoneExt, this.postalCode, this.state, this.stateCode, street);
     }
 
     public ParsedWhoisRegistrant replaceStreet(final com.google.common.collect.ImmutableList<String> street) {
@@ -2745,7 +2569,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     public void writeAirportCodeField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
         if (getAirportCode().isPresent()) {
-            oprot.writeFieldBegin("airport_code", org.thryft.protocol.Type.STRING, (short)0);
+            oprot.writeFieldBegin(FieldMetadata.AIRPORT_CODE);
             oprot.writeString(getAirportCode().get());
             oprot.writeFieldEnd();
         }
@@ -2873,7 +2697,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     public void writeCityField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
         if (getCity().isPresent()) {
-            oprot.writeFieldBegin("city", org.thryft.protocol.Type.STRING, (short)0);
+            oprot.writeFieldBegin(FieldMetadata.CITY);
             oprot.writeString(getCity().get());
             oprot.writeFieldEnd();
         }
@@ -2881,7 +2705,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     public void writeCountryCodeField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
         if (getCountryCode().isPresent()) {
-            oprot.writeFieldBegin("country_code", org.thryft.protocol.Type.STRING, (short)0);
+            oprot.writeFieldBegin(FieldMetadata.COUNTRY_CODE);
             oprot.writeString(getCountryCode().get());
             oprot.writeFieldEnd();
         }
@@ -2889,7 +2713,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     public void writeCountryField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
         if (getCountry().isPresent()) {
-            oprot.writeFieldBegin("country", org.thryft.protocol.Type.STRING, (short)0);
+            oprot.writeFieldBegin(FieldMetadata.COUNTRY);
             oprot.writeString(getCountry().get());
             oprot.writeFieldEnd();
         }
@@ -2897,7 +2721,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     public void writeDistrictField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
         if (getDistrict().isPresent()) {
-            oprot.writeFieldBegin("district", org.thryft.protocol.Type.STRING, (short)0);
+            oprot.writeFieldBegin(FieldMetadata.DISTRICT);
             oprot.writeString(getDistrict().get());
             oprot.writeFieldEnd();
         }
@@ -2905,7 +2729,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     public void writeEmailField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
         if (getEmail().isPresent()) {
-            oprot.writeFieldBegin("email", org.thryft.protocol.Type.STRING, (short)0);
+            oprot.writeFieldBegin(FieldMetadata.EMAIL);
             oprot.writeString(getEmail().get());
             oprot.writeFieldEnd();
         }
@@ -2952,7 +2776,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     public void writeFirstNameField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
         if (getFirstName().isPresent()) {
-            oprot.writeFieldBegin("first_name", org.thryft.protocol.Type.STRING, (short)0);
+            oprot.writeFieldBegin(FieldMetadata.FIRST_NAME);
             oprot.writeString(getFirstName().get());
             oprot.writeFieldEnd();
         }
@@ -2960,7 +2784,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     public void writeHandleField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
         if (getHandle().isPresent()) {
-            oprot.writeFieldBegin("handle", org.thryft.protocol.Type.STRING, (short)0);
+            oprot.writeFieldBegin(FieldMetadata.HANDLE);
             oprot.writeString(getHandle().get());
             oprot.writeFieldEnd();
         }
@@ -2968,7 +2792,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     public void writeLastNameField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
         if (getLastName().isPresent()) {
-            oprot.writeFieldBegin("last_name", org.thryft.protocol.Type.STRING, (short)0);
+            oprot.writeFieldBegin(FieldMetadata.LAST_NAME);
             oprot.writeString(getLastName().get());
             oprot.writeFieldEnd();
         }
@@ -2976,7 +2800,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     public void writeNameField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
         if (getName().isPresent()) {
-            oprot.writeFieldBegin("name", org.thryft.protocol.Type.STRING, (short)0);
+            oprot.writeFieldBegin(FieldMetadata.NAME);
             oprot.writeString(getName().get());
             oprot.writeFieldEnd();
         }
@@ -2984,7 +2808,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     public void writeOrganizationField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
         if (getOrganization().isPresent()) {
-            oprot.writeFieldBegin("organization", org.thryft.protocol.Type.STRING, (short)0);
+            oprot.writeFieldBegin(FieldMetadata.ORGANIZATION);
             oprot.writeString(getOrganization().get());
             oprot.writeFieldEnd();
         }
@@ -2992,7 +2816,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     public void writePhoneExtField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
         if (getPhoneExt().isPresent()) {
-            oprot.writeFieldBegin("phone_ext", org.thryft.protocol.Type.STRING, (short)0);
+            oprot.writeFieldBegin(FieldMetadata.PHONE_EXT);
             oprot.writeString(getPhoneExt().get());
             oprot.writeFieldEnd();
         }
@@ -3000,7 +2824,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     public void writePhoneField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
         if (getPhone().isPresent()) {
-            oprot.writeFieldBegin("phone", org.thryft.protocol.Type.STRING, (short)0);
+            oprot.writeFieldBegin(FieldMetadata.PHONE);
             oprot.writeString(getPhone().get());
             oprot.writeFieldEnd();
         }
@@ -3008,7 +2832,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     public void writePostalCodeField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
         if (getPostalCode().isPresent()) {
-            oprot.writeFieldBegin("postal_code", org.thryft.protocol.Type.STRING, (short)0);
+            oprot.writeFieldBegin(FieldMetadata.POSTAL_CODE);
             oprot.writeString(getPostalCode().get());
             oprot.writeFieldEnd();
         }
@@ -3016,7 +2840,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     public void writeStateCodeField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
         if (getStateCode().isPresent()) {
-            oprot.writeFieldBegin("state_code", org.thryft.protocol.Type.STRING, (short)0);
+            oprot.writeFieldBegin(FieldMetadata.STATE_CODE);
             oprot.writeString(getStateCode().get());
             oprot.writeFieldEnd();
         }
@@ -3024,7 +2848,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     public void writeStateField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
         if (getState().isPresent()) {
-            oprot.writeFieldBegin("state", org.thryft.protocol.Type.STRING, (short)0);
+            oprot.writeFieldBegin(FieldMetadata.STATE);
             oprot.writeString(getState().get());
             oprot.writeFieldEnd();
         }
@@ -3032,7 +2856,7 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
 
     public void writeStreetField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
         if (getStreet().isPresent()) {
-            oprot.writeFieldBegin("street", org.thryft.protocol.Type.LIST, (short)0);
+            oprot.writeFieldBegin(FieldMetadata.STREET);
             oprot.writeListBegin(org.thryft.protocol.Type.STRING, getStreet().get().size());
             for (final String _iter0 : getStreet().get()) {
                 oprot.writeString(_iter0);
@@ -3041,6 +2865,8 @@ public final class ParsedWhoisRegistrant implements org.thryft.Struct {
             oprot.writeFieldEnd();
         }
     }
+
+    public final static ParsedWhoisRegistrant EMPTY = new ParsedWhoisRegistrant();
 
     private final com.google.common.base.Optional<String> airportCode;
 

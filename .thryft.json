@@ -1,0 +1,32 @@
+{
+    "version": 1,
+
+    "tasks": {
+        "clean": [
+            "java/src/gen/java/io/github"
+        ],
+        "generate": [
+            {
+                "description": "Java",
+                "thrift_root_dir": "thrift/src",
+                "thrift_files": "thrift/src/**/*.thrift",
+                "gen": {
+                    "java": {
+                        "default_methods": true,
+                        "function_overloads": true,
+                        "namespace_prefix": "io.github.minorg.",
+                        "out": "java/src/gen/java"
+                    }
+                }
+            }
+        ],
+        "lint": [{
+            "thrift_root_dir": "thrift/src"
+        }],
+        "package_info_java": [{
+            "description": "package-info.java",
+            "java_root_dir": "java/src/main/java",
+            "java_dirs": "java/src/main/java/io/github/**/"
+        }]
+    }
+}

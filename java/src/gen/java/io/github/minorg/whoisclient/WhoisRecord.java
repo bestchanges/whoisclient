@@ -15,22 +15,24 @@ public final class WhoisRecord implements org.thryft.Struct {
         }
 
         protected WhoisRecord _build(final io.github.minorg.whoisclient.WhoisRecordMetadata metadata, final io.github.minorg.whoisclient.ParsedWhoisRecord parsed, final String text) {
-            return new WhoisRecord(metadata, parsed, text, DefaultConstructionValidator.getInstance());
+            return new WhoisRecord(metadata, parsed, text);
         }
 
         public WhoisRecord build() {
+            UncheckedValidator.validate(metadata, parsed, text);
+
             return _build(metadata, parsed, text);
         }
 
-        public final io.github.minorg.whoisclient.WhoisRecordMetadata getMetadata() {
+        public final @javax.annotation.Nullable io.github.minorg.whoisclient.WhoisRecordMetadata getMetadata() {
             return metadata;
         }
 
-        public final io.github.minorg.whoisclient.ParsedWhoisRecord getParsed() {
+        public final @javax.annotation.Nullable io.github.minorg.whoisclient.ParsedWhoisRecord getParsed() {
             return parsed;
         }
 
-        public final String getText() {
+        public final @javax.annotation.Nullable String getText() {
             return text;
         }
 
@@ -76,11 +78,11 @@ public final class WhoisRecord implements org.thryft.Struct {
                     }
                     switch (ifield.getName()) {
                     case "metadata": {
-                        metadata = io.github.minorg.whoisclient.WhoisRecordMetadata.readAsStruct(iprot);
+                        metadata = io.github.minorg.whoisclient.WhoisRecordMetadata.readAsStruct(iprot, unknownFieldCallback);
                         break;
                     }
                     case "parsed": {
-                        parsed = io.github.minorg.whoisclient.ParsedWhoisRecord.readAsStruct(iprot);
+                        parsed = io.github.minorg.whoisclient.ParsedWhoisRecord.readAsStruct(iprot, unknownFieldCallback);
                         break;
                     }
                     case "text": {
@@ -136,17 +138,20 @@ public final class WhoisRecord implements org.thryft.Struct {
         }
 
         public Builder setMetadata(final io.github.minorg.whoisclient.WhoisRecordMetadata metadata) {
-            this.metadata = DefaultConstructionValidator.getInstance().validateMetadata(metadata);
+            UncheckedValidator.validateMetadata(metadata);
+            this.metadata = metadata;
             return this;
         }
 
         public Builder setParsed(final io.github.minorg.whoisclient.ParsedWhoisRecord parsed) {
-            this.parsed = DefaultConstructionValidator.getInstance().validateParsed(parsed);
+            UncheckedValidator.validateParsed(parsed);
+            this.parsed = parsed;
             return this;
         }
 
         public Builder setText(final String text) {
-            this.text = DefaultConstructionValidator.getInstance().validateText(text);
+            UncheckedValidator.validateText(text);
+            this.text = text;
             return this;
         }
 
@@ -188,9 +193,9 @@ public final class WhoisRecord implements org.thryft.Struct {
             return this;
         }
 
-        private io.github.minorg.whoisclient.WhoisRecordMetadata metadata;
-        private io.github.minorg.whoisclient.ParsedWhoisRecord parsed;
-        private String text;
+        private @javax.annotation.Nullable io.github.minorg.whoisclient.WhoisRecordMetadata metadata;
+        private @javax.annotation.Nullable io.github.minorg.whoisclient.ParsedWhoisRecord parsed;
+        private @javax.annotation.Nullable String text;
     }
 
     public final static class Factory implements org.thryft.CompoundType.Factory<WhoisRecord> {
@@ -224,9 +229,9 @@ public final class WhoisRecord implements org.thryft.Struct {
 
     @SuppressWarnings("serial")
     public enum FieldMetadata implements org.thryft.CompoundType.FieldMetadata {
-        METADATA("metadata", new com.google.common.reflect.TypeToken<io.github.minorg.whoisclient.WhoisRecordMetadata>() {}, true, 0, "metadata", org.thryft.protocol.Type.STRUCT),
-        PARSED("parsed", new com.google.common.reflect.TypeToken<io.github.minorg.whoisclient.ParsedWhoisRecord>() {}, true, 0, "parsed", org.thryft.protocol.Type.STRUCT),
-        TEXT("text", new com.google.common.reflect.TypeToken<String>() {}, true, 0, "text", org.thryft.protocol.Type.STRING);
+        METADATA("metadata", new com.google.common.reflect.TypeToken<io.github.minorg.whoisclient.WhoisRecordMetadata>() {}, true, (short)0, "metadata", org.thryft.protocol.Type.STRUCT),
+        PARSED("parsed", new com.google.common.reflect.TypeToken<io.github.minorg.whoisclient.ParsedWhoisRecord>() {}, true, (short)0, "parsed", org.thryft.protocol.Type.STRUCT),
+        TEXT("text", new com.google.common.reflect.TypeToken<String>() {}, true, (short)0, "text", org.thryft.protocol.Type.STRING);
 
         @Override
         public String getJavaName() {
@@ -239,7 +244,7 @@ public final class WhoisRecord implements org.thryft.Struct {
         }
 
         @Override
-        public int getThriftId() {
+        public short getThriftId() {
             return thriftId;
         }
 
@@ -288,7 +293,7 @@ public final class WhoisRecord implements org.thryft.Struct {
             }
         }
 
-        private FieldMetadata(final String javaName, final com.google.common.reflect.TypeToken<?> javaType, final boolean required, final int thriftId, final String thriftName, final org.thryft.protocol.Type thriftProtocolType) {
+        private FieldMetadata(final String javaName, final com.google.common.reflect.TypeToken<?> javaType, final boolean required, final short thriftId, final String thriftName, final org.thryft.protocol.Type thriftProtocolType) {
             this.javaName = javaName;
             this.javaType = javaType;
             this.required = required;
@@ -305,134 +310,34 @@ public final class WhoisRecord implements org.thryft.Struct {
         private final String javaName;
         private final com.google.common.reflect.TypeToken<?> javaType;
         private final boolean required;
-        private final int thriftId;
+        private final short thriftId;
         private final String thriftName;
         private final String thriftProtocolKey;
         private final org.thryft.protocol.Type thriftProtocolType;
     }
 
-    public interface Validator<ExceptionT extends Exception> {
-        public io.github.minorg.whoisclient.WhoisRecordMetadata validateMetadata(final io.github.minorg.whoisclient.WhoisRecordMetadata metadata) throws ExceptionT;
-
-        public io.github.minorg.whoisclient.ParsedWhoisRecord validateParsed(final io.github.minorg.whoisclient.ParsedWhoisRecord parsed) throws ExceptionT;
-
-        public String validateText(final String text) throws ExceptionT;
-    }
-
-    public interface ConstructionValidator extends Validator<RuntimeException> {
-    }
-
-    public static class DefaultConstructionValidator implements ConstructionValidator {
-        public static DefaultConstructionValidator getInstance() {
-            return instance;
+    public final static class ReadValidator {
+        public static void validate(final io.github.minorg.whoisclient.WhoisRecordMetadata metadata, final io.github.minorg.whoisclient.ParsedWhoisRecord parsed, final String text) throws org.thryft.protocol.InputProtocolException {
+            validateMetadata(metadata);
+            validateParsed(parsed);
+            validateText(text);
         }
 
-        public DefaultConstructionValidator() {
-        }
-
-        @Override
-        public io.github.minorg.whoisclient.WhoisRecordMetadata validateMetadata(final io.github.minorg.whoisclient.WhoisRecordMetadata metadata) throws RuntimeException {
-            if (metadata == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.WhoisRecord: metadata is null");
-            }
-            return metadata;
-        }
-
-        @Override
-        public io.github.minorg.whoisclient.ParsedWhoisRecord validateParsed(final io.github.minorg.whoisclient.ParsedWhoisRecord parsed) throws RuntimeException {
-            if (parsed == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.WhoisRecord: parsed is null");
-            }
-            return parsed;
-        }
-
-        @Override
-        public String validateText(final String text) throws RuntimeException {
-            if (text == null) {
-                throw new NullPointerException("io.github.minorg.whoisclient.WhoisRecord: text is null");
-            }
-            if (text.isEmpty()) {
-                throw new IllegalArgumentException("io.github.minorg.whoisclient.WhoisRecord: text is less than min length 1");
-            }
-            {
-                final int __strLen = text.length();
-                boolean __blank = true;
-                for (int i = 0; i < __strLen; i++) {
-                    if (!Character.isWhitespace(text.charAt(i))) {
-                        __blank = false;
-                        break;
-                    }
-                }
-                if (__blank) {
-                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.WhoisRecord: text is blank: '%s' (length=%d)", text, __strLen));
-                }
-            }
-            return text;
-        }
-
-        private final static DefaultConstructionValidator instance = new DefaultConstructionValidator();
-    }
-
-    public static class NopConstructionValidator implements ConstructionValidator {
-        public static NopConstructionValidator getInstance() {
-            return instance;
-        }
-
-        public NopConstructionValidator() {
-        }
-
-        @Override
-        public io.github.minorg.whoisclient.WhoisRecordMetadata validateMetadata(final io.github.minorg.whoisclient.WhoisRecordMetadata metadata) {
-            return metadata;
-        }
-
-        @Override
-        public io.github.minorg.whoisclient.ParsedWhoisRecord validateParsed(final io.github.minorg.whoisclient.ParsedWhoisRecord parsed) {
-            return parsed;
-        }
-
-        @Override
-        public String validateText(final String text) {
-            return text;
-        }
-
-        private final static NopConstructionValidator instance = new NopConstructionValidator();
-    }
-
-    public interface ReadValidator extends Validator<org.thryft.protocol.InputProtocolException> {
-    }
-
-    public static class DefaultReadValidator implements ReadValidator {
-        public static DefaultReadValidator getInstance() {
-            return instance;
-        }
-
-        public DefaultReadValidator() {
-        }
-
-        @Override
-        public io.github.minorg.whoisclient.WhoisRecordMetadata validateMetadata(final io.github.minorg.whoisclient.WhoisRecordMetadata metadata) throws org.thryft.protocol.InputProtocolException {
+        public static void validateMetadata(final io.github.minorg.whoisclient.WhoisRecordMetadata metadata) throws org.thryft.protocol.InputProtocolException {
             if (metadata == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.METADATA, "io.github.minorg.whoisclient.WhoisRecord: metadata is null");
             }
-            return metadata;
         }
 
-        @Override
-        public io.github.minorg.whoisclient.ParsedWhoisRecord validateParsed(final io.github.minorg.whoisclient.ParsedWhoisRecord parsed) throws org.thryft.protocol.InputProtocolException {
+        public static void validateParsed(final io.github.minorg.whoisclient.ParsedWhoisRecord parsed) throws org.thryft.protocol.InputProtocolException {
             if (parsed == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.PARSED, "io.github.minorg.whoisclient.WhoisRecord: parsed is null");
             }
-            return parsed;
         }
 
-        @Override
-        public String validateText(final String text) throws org.thryft.protocol.InputProtocolException {
+        public static void validateText(final String text) throws org.thryft.protocol.InputProtocolException {
             if (text == null) {
                 throw new org.thryft.protocol.MissingFieldInputProtocolException(FieldMetadata.TEXT, "io.github.minorg.whoisclient.WhoisRecord: text is null");
-            }
-            if (text.isEmpty()) {
-                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.TEXT, "io.github.minorg.whoisclient.WhoisRecord: text is less than min length 1");
             }
             {
                 final int __strLen = text.length();
@@ -444,52 +349,73 @@ public final class WhoisRecord implements org.thryft.Struct {
                     }
                 }
                 if (__blank) {
-                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.TEXT, String.format("io.github.minorg.whoisclient.WhoisRecord: text is blank: '%s' (length=%d)", text, __strLen));
+                    throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.TEXT, String.format("io.github.minorg.whoisclient.WhoisRecord.text: blank '%s' (length=%d)", text, __strLen));
                 }
             }
-            return text;
+            if (text.isEmpty()) {
+                throw new org.thryft.protocol.InvalidFieldInputProtocolException(FieldMetadata.TEXT, "io.github.minorg.whoisclient.WhoisRecord.text: less than min length 1");
+            }
         }
-
-        private final static DefaultReadValidator instance = new DefaultReadValidator();
     }
 
-    public static class NopReadValidator implements ReadValidator {
-        public static NopReadValidator getInstance() {
-            return instance;
+    public final static class UncheckedValidator {
+        public static void validate(final io.github.minorg.whoisclient.WhoisRecordMetadata metadata, final io.github.minorg.whoisclient.ParsedWhoisRecord parsed, final String text) {
+            validateMetadata(metadata);
+            validateParsed(parsed);
+            validateText(text);
         }
 
-        public NopReadValidator() {
+        public static void validateMetadata(final io.github.minorg.whoisclient.WhoisRecordMetadata metadata) {
+            if (metadata == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.WhoisRecord: metadata is null");
+            }
         }
 
-        @Override
-        public io.github.minorg.whoisclient.WhoisRecordMetadata validateMetadata(final io.github.minorg.whoisclient.WhoisRecordMetadata metadata) {
-            return metadata;
+        public static void validateParsed(final io.github.minorg.whoisclient.ParsedWhoisRecord parsed) {
+            if (parsed == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.WhoisRecord: parsed is null");
+            }
         }
 
-        @Override
-        public io.github.minorg.whoisclient.ParsedWhoisRecord validateParsed(final io.github.minorg.whoisclient.ParsedWhoisRecord parsed) {
-            return parsed;
+        public static void validateText(final String text) {
+            if (text == null) {
+                throw new NullPointerException("io.github.minorg.whoisclient.WhoisRecord: text is null");
+            }
+            {
+                final int __strLen = text.length();
+                boolean __blank = true;
+                for (int i = 0; i < __strLen; i++) {
+                    if (!Character.isWhitespace(text.charAt(i))) {
+                        __blank = false;
+                        break;
+                    }
+                }
+                if (__blank) {
+                    throw new IllegalArgumentException(String.format("io.github.minorg.whoisclient.WhoisRecord.text: blank '%s' (length=%d)", text, __strLen));
+                }
+            }
+            if (text.isEmpty()) {
+                throw new IllegalArgumentException("io.github.minorg.whoisclient.WhoisRecord.text: less than min length 1");
+            }
         }
-
-        @Override
-        public String validateText(final String text) {
-            return text;
-        }
-
-        private final static NopReadValidator instance = new NopReadValidator();
     }
 
     /**
      * Copy constructor
      */
     public WhoisRecord(final WhoisRecord other) {
-        this(other.getMetadata(), other.getParsed(), other.getText(), NopConstructionValidator.getInstance());
+        this(other.getMetadata(), other.getParsed(), other.getText());
     }
 
-    protected WhoisRecord(final io.github.minorg.whoisclient.WhoisRecordMetadata metadata, final io.github.minorg.whoisclient.ParsedWhoisRecord parsed, final String text, ConstructionValidator validator) {
-        this.metadata = validator.validateMetadata(metadata);
-        this.parsed = validator.validateParsed(parsed);
-        this.text = validator.validateText(text);
+    /**
+     * Total constructor
+     *
+     * All fields should have been validated before calling this.
+     */
+    protected WhoisRecord(final io.github.minorg.whoisclient.WhoisRecordMetadata metadata, final io.github.minorg.whoisclient.ParsedWhoisRecord parsed, final String text) {
+        this.metadata = metadata;
+        this.parsed = parsed;
+        this.text = text;
     }
 
     public static Builder builder() {
@@ -508,7 +434,8 @@ public final class WhoisRecord implements org.thryft.Struct {
      * Optional factory method
      */
     public static WhoisRecord create(final io.github.minorg.whoisclient.WhoisRecordMetadata metadata, final io.github.minorg.whoisclient.ParsedWhoisRecord parsed, final String text) {
-        return new WhoisRecord(metadata, parsed, text, DefaultConstructionValidator.getInstance());
+        UncheckedValidator.validate(metadata, parsed, text);
+        return new WhoisRecord(metadata, parsed, text);
     }
 
     @Override
@@ -597,9 +524,9 @@ public final class WhoisRecord implements org.thryft.Struct {
     }
 
     public static WhoisRecord readAsList(final org.thryft.protocol.InputProtocol iprot) throws org.thryft.protocol.InputProtocolException {
-        io.github.minorg.whoisclient.WhoisRecordMetadata metadata = null;
-        io.github.minorg.whoisclient.ParsedWhoisRecord parsed = null;
-        String text = null;
+        io.github.minorg.whoisclient.WhoisRecordMetadata metadata;
+        io.github.minorg.whoisclient.ParsedWhoisRecord parsed;
+        String text;
 
         try {
             iprot.readListBegin();
@@ -610,7 +537,10 @@ public final class WhoisRecord implements org.thryft.Struct {
         } catch (final RuntimeException e) {
             throw new IllegalStateException(e);
         }
-        return new WhoisRecord(DefaultReadValidator.getInstance().validateMetadata(metadata), DefaultReadValidator.getInstance().validateParsed(parsed), DefaultReadValidator.getInstance().validateText(text), NopConstructionValidator.getInstance());
+
+        ReadValidator.validate(metadata, parsed, text);
+
+        return new WhoisRecord(metadata, parsed, text);
     }
 
     public static WhoisRecord readAsStruct(final org.thryft.protocol.InputProtocol iprot) throws org.thryft.protocol.InputProtocolException {
@@ -618,9 +548,9 @@ public final class WhoisRecord implements org.thryft.Struct {
     }
 
     public static WhoisRecord readAsStruct(final org.thryft.protocol.InputProtocol iprot, final com.google.common.base.Optional<UnknownFieldCallback> unknownFieldCallback) throws org.thryft.protocol.InputProtocolException {
-        io.github.minorg.whoisclient.WhoisRecordMetadata metadata = null;
-        io.github.minorg.whoisclient.ParsedWhoisRecord parsed = null;
-        String text = null;
+        @javax.annotation.Nullable io.github.minorg.whoisclient.WhoisRecordMetadata metadata = null;
+        @javax.annotation.Nullable io.github.minorg.whoisclient.ParsedWhoisRecord parsed = null;
+        @javax.annotation.Nullable String text = null;
 
         try {
             iprot.readStructBegin();
@@ -631,11 +561,11 @@ public final class WhoisRecord implements org.thryft.Struct {
                 }
                 switch (ifield.getName()) {
                 case "metadata": {
-                    metadata = io.github.minorg.whoisclient.WhoisRecordMetadata.readAsStruct(iprot);
+                    metadata = io.github.minorg.whoisclient.WhoisRecordMetadata.readAsStruct(iprot, unknownFieldCallback);
                     break;
                 }
                 case "parsed": {
-                    parsed = io.github.minorg.whoisclient.ParsedWhoisRecord.readAsStruct(iprot);
+                    parsed = io.github.minorg.whoisclient.ParsedWhoisRecord.readAsStruct(iprot, unknownFieldCallback);
                     break;
                 }
                 case "text": {
@@ -654,19 +584,25 @@ public final class WhoisRecord implements org.thryft.Struct {
         } catch (final RuntimeException e) {
             throw new IllegalStateException(e);
         }
-        return new WhoisRecord(DefaultReadValidator.getInstance().validateMetadata(metadata), DefaultReadValidator.getInstance().validateParsed(parsed), DefaultReadValidator.getInstance().validateText(text), NopConstructionValidator.getInstance());
+
+        ReadValidator.validate(metadata, parsed, text);
+
+        return new WhoisRecord(metadata, parsed, text);
     }
 
     public WhoisRecord replaceMetadata(final io.github.minorg.whoisclient.WhoisRecordMetadata metadata) {
-        return new WhoisRecord(DefaultConstructionValidator.getInstance().validateMetadata(metadata), this.parsed, this.text, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateMetadata(metadata);
+        return new WhoisRecord(metadata, this.parsed, this.text);
     }
 
     public WhoisRecord replaceParsed(final io.github.minorg.whoisclient.ParsedWhoisRecord parsed) {
-        return new WhoisRecord(this.metadata, DefaultConstructionValidator.getInstance().validateParsed(parsed), this.text, NopConstructionValidator.getInstance());
+        UncheckedValidator.validateParsed(parsed);
+        return new WhoisRecord(this.metadata, parsed, this.text);
     }
 
     public WhoisRecord replaceText(final String text) {
-        return new WhoisRecord(this.metadata, this.parsed, DefaultConstructionValidator.getInstance().validateText(text), NopConstructionValidator.getInstance());
+        UncheckedValidator.validateText(text);
+        return new WhoisRecord(this.metadata, this.parsed, text);
     }
 
     @Override
@@ -706,19 +642,19 @@ public final class WhoisRecord implements org.thryft.Struct {
     }
 
     public void writeMetadataField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
-        oprot.writeFieldBegin("metadata", org.thryft.protocol.Type.STRUCT, (short)0);
+        oprot.writeFieldBegin(FieldMetadata.METADATA);
         getMetadata().writeAsStruct(oprot);
         oprot.writeFieldEnd();
     }
 
     public void writeParsedField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
-        oprot.writeFieldBegin("parsed", org.thryft.protocol.Type.STRUCT, (short)0);
+        oprot.writeFieldBegin(FieldMetadata.PARSED);
         getParsed().writeAsStruct(oprot);
         oprot.writeFieldEnd();
     }
 
     public void writeTextField(final org.thryft.protocol.OutputProtocol oprot) throws org.thryft.protocol.OutputProtocolException {
-        oprot.writeFieldBegin("text", org.thryft.protocol.Type.STRING, (short)0);
+        oprot.writeFieldBegin(FieldMetadata.TEXT);
         oprot.writeString(getText());
         oprot.writeFieldEnd();
     }
