@@ -1,4 +1,4 @@
-package io.github.minorg.whoisclient.parser;
+package io.github.bestchanges.whoisclient;
 
 public final class WhoisRecordParseException extends Exception {
     public WhoisRecordParseException(final String message) {

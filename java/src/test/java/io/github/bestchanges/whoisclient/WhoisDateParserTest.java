@@ -1,8 +1,6 @@
-package io.github.minorg.whoisclient.parser;
+package io.github.bestchanges.whoisclient;
 
 import org.junit.Test;
-
-import io.github.minorg.whoisclient.parser.WhoisDateParser;
 
 public final class WhoisDateParserTest {
     @Test

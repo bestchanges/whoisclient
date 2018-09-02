@@ -1,4 +1,4 @@
-package io.github.minorg.whoisclient.parser;
+package io.github.bestchanges.whoisclient;
 
 import java.util.Date;
 import java.util.regex.Matcher;

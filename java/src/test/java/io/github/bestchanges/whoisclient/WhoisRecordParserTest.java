@@ -1,23 +1,14 @@
-package io.github.minorg.whoisclient.parser;
+package io.github.bestchanges.whoisclient;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.util.Date;
-
 import org.junit.Before;
 import org.junit.Test;
-import org.thryft.native_.InternetDomainName;
-
-import com.google.common.collect.ImmutableList;
-
-import io.github.minorg.whoisclient.ParsedWhoisRecord;
-import io.github.minorg.whoisclient.RawWhoisRecord;
 
 public final class WhoisRecordParserTest {
     @Before
     public void setUp() {
-        parser = new WhoisRecordParser();
     }
 
     @SuppressWarnings("deprecation")
@@ -69,15 +60,10 @@ public final class WhoisRecordParserTest {
                 + "Whois database for failure to abide by these terms of use. VeriSign\n"
                 + "reserves the right to modify these terms at any time.\n" + "\n"
                 + "The Registry database contains ONLY .COM, .NET, .EDU domains and\n" + "Registrars.\n" + "";
-        final ParsedWhoisRecord record = __parse(raw, "notablist.com", "whois.verisign-grs.com");
-        assertTrue(record.getCreationDate().isPresent());
-        assertEquals(2014, record.getCreationDate().get().getYear() + 1900);
-        assertEquals(1, record.getCreationDate().get().getMonth());
-        assertEquals(24, record.getCreationDate().get().getDate());
-        assertTrue(record.getExpirationDate().isPresent());
-        assertTrue(record.getReferral().isPresent());
-        assertEquals("whois.godaddy.com", record.getReferral().get());
-        assertTrue(record.getUpdatedDate().isPresent());
+        final WhoisRecord record = __parse(raw, "notablist.com", "whois.verisign-grs.com");
+        assertTrue(record.getExpirationDate() != null);
+        assertTrue(record.getReferralWhoisServer() != null);
+        assertEquals("whois.godaddy.com", record.getReferralWhoisServer());
     }
 
     @Test
@@ -119,10 +105,8 @@ public final class WhoisRecordParserTest {
                 + "A dispute over the ownership of a domain name may be subject to the alternate procedure established by the Registry in question or brought before the courts. <br />\n"
                 + "For additional information, please contact us via the following form:<br />\n"
                 + " https://www.gandi.net/support/contacter/mail/\n" + "";
-        final ParsedWhoisRecord record = __parse(raw, "minorgordon.net", "whois.gandi.net");
-        assertTrue(record.getAdministrativeContact().isPresent());
-        assertTrue(record.getRegistrant().isPresent());
-        assertTrue(record.getTechnicalContact().isPresent());
+        final WhoisRecord record = __parse(raw, "minorgordon.net", "whois.gandi.net");
+        assertTrue(record.getRegistrant() != null);
     }
 
     @Test
@@ -175,10 +159,47 @@ public final class WhoisRecordParserTest {
                 + "Please note: the registrant of the domain name is specified\n"
                 + "in the \"registrant\" section.  In most cases, GoDaddy.com, LLC \n"
                 + "is not the registrant of domain names listed in this database.\n" + "";
-        final ParsedWhoisRecord record = __parse(text, "notablist.com", "whois.godaddy.com");
-        assertTrue(record.getAdministrativeContact().isPresent());
-        assertTrue(record.getRegistrant().isPresent());
-        assertTrue(record.getTechnicalContact().isPresent());
+        final WhoisRecord record = __parse(text, "notablist.com", "whois.godaddy.com");
+        assertTrue(record.getRegistrant() != null);
+    }
+
+    @Test
+    public void testInfo() throws WhoisRecordParseException {
+        final String text = "Domain Name: DOMAIN.INFO\n" +
+                "Registry Domain ID: D31786-LRMS\n" +
+                "Registrar WHOIS Server:\n" +
+                "Registrar URL: http://www.domain.com\n" +
+                "Updated Date: 2018-07-02T03:47:21Z\n" +
+                "Creation Date: 2001-07-31T19:12:43Z\n" +
+                "Registry Expiry Date: 2019-07-31T19:12:43Z\n" +
+                "Registrar Registration Expiration Date:\n" +
+                "Registrar: Domain.com,LLC\n" +
+                "Registrar IANA ID: 886\n" +
+                "Registrar Abuse Contact Email:\n" +
+                "Registrar Abuse Contact Phone:\n" +
+                "Reseller:\n" +
+                "Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited\n" +
+                "Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited\n" +
+                "Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited\n" +
+                "Registrant Organization: Endurance International Group West, Inc.\n" +
+                "Registrant State/Province: MA\n" +
+                "Registrant Country: US\n" +
+                "Name Server: DNS1.DOMAINBANK.COM\n" +
+                "Name Server: DNS2.DOMAINBANK.COM\n" +
+                "DNSSEC: unsigned\n" +
+                "URL of the ICANN Whois Inaccuracy Complaint Form is https://www.icann.org/wicf/\n" +
+                ">>> Last update of WHOIS database: 2018-09-02T10:06:34Z <<<\n" +
+                "\n" +
+                "For more information on Whois status codes, please visit https://icann.org/epp\n" +
+                "\n" +
+                "Access to AFILIAS WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the Afilias registry database. The data in this record is provided by Afilias Limited for informational purposes only, and Afilias does not guarantee its accuracy.  This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to(a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Afilias except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. Afilias reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy.\n" +
+                "\n" +
+                "The Registrar of Record identified in this output may have an RDDS service that can be queried for additional information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.\n";
+        final WhoisRecord record = __parse(text, "notablist.com", "whois.godaddy.com");
+        assertTrue(record.getRegistrant() != null);
+        assertTrue(record.getRegistrar() != null);
+        assertTrue(record.getUpdated() != null);
+        assertTrue(record.getExpirationDate() != null);
     }
 
     @Test
@@ -231,17 +252,13 @@ public final class WhoisRecordParserTest {
                 + "Please note: the registrant of the domain name is specified\n"
                 + "in the \"registrant\" section.  In most cases, GoDaddy.com, LLC \n"
                 + "is not the registrant of domain names listed in this database.\n" + "";
-        final ParsedWhoisRecord record = __parse(text, "notablist.com", "whois.godaddy.com");
-        assertTrue(record.getAdministrativeContact().isPresent());
-        assertTrue(record.getRegistrant().isPresent());
-        assertTrue(record.getTechnicalContact().isPresent());
+        final WhoisRecord record = __parse(text, "notablist.com", "whois.godaddy.com");
+        assertTrue(record.getRegistrant() != null);
     }
 
-    private ParsedWhoisRecord __parse(final String raw, final String requestedDomainName, final String whoisServer)
+    private WhoisRecord __parse(final String raw, final String requestedDomainName, final String whoisServer)
             throws WhoisRecordParseException {
-        return parser.parse(RawWhoisRecord.create(InternetDomainName.from(requestedDomainName),
-                ImmutableList.of(InternetDomainName.from(whoisServer)), new Date(), raw)).getParsed();
+        return new WhoisRecord(raw, requestedDomainName, whoisServer, null);
     }
 
-    private WhoisRecordParser parser;
 }
