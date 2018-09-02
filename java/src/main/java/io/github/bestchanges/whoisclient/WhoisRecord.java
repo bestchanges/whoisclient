@@ -122,7 +122,7 @@ public class WhoisRecord {
     }
 
     public Date getUpdated() {
-        String value = this.getValue("Updated Date");
+        String value = this.getValue("Updated Date", "Update Date");
         return __parseDateValue(value);
     }
 

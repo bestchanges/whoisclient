@@ -61,8 +61,8 @@ public final class WhoisRecordParserTest {
                 + "reserves the right to modify these terms at any time.\n" + "\n"
                 + "The Registry database contains ONLY .COM, .NET, .EDU domains and\n" + "Registrars.\n" + "";
         final WhoisRecord record = __parse(raw, "notablist.com", "whois.verisign-grs.com");
+        assertTrue(record.getUpdated() != null);
         assertTrue(record.getExpirationDate() != null);
-        assertTrue(record.getReferralWhoisServer() != null);
         assertEquals("whois.godaddy.com", record.getReferralWhoisServer());
     }
 
@@ -161,6 +161,9 @@ public final class WhoisRecordParserTest {
                 + "is not the registrant of domain names listed in this database.\n" + "";
         final WhoisRecord record = __parse(text, "notablist.com", "whois.godaddy.com");
         assertTrue(record.getRegistrant() != null);
+        assertTrue(record.getRegistrar() != null);
+        assertTrue(record.getUpdated() != null);
+        assertTrue(record.getExpirationDate() != null);
     }
 
     @Test
@@ -254,6 +257,9 @@ public final class WhoisRecordParserTest {
                 + "is not the registrant of domain names listed in this database.\n" + "";
         final WhoisRecord record = __parse(text, "notablist.com", "whois.godaddy.com");
         assertTrue(record.getRegistrant() != null);
+        assertTrue(record.getRegistrar() != null);
+        assertTrue(record.getUpdated() != null);
+        assertTrue(record.getExpirationDate() != null);
     }
 
     private WhoisRecord __parse(final String raw, final String requestedDomainName, final String whoisServer)
